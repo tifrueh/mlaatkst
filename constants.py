@@ -1,17 +1,3 @@
-TITLE = """MLA at KST
-¯¯¯¯¯¯¯¯¯¯
-"""
-
-MAIN_PROMPT = """
-Wählen Sie bitte eine der folgenden Optionen:
-    a - Erstnennung eines Buches
-    b - Zweitnennung eines Buches
-    c - Quellen und Darstellungen aus dem Internet
-
-    q - Skript beenden
-
-Geben Sie bitte einen Buchstaben ein: """
-
 AUTHOR_PROMPT = "Wie lautet der Name des/der zitierten Autoren/in? (Nachname, Vorname) "
 AUTHOR_LASTNAME_PROMPT = "Wie lautet der Nachname des/der Autoren/in? "
 TITLE_PROMPT = "Wie lautet der Titel des zitierten Werks/Website? "
