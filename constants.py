@@ -1,3 +1,4 @@
+# this is the file where all constants are located
 AUTHOR_PROMPT = "Wie lautet der Name des/der zitierten Autoren/in? (Nachname, Vorname) "
 AUTHOR_LASTNAME_PROMPT = "Wie lautet der Nachname des/der Autoren/in? "
 TITLE_PROMPT = "Wie lautet der Titel des zitierten Werks/Website? "
