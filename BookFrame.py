@@ -42,7 +42,7 @@ class BookFrame(ttk.LabelFrame):
 
         self.enterButton = ttk.Button(self, text="Fertig", command=self.format).pack()
 
-        self.resultLabel = ttk.Label(self)
+        self.resultLabel = ttk.Label(self).pack()
 
     def format(self):
         result = CitationFormatter.book(self.nameAuthor, self.title, self.subtitle, self.edition, self.publisher, self.location, self.year, self.pageS)
