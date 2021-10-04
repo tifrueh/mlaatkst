@@ -107,33 +107,33 @@ class EntryFrame(ttk.LabelFrame):
     
     def askEdition(self):
         self.editionLabel = ttk.Label(self, text=c.EDITION_PROMPT, justify=tk.LEFT)
-        self.editionLabel.grid(column=0, row=3, sticky=tk.W, padx=10)
+        self.editionLabel.grid(column=0, row=4, sticky=tk.W, padx=10)
         self.editionEntry = ttk.Entry(self, textvariable=self.edition)
-        self.editionEntry.grid(column=1, row=3, pady=10, padx=10)
+        self.editionEntry.grid(column=1, row=4, pady=10, padx=10)
     
     def askPublisher(self):
         self.publisherLabel = ttk.Label(self, text=c.PUBLISHER_PROMPT, justify=tk.LEFT)
-        self.publisherLabel.grid(column=0, row=4, sticky=tk.W, padx=10)
+        self.publisherLabel.grid(column=0, row=5, sticky=tk.W, padx=10)
         self.publisherEntry = ttk.Entry(self, textvariable=self.publisher)
-        self.publisherEntry.grid(column=1, row=4, pady=10, padx=10)
+        self.publisherEntry.grid(column=1, row=5, pady=10, padx=10)
     
     def askLocation(self):
         self.locationLabel = ttk.Label(self, text=c.LOCATION_PROMPT, justify=tk.LEFT)
-        self.locationLabel.grid(column=0, row=5, sticky=tk.W, padx=10)
+        self.locationLabel.grid(column=0, row=6, sticky=tk.W, padx=10)
         self.locationEntry = ttk.Entry(self, textvariable=self.location)
-        self.locationEntry.grid(column=1, row=5, pady=10, padx=10)
+        self.locationEntry.grid(column=1, row=6, pady=10, padx=10)
     
     def askYear(self):
         self.yearLabel = ttk.Label(self, text=c.YEAR_PROMPT, justify=tk.LEFT)
-        self.yearLabel.grid(column=0, row=6, sticky=tk.W, padx=10)
+        self.yearLabel.grid(column=0, row=7, sticky=tk.W, padx=10)
         self.yearEntry = ttk.Entry(self, textvariable=self.year)
-        self.yearEntry.grid(column=1, row=6, pady=10, padx=10)
+        self.yearEntry.grid(column=1, row=7, pady=10, padx=10)
     
     def askPageS(self):
         self.pageSLabel = ttk.Label(self, text=c.PAGES_PROMPT, justify=tk.LEFT)
-        self.pageSLabel.grid(column=0, row=7, sticky=tk.W, padx=10)
+        self.pageSLabel.grid(column=0, row=8, sticky=tk.W, padx=10)
         self.pageSEntry = ttk.Entry(self, textvariable=self.pageS)
-        self.pageSEntry.grid(column=1, row=7, pady=10, padx=10)
+        self.pageSEntry.grid(column=1, row=8, pady=10, padx=10)
     
     def askURL(self):
         self.urlLabel = ttk.Label(self, text=c.URL_PROMPT, justify=tk.LEFT)
@@ -143,6 +143,6 @@ class EntryFrame(ttk.LabelFrame):
     
     def askDownDate(self):
         self.downDateLabel = ttk.Label(self, text=c.DOWNDATE_PROMPT, justify=tk.LEFT)
-        self.downDateLabel.grid(column=0, row=7, sticky=tk.W, padx=10)
+        self.downDateLabel.grid(column=0, row=10, sticky=tk.W, padx=10)
         self.downDateEntry = ttk.Entry(self, textvariable=self.downDate)
-        self.downDateEntry.grid(column=1, row=7, pady=10, padx=10)
+        self.downDateEntry.grid(column=1, row=10, pady=10, padx=10)
