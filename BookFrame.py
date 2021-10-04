@@ -17,6 +17,9 @@ class BookFrame(ttk.LabelFrame):
         self.year = tk.StringVar()
         self.pageS = tk.StringVar()
 
+        self.columnconfigure(index=0, weight=1)
+        self.columnconfigure(index=1, weight=2)
+
         self.authorLabel = ttk.Label(self, text=c.AUTHOR_PROMPT, justify=tk.LEFT)
         self.authorLabel.grid(column=0, row=0, sticky=tk.W, padx=10)
         self.authorEntry = ttk.Entry(self, textvariable=self.nameAuthor)
@@ -58,7 +61,7 @@ class BookFrame(ttk.LabelFrame):
         self.pageSEntry.grid(column=1, row=7, pady=10, padx=10)
 
         self.enterButton = ttk.Button(self, text="Fertig", command=self.format)
-        self.enterButton.grid(columnspan=2, row=8)
+        self.enterButton.grid(columnspan=2, row=8, pady=5)
 
         self.resultLabel = ttk.Label(self, justify=tk.LEFT)
         self.resultLabel.grid(columnspan=2, row=9, padx=20, pady=20)
