@@ -1,6 +1,7 @@
+import clipboard
 import tkinter as tk
-from tkinter.constants import W
 import constants as c
+from tkinter.constants import W
 from tkinter import ttk
 from CitationFormatter import CitationFormatter
 
@@ -60,14 +61,21 @@ class BookFrame(ttk.LabelFrame):
         self.pageSEntry = ttk.Entry(self, textvariable=self.pageS)
         self.pageSEntry.grid(column=1, row=7, pady=10, padx=10)
 
-        self.enterButton = ttk.Button(self, text="Fertig", command=self.format)
-        self.enterButton.grid(columnspan=2, row=8, pady=5)
+        self.enterButton = ttk.Button(self, text="Fertig", command=self.formatCitation)
+        self.enterButton.grid(columnspan=2, row=8, pady=20)
 
-        self.resultLabel = ttk.Label(self, justify=tk.LEFT)
-        self.resultLabel.grid(columnspan=2, row=9, padx=20, pady=20)
+        self.resultLabel = ttk.Label(self, justify=tk.LEFT, text="Resultat erscheint hier...")
+        self.resultLabel.grid(columnspan=2, row=9, padx=20, pady=5)
+
+        self.copyButton = ttk.Button(self, text="Kopieren", command=self.copyCitation)
+        self.copyButton.grid(columnspan=2, row=10)
 
         self.pack(fill="x", padx=20, pady=10)
 
-    def format(self):
+    def formatCitation(self):
         result = CitationFormatter.book(self.nameAuthor.get(), self.title.get(), self.subtitle.get(), self.edition.get(), self.publisher.get(), self.location.get(), self.year.get(), self.pageS.get())
         self.resultLabel.config(text=result)
+    
+    def copyCitation(self):
+        result = CitationFormatter.book(self.nameAuthor.get(), self.title.get(), self.subtitle.get(), self.edition.get(), self.publisher.get(), self.location.get(), self.year.get(), self.pageS.get())
+        clipboard.copy(result)
