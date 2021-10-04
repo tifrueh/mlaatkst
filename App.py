@@ -14,7 +14,7 @@ class App(tk.Tk):
 
         self.columnconfigure(index=0, weight=1)
 
-        self.titleLabel = ttk.Label(self, text="MLA-Standard an der KST", font=("Futura", 16))
+        self.titleLabel = ttk.Label(self, text="MLA-Standard an der KST", font=("Futura", 20))
         self.titleLabel.grid(column=0, row= 0, pady=10)
 
 if __name__ == "__main__":

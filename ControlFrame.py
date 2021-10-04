@@ -34,7 +34,7 @@ class ControlFrame(ttk.LabelFrame):
             command=self.changeFrame
         ).grid(column=2, row=0, padx=5, pady=5)
 
-        self.grid(column=0, row=2, padx=20, pady=20, sticky=tk.EW)
+        self.grid(column=0, row=1, padx=30, pady=30, sticky=tk.NSEW)
 
         self.frames = {}
         self.frames[0] = EntryFrame(

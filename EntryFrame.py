@@ -89,7 +89,7 @@ class EntryFrame(ttk.Frame):
         self.copyButton = ttk.Button(self, text="Kopieren", command=self.copyCitation)
         self.copyButton.grid(columnspan=2, row=13)
 
-        self.grid(column=0, row=1, sticky=tk.NSEW, padx=20, pady=10)
+        self.grid(column=0, row=2, sticky=tk.NSEW, padx=20, pady=10)
 
     def formatCitation(self):
         if self.option == "book":
