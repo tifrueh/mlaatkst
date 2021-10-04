@@ -8,9 +8,6 @@ class BookFrame(ttk.LabelFrame):
     def __init__(self, container):
         super().__init__(container)
 
-        self.columnconfigure(index=0, weight=1)
-        self.columnconfigure(index=1, weight=2)
-        
         self.nameAuthor = tk.StringVar()
         self.title = tk.StringVar()
         self.subtitle = tk.StringVar()
@@ -66,7 +63,7 @@ class BookFrame(ttk.LabelFrame):
         self.resultLabel = ttk.Label(self, justify=tk.LEFT)
         self.resultLabel.grid(columnspan=2, row=9, padx=20, pady=20)
 
-        self.pack(fill="x", padx=20, pady=20, ipadx=20, ipady=20)
+        self.pack(fill="x", padx=20, pady=10)
 
     def format(self):
         result = CitationFormatter.book(self.nameAuthor.get(), self.title.get(), self.subtitle.get(), self.edition.get(), self.publisher.get(), self.location.get(), self.year.get(), self.pageS.get())
