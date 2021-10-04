@@ -8,7 +8,7 @@ class App(tk.Tk):
         super().__init__()
 
         self.title("MLA @ KST")
-        self.geometry("600x600+50+50")
+        self.geometry("500x600+50+50")
         self.resizable(False, False)
 
 if __name__ == "__main__":
