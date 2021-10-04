@@ -1,7 +1,7 @@
-import CitationFormatter
 import tkinter as tk
 import constants as c
 from tkinter import ttk
+from CitationFormatter import CitationFormatter
 
 class BookFrame(ttk.LabelFrame):
     def __init__(self, container):
