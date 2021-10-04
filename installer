@@ -1,0 +1,3 @@
+#!/bin/bash
+
+pyinstaller --clean -n "MLAatKST" -w -i ./assets/mlaatkst.icns --osx-bundle-identifier "com.tifrueh.mlaatkst" --add-data="README.md:." App.py
