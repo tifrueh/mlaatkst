@@ -1,6 +1,6 @@
 import tkinter as tk
-from tkinter import ttk
 import constants as c
+from tkinter import ttk
 
 class App(tk.Tk):
     def __init__(self):
