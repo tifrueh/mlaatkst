@@ -1,4 +1,5 @@
 import tkinter as tk
+from tkinter.constants import W
 import constants as c
 from tkinter import ttk
 from CitationFormatter import CitationFormatter
@@ -6,6 +7,9 @@ from CitationFormatter import CitationFormatter
 class BookFrame(ttk.LabelFrame):
     def __init__(self, container):
         super().__init__(container)
+
+        self.columnconfigure(index=0, weight=1)
+        self.columnconfigure(index=1, weight=2)
         
         self.nameAuthor = tk.StringVar()
         self.title = tk.StringVar()
@@ -16,51 +20,51 @@ class BookFrame(ttk.LabelFrame):
         self.year = tk.StringVar()
         self.pageS = tk.StringVar()
 
-        self.authorLabel = ttk.Label(self, text=c.AUTHOR_PROMPT, justify=tk.CENTER)
-        self.authorLabel.pack()
+        self.authorLabel = ttk.Label(self, text=c.AUTHOR_PROMPT, justify=tk.LEFT)
+        self.authorLabel.grid(column=0, row=0, sticky=tk.W)
         self.authorEntry = ttk.Entry(self, textvariable=self.nameAuthor)
-        self.authorEntry.pack()
+        self.authorEntry.grid(column=1, row=0)
 
-        self.titleLabel = ttk.Label(self, text=c.TITLE_PROMPT, justify=tk.CENTER)
-        self.titleLabel.pack()
+        self.titleLabel = ttk.Label(self, text=c.TITLE_PROMPT, justify=tk.LEFT)
+        self.titleLabel.grid(column=0, row=1, sticky=tk.W)
         self.titleEntry = ttk.Entry(self, textvariable=self.title)
-        self.titleEntry.pack()
+        self.titleEntry.grid(column=1, row=1)
 
-        self.subtitleLabel = ttk.Label(self, text=c.SUBTITLE_PROMPT, justify=tk.CENTER)
-        self.subtitleLabel.pack()
+        self.subtitleLabel = ttk.Label(self, text=c.SUBTITLE_PROMPT, justify=tk.LEFT)
+        self.subtitleLabel.grid(column=0, row=2, sticky=tk.W)
         self.subtitleEntry = ttk.Entry(self, textvariable=self.subtitle)
-        self.subtitleEntry.pack()
+        self.subtitleEntry.grid(column=1, row=2)
 
-        self.editionLabel = ttk.Label(self, text=c.EDITION_PROMPT, justify=tk.CENTER)
-        self.editionLabel.pack()
+        self.editionLabel = ttk.Label(self, text=c.EDITION_PROMPT, justify=tk.LEFT)
+        self.editionLabel.grid(column=0, row=3, sticky=tk.W)
         self.editionEntry = ttk.Entry(self, textvariable=self.edition)
-        self.editionEntry.pack()
+        self.editionEntry.grid(column=1, row=3)
 
-        self.publisherLabel = ttk.Label(self, text=c.PUBLISHER_PROMPT, justify=tk.CENTER)
-        self.publisherLabel.pack()
+        self.publisherLabel = ttk.Label(self, text=c.PUBLISHER_PROMPT, justify=tk.LEFT)
+        self.publisherLabel.grid(column=0, row=4, sticky=tk.W)
         self.publisherEntry = ttk.Entry(self, textvariable=self.publisher)
-        self.publisherEntry.pack()
+        self.publisherEntry.grid(column=1, row=4)
 
-        self.locationLabel = ttk.Label(self, text=c.LOCATION_PROMPT, justify=tk.CENTER)
-        self.locationLabel.pack()
+        self.locationLabel = ttk.Label(self, text=c.LOCATION_PROMPT, justify=tk.LEFT)
+        self.locationLabel.grid(column=0, row=5, sticky=tk.W)
         self.locationEntry = ttk.Entry(self, textvariable=self.location)
-        self.locationEntry.pack()
+        self.locationEntry.grid(column=1, row=5)
 
-        self.yearLabel = ttk.Label(self, text=c.YEAR_PROMPT, justify=tk.CENTER)
-        self.yearLabel.pack()
+        self.yearLabel = ttk.Label(self, text=c.YEAR_PROMPT, justify=tk.LEFT)
+        self.yearLabel.grid(column=0, row=6, sticky=tk.W)
         self.yearEntry = ttk.Entry(self, textvariable=self.year)
-        self.yearEntry.pack()
+        self.yearEntry.grid(column=1, row=6)
 
-        self.pageSLabel = ttk.Label(self, text=c.PAGES_PROMPT, justify=tk.CENTER)
-        self.pageSLabel.pack()
+        self.pageSLabel = ttk.Label(self, text=c.PAGES_PROMPT, justify=tk.LEFT)
+        self.pageSLabel.grid(column=0, row=7, sticky=tk.W)
         self.pageSEntry = ttk.Entry(self, textvariable=self.pageS)
-        self.pageSEntry.pack()
+        self.pageSEntry.grid(column=1, row=7)
 
         self.enterButton = ttk.Button(self, text="Fertig", command=self.format)
-        self.enterButton.pack()
+        self.enterButton.grid(columnspan=2, row=8)
 
-        self.resultLabel = ttk.Label(self, justify=tk.CENTER)
-        self.resultLabel.pack()
+        self.resultLabel = ttk.Label(self, justify=tk.LEFT)
+        self.resultLabel.grid(columnspan=2, row=9)
 
         self.pack()
 
