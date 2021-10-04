@@ -4,7 +4,7 @@ import constants as c
 from tkinter import ttk
 from CitationFormatter import CitationFormatter
 
-class EntryFrame(ttk.LabelFrame):
+class EntryFrame(ttk.Frame):
     def __init__(self, container, option):
         super().__init__(container)
 
