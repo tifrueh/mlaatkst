@@ -2,7 +2,7 @@
 AUTHOR_PROMPT = "Name des Autors / der Autorin: (Nachname, Vorname)"
 AUTHOR_LASTNAME_PROMPT = "Nachname des Autors / der Autorin:"
 TITLE_PROMPT = "Titel des Werks:"
-SUBTITLE_PROMPT = "Untertitel: (leer wenn nicht vorhanden)"
+SUBTITLE_PROMPT = "Untertitel: (leer lassen wenn nicht vorhanden)"
 EDITION_PROMPT = "Auflage: (Zahl eingeben)"
 PUBLISHER_PROMPT = "Verlag:"
 LOCATION_PROMPT = "Ort:"
