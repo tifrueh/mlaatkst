@@ -66,7 +66,7 @@ class BookFrame(ttk.LabelFrame):
         self.resultLabel = ttk.Label(self, justify=tk.LEFT)
         self.resultLabel.grid(columnspan=2, row=9, padx=20, pady=20)
 
-        self.pack()
+        self.pack(fill="x", padx=20, pady=20, ipadx=20, ipady=20)
 
     def format(self):
         result = CitationFormatter.book(self.nameAuthor.get(), self.title.get(), self.subtitle.get(), self.edition.get(), self.publisher.get(), self.location.get(), self.year.get(), self.pageS.get())
