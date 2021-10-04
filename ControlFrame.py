@@ -12,7 +12,7 @@ class ControlFrame(ttk.LabelFrame):
 
         ttk.Radiobutton(
             self,
-            text="Erstnennung Buch",
+            text=c.BOOK_BUTTON,
             value=0,
             variable=self.selectedFrame,
             command=self.changeFrame
@@ -20,7 +20,7 @@ class ControlFrame(ttk.LabelFrame):
 
         ttk.Radiobutton(
             self,
-            text="Zweitnennung Buch",
+            text=c.SCNDBOOK_BUTTON,
             value=1,
             variable=self.selectedFrame,
             command=self.changeFrame
@@ -28,7 +28,7 @@ class ControlFrame(ttk.LabelFrame):
 
         ttk.Radiobutton(
             self,
-            text="Webzitat",
+            text=c.WEB_BUTTON,
             value=2,
             variable=self.selectedFrame,
             command=self.changeFrame

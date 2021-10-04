@@ -80,13 +80,13 @@ class EntryFrame(ttk.Frame):
         if self.option == "web":
             self.askDownDate()
 
-        self.enterButton = ttk.Button(self, text="Fertig", command=self.formatCitation)
-        self.enterButton.grid(columnspan=2, row=11, pady=20)
+        self.doneButton = ttk.Button(self, text=c.DONE_BUTTON, command=self.formatCitation)
+        self.doneButton.grid(columnspan=2, row=11, pady=20)
 
-        self.resultLabel = ttk.Label(self, justify=tk.LEFT, text="Resultat erscheint hier...")
+        self.resultLabel = ttk.Label(self, justify=tk.LEFT, text=c.STANDARD_OUTPUT)
         self.resultLabel.grid(columnspan=2, row=12, padx=20, pady=5)
 
-        self.copyButton = ttk.Button(self, text="Kopieren", command=self.copyCitation)
+        self.copyButton = ttk.Button(self, text=c.COPY_BUTTON, command=self.copyCitation)
         self.copyButton.grid(columnspan=2, row=13)
 
         self.grid(column=0, row=2, sticky=tk.NSEW, padx=20, pady=10)
@@ -116,7 +116,7 @@ class EntryFrame(ttk.Frame):
         self.pageSEntry.delete(0, tk.END)
         self.urlEntry.delete(0, tk.END)
         self.downDateEntry.delete(0, tk.END)
-        self.resultLabel["text"] = "Resultat erscheint hier..."
+        self.resultLabel["text"] = c.STANDARD_OUTPUT
 
     def askAuthor(self):
         self.nameAuthorLabel.grid(column=0, row=0, sticky=tk.W, padx=10)
