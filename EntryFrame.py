@@ -81,17 +81,30 @@ class EntryFrame(ttk.Frame):
         citation = self.resultLabel["text"]
         clipboard.copy(citation)
     
+    def reset(self):
+        self.nameAuthorEntry.delete(0, tk.END)
+        self.lastNameAuthorEntry.delete(0, tk.END)
+        self.titleEntry.delete(0, tk.END)
+        self.subtitleEntry.delete(0, tk.END)
+        self.editionEntry.delete(0, tk.END)
+        self.publisherEntry.delete(0, tk.END)
+        self.locationEntry.delete(0, tk.END)
+        self.yearEntry.delete(0, tk.END)
+        self.pageSEntry.delete(0, tk.END)
+        self.urlEntry.delete(0, tk.END)
+        self.downDateEntry.delete(0, tk.END)
+
     def askAuthor(self):
-        self.authorLabel = ttk.Label(self, text=c.AUTHOR_PROMPT, justify=tk.LEFT)
-        self.authorLabel.grid(column=0, row=0, sticky=tk.W, padx=10)
-        self.authorEntry = ttk.Entry(self, textvariable=self.nameAuthor)
-        self.authorEntry.grid(column=1, row=0, pady=10, padx=10)
+        self.nameAuthorLabel = ttk.Label(self, text=c.AUTHOR_PROMPT, justify=tk.LEFT)
+        self.nameAuthorLabel.grid(column=0, row=0, sticky=tk.W, padx=10)
+        self.nameAuthorEntry = ttk.Entry(self, textvariable=self.nameAuthor)
+        self.nameAuthorEntry.grid(column=1, row=0, pady=10, padx=10)
     
     def askLastNameAuthor(self):
-        self.authorLastNameLabel = ttk.Label(self, text=c.AUTHOR_LASTNAME_PROMPT, justify=tk.LEFT)
-        self.authorLastNameLabel.grid(column=0, row=1, sticky=tk.W, padx=10)
-        self.authorLastNameEntry = ttk.Entry(self, textvariable=self.lastNameAuthor)
-        self.authorLastNameEntry.grid(column=1, row=1, pady=10, padx=10)
+        self.lastNameAuthorLabel = ttk.Label(self, text=c.AUTHOR_LASTNAME_PROMPT, justify=tk.LEFT)
+        self.lastNameAuthorLabel.grid(column=0, row=1, sticky=tk.W, padx=10)
+        self.lastNameAuthorEntry = ttk.Entry(self, textvariable=self.lastNameAuthor)
+        self.lastNameAuthorEntry.grid(column=1, row=1, pady=10, padx=10)
 
     def askTitle(self):
         self.titleLabel = ttk.Label(self, text=c.TITLE_PROMPT, justify=tk.LEFT)
