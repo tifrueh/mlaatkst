@@ -4,7 +4,7 @@ import constants as c
 from tkinter import ttk
 from CitationFormatter import CitationFormatter
 
-class BookFrame(ttk.LabelFrame):
+class EntryFrame(ttk.LabelFrame):
     def __init__(self, container, option):
         super().__init__(container)
 
@@ -69,12 +69,17 @@ class BookFrame(ttk.LabelFrame):
         self.pack(fill="x", padx=20, pady=10)
 
     def formatCitation(self):
-        result = CitationFormatter.book(self.nameAuthor.get(), self.title.get(), self.subtitle.get(), self.edition.get(), self.publisher.get(), self.location.get(), self.year.get(), self.pageS.get())
+        if self.option == "book":
+            result = CitationFormatter.book(self.nameAuthor.get(), self.title.get(), self.subtitle.get(), self.edition.get(), self.publisher.get(), self.location.get(), self.year.get(), self.pageS.get())
+        elif self.option == "scndBook":
+            result = CitationFormatter.scndBook(self.lastNameAuthor.get(), self.year.get(), self.pageS.get())
+        elif self.option == "web":
+            result = CitationFormatter.web(self.nameAuthor.get(), self.title.get(), self.subtitle.get(), self.url.get(), self.downDate.get())
         self.resultLabel.config(text=result)
     
     def copyCitation(self):
-        result = CitationFormatter.book(self.nameAuthor.get(), self.title.get(), self.subtitle.get(), self.edition.get(), self.publisher.get(), self.location.get(), self.year.get(), self.pageS.get())
-        clipboard.copy(result)
+        citation = self.resultLabel["text"]
+        clipboard.copy(citation)
     
     def askAuthor(self):
         self.authorLabel = ttk.Label(self, text=c.AUTHOR_PROMPT, justify=tk.LEFT)
