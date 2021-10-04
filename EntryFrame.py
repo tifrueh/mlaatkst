@@ -116,6 +116,7 @@ class EntryFrame(ttk.Frame):
         self.pageSEntry.delete(0, tk.END)
         self.urlEntry.delete(0, tk.END)
         self.downDateEntry.delete(0, tk.END)
+        self.resultLabel["text"] = "Resultat erscheint hier..."
 
     def askAuthor(self):
         self.nameAuthorLabel.grid(column=0, row=0, sticky=tk.W, padx=10)
