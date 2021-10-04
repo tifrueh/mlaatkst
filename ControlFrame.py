@@ -54,5 +54,7 @@ class ControlFrame(ttk.LabelFrame):
 
     def changeFrame(self):
         frame = self.frames[self.selectedFrame.get()]
+        frame.lastNameAuthorEntry.focus()
+        frame.nameAuthorEntry.focus()
         frame.reset()
         frame.tkraise()
