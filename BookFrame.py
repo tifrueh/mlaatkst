@@ -16,34 +16,54 @@ class BookFrame(ttk.LabelFrame):
         self.year = tk.StringVar()
         self.pageS = tk.StringVar()
 
-        self.authorLabel = ttk.Label(self, text=c.AUTHOR_PROMPT).pack()
-        self.authorEntry = ttk.Entry(self, textvariable=self.nameAuthor).pack()
+        self.authorLabel = ttk.Label(self, text=c.AUTHOR_PROMPT, justify=tk.CENTER)
+        self.authorLabel.pack()
+        self.authorEntry = ttk.Entry(self, textvariable=self.nameAuthor)
+        self.authorEntry.pack()
 
-        self.titleLabel = ttk.Label(self, text=c.TITLE_PROMPT).pack()
-        self.titleEntry = ttk.Entry(self, textvariable=self.title).pack()
+        self.titleLabel = ttk.Label(self, text=c.TITLE_PROMPT, justify=tk.CENTER)
+        self.titleLabel.pack()
+        self.titleEntry = ttk.Entry(self, textvariable=self.title)
+        self.titleEntry.pack()
 
-        self.subtitleLabel = ttk.Label(self, text=c.SUBTITLE_PROMPT).pack()
-        self.subtitleEntry = ttk.Entry(self, textvariable=self.subtitle).pack()
+        self.subtitleLabel = ttk.Label(self, text=c.SUBTITLE_PROMPT, justify=tk.CENTER)
+        self.subtitleLabel.pack()
+        self.subtitleEntry = ttk.Entry(self, textvariable=self.subtitle)
+        self.subtitleEntry.pack()
 
-        self.editionLabel = ttk.Label(self, text=c.EDITION_PROMPT).pack()
-        self.editionEntry = ttk.Entry(self, textvariable=self.edition).pack()
+        self.editionLabel = ttk.Label(self, text=c.EDITION_PROMPT, justify=tk.CENTER)
+        self.editionLabel.pack()
+        self.editionEntry = ttk.Entry(self, textvariable=self.edition)
+        self.editionEntry.pack()
 
-        self.publisherLabel = ttk.Label(self, text=c.PUBLISHER_PROMPT).pack()
-        self.publisherEntry = ttk.Entry(self, textvariable=self.publisher).pack()
+        self.publisherLabel = ttk.Label(self, text=c.PUBLISHER_PROMPT, justify=tk.CENTER)
+        self.publisherLabel.pack()
+        self.publisherEntry = ttk.Entry(self, textvariable=self.publisher)
+        self.publisherEntry.pack()
 
-        self.locationLabel = ttk.Label(self, text=c.LOCATION_PROMPT).pack()
-        self.locationEntry = ttk.Entry(self, textvariable=self.location).pack()
+        self.locationLabel = ttk.Label(self, text=c.LOCATION_PROMPT, justify=tk.CENTER)
+        self.locationLabel.pack()
+        self.locationEntry = ttk.Entry(self, textvariable=self.location)
+        self.locationEntry.pack()
 
-        self.yearLabel = ttk.Label(self, text=c.YEAR_PROMPT).pack()
-        self.yearEntry = ttk.Entry(self, textvariable=self.year).pack()
+        self.yearLabel = ttk.Label(self, text=c.YEAR_PROMPT, justify=tk.CENTER)
+        self.yearLabel.pack()
+        self.yearEntry = ttk.Entry(self, textvariable=self.year)
+        self.yearEntry.pack()
 
-        self.pageSLabel = ttk.Label(self, text=c.PAGES_PROMPT).pack()
-        self.pageSEntry = ttk.Entry(self, textvariable=self.pageS).pack()
+        self.pageSLabel = ttk.Label(self, text=c.PAGES_PROMPT, justify=tk.CENTER)
+        self.pageSLabel.pack()
+        self.pageSEntry = ttk.Entry(self, textvariable=self.pageS)
+        self.pageSEntry.pack()
 
-        self.enterButton = ttk.Button(self, text="Fertig", command=self.format).pack()
+        self.enterButton = ttk.Button(self, text="Fertig", command=self.format)
+        self.enterButton.pack()
 
-        self.resultLabel = ttk.Label(self).pack()
+        self.resultLabel = ttk.Label(self, justify=tk.CENTER)
+        self.resultLabel.pack()
+
+        self.pack()
 
     def format(self):
-        result = CitationFormatter.book(self.nameAuthor, self.title, self.subtitle, self.edition, self.publisher, self.location, self.year, self.pageS)
+        result = CitationFormatter.book(self.nameAuthor.get(), self.title.get(), self.subtitle.get(), self.edition.get(), self.publisher.get(), self.location.get(), self.year.get(), self.pageS.get())
         self.resultLabel.config(text=result)
