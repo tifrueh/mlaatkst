@@ -21,6 +21,29 @@ class EntryFrame(ttk.Frame):
         self.url = tk.StringVar()
         self.downDate = tk.StringVar()
 
+        self.nameAuthorLabel = ttk.Label(self, text=c.AUTHOR_PROMPT, justify=tk.LEFT)
+        self.nameAuthorEntry = ttk.Entry(self, textvariable=self.nameAuthor)
+        self.lastNameAuthorLabel = ttk.Label(self, text=c.AUTHOR_LASTNAME_PROMPT, justify=tk.LEFT)
+        self.lastNameAuthorEntry = ttk.Entry(self, textvariable=self.lastNameAuthor)
+        self.titleLabel = ttk.Label(self, text=c.TITLE_PROMPT, justify=tk.LEFT)
+        self.titleEntry = ttk.Entry(self, textvariable=self.title)
+        self.subtitleLabel = ttk.Label(self, text=c.SUBTITLE_PROMPT, justify=tk.LEFT)
+        self.subtitleEntry = ttk.Entry(self, textvariable=self.subtitle)
+        self.editionLabel = ttk.Label(self, text=c.EDITION_PROMPT, justify=tk.LEFT)
+        self.editionEntry = ttk.Entry(self, textvariable=self.edition)
+        self.publisherLabel = ttk.Label(self, text=c.PUBLISHER_PROMPT, justify=tk.LEFT)
+        self.publisherEntry = ttk.Entry(self, textvariable=self.publisher)
+        self.locationLabel = ttk.Label(self, text=c.LOCATION_PROMPT, justify=tk.LEFT)
+        self.locationEntry = ttk.Entry(self, textvariable=self.location)
+        self.yearLabel = ttk.Label(self, text=c.YEAR_PROMPT, justify=tk.LEFT)
+        self.yearEntry = ttk.Entry(self, textvariable=self.year)
+        self.pageSLabel = ttk.Label(self, text=c.PAGES_PROMPT, justify=tk.LEFT)
+        self.pageSEntry = ttk.Entry(self, textvariable=self.pageS)
+        self.urlLabel = ttk.Label(self, text=c.URL_PROMPT, justify=tk.LEFT)
+        self.urlEntry = ttk.Entry(self, textvariable=self.url)
+        self.downDateLabel = ttk.Label(self, text=c.DOWNDATE_PROMPT, justify=tk.LEFT)
+        self.downDateEntry = ttk.Entry(self, textvariable=self.downDate)
+
         self.columnconfigure(index=0, weight=1)
         self.columnconfigure(index=1, weight=2)
 
@@ -66,7 +89,7 @@ class EntryFrame(ttk.Frame):
         self.copyButton = ttk.Button(self, text="Kopieren", command=self.copyCitation)
         self.copyButton.grid(columnspan=2, row=13)
 
-        self.pack(fill="x", padx=20, pady=10)
+        self.grid(column=0, row=1, sticky=tk.NSEW, padx=20, pady=10)
 
     def formatCitation(self):
         if self.option == "book":
@@ -95,67 +118,45 @@ class EntryFrame(ttk.Frame):
         self.downDateEntry.delete(0, tk.END)
 
     def askAuthor(self):
-        self.nameAuthorLabel = ttk.Label(self, text=c.AUTHOR_PROMPT, justify=tk.LEFT)
         self.nameAuthorLabel.grid(column=0, row=0, sticky=tk.W, padx=10)
-        self.nameAuthorEntry = ttk.Entry(self, textvariable=self.nameAuthor)
         self.nameAuthorEntry.grid(column=1, row=0, pady=10, padx=10)
     
     def askLastNameAuthor(self):
-        self.lastNameAuthorLabel = ttk.Label(self, text=c.AUTHOR_LASTNAME_PROMPT, justify=tk.LEFT)
         self.lastNameAuthorLabel.grid(column=0, row=1, sticky=tk.W, padx=10)
-        self.lastNameAuthorEntry = ttk.Entry(self, textvariable=self.lastNameAuthor)
         self.lastNameAuthorEntry.grid(column=1, row=1, pady=10, padx=10)
 
     def askTitle(self):
-        self.titleLabel = ttk.Label(self, text=c.TITLE_PROMPT, justify=tk.LEFT)
         self.titleLabel.grid(column=0, row=2, sticky=tk.W, padx=10)
-        self.titleEntry = ttk.Entry(self, textvariable=self.title)
         self.titleEntry.grid(column=1, row=2, pady=10, padx=10)
     
     def askSubtitle(self):
-        self.subtitleLabel = ttk.Label(self, text=c.SUBTITLE_PROMPT, justify=tk.LEFT)
         self.subtitleLabel.grid(column=0, row=3, sticky=tk.W, padx=10)
-        self.subtitleEntry = ttk.Entry(self, textvariable=self.subtitle)
         self.subtitleEntry.grid(column=1, row=3, pady=10, padx=10)
     
     def askEdition(self):
-        self.editionLabel = ttk.Label(self, text=c.EDITION_PROMPT, justify=tk.LEFT)
         self.editionLabel.grid(column=0, row=4, sticky=tk.W, padx=10)
-        self.editionEntry = ttk.Entry(self, textvariable=self.edition)
         self.editionEntry.grid(column=1, row=4, pady=10, padx=10)
     
     def askPublisher(self):
-        self.publisherLabel = ttk.Label(self, text=c.PUBLISHER_PROMPT, justify=tk.LEFT)
         self.publisherLabel.grid(column=0, row=5, sticky=tk.W, padx=10)
-        self.publisherEntry = ttk.Entry(self, textvariable=self.publisher)
         self.publisherEntry.grid(column=1, row=5, pady=10, padx=10)
     
     def askLocation(self):
-        self.locationLabel = ttk.Label(self, text=c.LOCATION_PROMPT, justify=tk.LEFT)
         self.locationLabel.grid(column=0, row=6, sticky=tk.W, padx=10)
-        self.locationEntry = ttk.Entry(self, textvariable=self.location)
         self.locationEntry.grid(column=1, row=6, pady=10, padx=10)
     
     def askYear(self):
-        self.yearLabel = ttk.Label(self, text=c.YEAR_PROMPT, justify=tk.LEFT)
         self.yearLabel.grid(column=0, row=7, sticky=tk.W, padx=10)
-        self.yearEntry = ttk.Entry(self, textvariable=self.year)
         self.yearEntry.grid(column=1, row=7, pady=10, padx=10)
     
     def askPageS(self):
-        self.pageSLabel = ttk.Label(self, text=c.PAGES_PROMPT, justify=tk.LEFT)
         self.pageSLabel.grid(column=0, row=8, sticky=tk.W, padx=10)
-        self.pageSEntry = ttk.Entry(self, textvariable=self.pageS)
         self.pageSEntry.grid(column=1, row=8, pady=10, padx=10)
     
     def askURL(self):
-        self.urlLabel = ttk.Label(self, text=c.URL_PROMPT, justify=tk.LEFT)
         self.urlLabel.grid(column=0, row=9, sticky=tk.W, padx=10)
-        self.urlEntry = ttk.Entry(self, textvariable=self.url)
         self.urlEntry.grid(column=1, row=9, pady=10, padx=10)
     
     def askDownDate(self):
-        self.downDateLabel = ttk.Label(self, text=c.DOWNDATE_PROMPT, justify=tk.LEFT)
         self.downDateLabel.grid(column=0, row=10, sticky=tk.W, padx=10)
-        self.downDateEntry = ttk.Entry(self, textvariable=self.downDate)
         self.downDateEntry.grid(column=1, row=10, pady=10, padx=10)

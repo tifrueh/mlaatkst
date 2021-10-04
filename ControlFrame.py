@@ -15,7 +15,7 @@ class ControlFrame(ttk.LabelFrame):
             text="Erstnennung Buch",
             value=0,
             variable=self.selectedFrame,
-            command=self.changeFrame()
+            command=self.changeFrame
         ).grid(column=0, row=0, padx=5, pady=5)
 
         ttk.Radiobutton(
@@ -23,7 +23,7 @@ class ControlFrame(ttk.LabelFrame):
             text="Zweitnennung Buch",
             value=1,
             variable=self.selectedFrame,
-            command=self.changeFrame()
+            command=self.changeFrame
         ).grid(column=1, row=0, padx=5, pady=5)
 
         ttk.Radiobutton(
@@ -31,10 +31,10 @@ class ControlFrame(ttk.LabelFrame):
             text="Webzitat",
             value=2,
             variable=self.selectedFrame,
-            command=self.changeFrame()
+            command=self.changeFrame
         ).grid(column=2, row=0, padx=5, pady=5)
 
-        self.grid(column=0, row=2, padx=5, pady=5, sticky=tk.EW)
+        self.grid(column=0, row=2, padx=20, pady=20, sticky=tk.EW)
 
         self.frames = {}
         self.frames[0] = EntryFrame(
@@ -49,6 +49,8 @@ class ControlFrame(ttk.LabelFrame):
             container,
             "web"
         )
+
+        self.changeFrame()
 
     def changeFrame(self):
         frame = self.frames[self.selectedFrame.get()]

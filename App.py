@@ -2,6 +2,7 @@ import tkinter as tk
 import constants as c
 from tkinter import ttk
 from EntryFrame import EntryFrame
+from ControlFrame import ControlFrame
 
 class App(tk.Tk):
     def __init__(self):
@@ -14,9 +15,9 @@ class App(tk.Tk):
         self.columnconfigure(index=0, weight=1)
 
         self.titleLabel = ttk.Label(self, text="MLA-Standard an der KST", font=("Futura", 16))
-        self.titleLabel.pack(pady=10)
+        self.titleLabel.grid(column=0, row= 0, pady=10)
 
 if __name__ == "__main__":
     app = App()
-    EntryFrame(app, option="book")
+    ControlFrame(app)
     app.mainloop()
