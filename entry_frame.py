@@ -48,7 +48,7 @@ class EntryFrame(ttk.Frame):
         self.downDateEntry = ttk.Entry(self, textvariable=self.downDate)
 
         self.columnconfigure(index=0, weight=1)
-        self.columnconfigure(index=1, weight=1)
+        self.columnconfigure(index=1, weight=0)
 
         if self.option == "book" or self.option == "web":
             self.ask_author()
@@ -83,14 +83,17 @@ class EntryFrame(ttk.Frame):
         if self.option == "web":
             self.ask_down_date()
 
-        self.resultLabel = ttk.Label(self, justify=tk.LEFT, text=c.STANDARD_OUTPUT)
+        self.resultLabel = ttk.Label(self, justify=tk.LEFT, text=c.STANDARD_OUTPUT, wraplength=300)
         self.resultLabel.grid(column=0, row=11, sticky=tk.W, padx=10, pady=5)
 
         self.doneButton = ttk.Button(self, text=c.DONE_BUTTON, command=self.format_citation)
-        self.doneButton.grid(column=1, row=11, pady=10)
+        self.doneButton.grid(column=1, row=11, sticky=tk.EW, padx=10, pady=20)
 
         self.copyButton = ttk.Button(self, text=c.COPY_BUTTON, command=self.copy_citation)
-        self.copyButton.grid(column=1, row=12, pady=0)
+        self.copyButton.grid(column=1, row=12, sticky=tk.EW, padx=10, pady=0)
+
+        self.resetButton = ttk.Button(self, text=c.RESET_BUTTON, command=self.reset)
+        self.resetButton.grid(column=1, row=13, sticky=tk.EW, padx=10, pady=5)
 
         self.grid(column=0, row=2, sticky=tk.NSEW, padx=50, pady=5)
 
@@ -134,46 +137,49 @@ class EntryFrame(ttk.Frame):
         self.downDateEntry.delete(0, tk.END)
         self.resultLabel["text"] = c.STANDARD_OUTPUT
 
+        self.lastNameAuthorEntry.focus_set()
+        self.nameAuthorEntry.focus_set()
+
     def ask_author(self):
-        self.nameAuthorLabel.grid(column=0, row=0, sticky=tk.W, padx=10)
-        self.nameAuthorEntry.grid(column=1, row=0, sticky=tk.E, pady=10, padx=10)
+        self.nameAuthorLabel.grid(column=0, row=0, sticky=tk.EW, padx=10)
+        self.nameAuthorEntry.grid(column=1, row=0, sticky=tk.EW, pady=7, padx=10)
 
     def ask_last_name_author(self):
-        self.lastNameAuthorLabel.grid(column=0, row=1, sticky=tk.W, padx=10)
-        self.lastNameAuthorEntry.grid(column=1, row=1, sticky=tk.E, pady=10, padx=10)
+        self.lastNameAuthorLabel.grid(column=0, row=1, sticky=tk.EW, padx=10)
+        self.lastNameAuthorEntry.grid(column=1, row=1, sticky=tk.EW, pady=7, padx=10)
 
     def ask_title(self):
-        self.titleLabel.grid(column=0, row=2, sticky=tk.W, padx=10)
-        self.titleEntry.grid(column=1, row=2, sticky=tk.E, pady=10, padx=10)
+        self.titleLabel.grid(column=0, row=2, sticky=tk.EW, padx=10)
+        self.titleEntry.grid(column=1, row=2, sticky=tk.EW, pady=7, padx=10)
 
     def ask_subtitle(self):
-        self.subtitleLabel.grid(column=0, row=3, sticky=tk.W, padx=10)
-        self.subtitleEntry.grid(column=1, row=3, sticky=tk.E, pady=10, padx=10)
+        self.subtitleLabel.grid(column=0, row=3, sticky=tk.EW, padx=10)
+        self.subtitleEntry.grid(column=1, row=3, sticky=tk.EW, pady=7, padx=10)
 
     def ask_edition(self):
-        self.editionLabel.grid(column=0, row=4, sticky=tk.W, padx=10)
-        self.editionEntry.grid(column=1, row=4, sticky=tk.E, pady=10, padx=10)
+        self.editionLabel.grid(column=0, row=4, sticky=tk.EW, padx=10)
+        self.editionEntry.grid(column=1, row=4, sticky=tk.EW, pady=7, padx=10)
 
     def ask_publisher(self):
         self.publisherLabel.grid(column=0, row=5, sticky=tk.W, padx=10)
-        self.publisherEntry.grid(column=1, row=5, sticky=tk.E, pady=10, padx=10)
+        self.publisherEntry.grid(column=1, row=5, sticky=tk.EW, pady=7, padx=10)
 
     def ask_location(self):
-        self.locationLabel.grid(column=0, row=6, sticky=tk.W, padx=10)
-        self.locationEntry.grid(column=1, row=6, sticky=tk.E, pady=10, padx=10)
+        self.locationLabel.grid(column=0, row=6, sticky=tk.EW, padx=10)
+        self.locationEntry.grid(column=1, row=6, sticky=tk.EW, pady=7, padx=10)
 
     def ask_year(self):
-        self.yearLabel.grid(column=0, row=7, sticky=tk.W, padx=10)
-        self.yearEntry.grid(column=1, row=7, sticky=tk.E, pady=10, padx=10)
+        self.yearLabel.grid(column=0, row=7, sticky=tk.EW, padx=10)
+        self.yearEntry.grid(column=1, row=7, sticky=tk.EW, pady=7, padx=10)
 
     def ask_page_s(self):
-        self.pageSLabel.grid(column=0, row=8, sticky=tk.W, padx=10)
-        self.pageSEntry.grid(column=1, row=8, sticky=tk.E, pady=10, padx=10)
+        self.pageSLabel.grid(column=0, row=8, sticky=tk.EW, padx=10)
+        self.pageSEntry.grid(column=1, row=8, sticky=tk.EW, pady=7, padx=10)
 
     def ask_url(self):
-        self.urlLabel.grid(column=0, row=9, sticky=tk.W, padx=10)
-        self.urlEntry.grid(column=1, row=9, sticky=tk.E, pady=10, padx=10)
+        self.urlLabel.grid(column=0, row=9, sticky=tk.EW, padx=10)
+        self.urlEntry.grid(column=1, row=9, sticky=tk.EW, pady=7, padx=10)
 
     def ask_down_date(self):
-        self.downDateLabel.grid(column=0, row=10, sticky=tk.W, padx=10)
-        self.downDateEntry.grid(column=1, row=10, sticky=tk.E, pady=10, padx=10)
+        self.downDateLabel.grid(column=0, row=10, sticky=tk.EW, padx=10)
+        self.downDateEntry.grid(column=1, row=10, sticky=tk.EW, pady=7, padx=10)
