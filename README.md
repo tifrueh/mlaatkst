@@ -12,3 +12,6 @@ NOTE: I do not have any developer certificate, so MacOS won't open the program. 
 xattr -d com.apple.quarantine /path/to/MLAatKST.app
 ```
 This should resolve the issue. I might do something about that in the future, if I get to do it for free, otherwise you'll just have to go with that.
+
+## Preview
+<img width="812" alt="Screenshot 2021-10-05 at 09 49 45" src="https://user-images.githubusercontent.com/84284672/135987992-25001e06-2d4c-44c7-8f72-7922b816ebb5.png">
