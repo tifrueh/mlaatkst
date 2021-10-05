@@ -83,16 +83,16 @@ class EntryFrame(ttk.Frame):
         if self.option == "web":
             self.ask_down_date()
 
-        self.doneButton = ttk.Button(self, text=c.DONE_BUTTON, command=self.format_citation)
-        self.doneButton.grid(columnspan=2, row=11, pady=20)
-
         self.resultLabel = ttk.Label(self, justify=tk.LEFT, text=c.STANDARD_OUTPUT)
-        self.resultLabel.grid(columnspan=2, row=12, padx=20, pady=5)
+        self.resultLabel.grid(column=0, row=11, sticky=tk.W, padx=10, pady=5)
+
+        self.doneButton = ttk.Button(self, text=c.DONE_BUTTON, command=self.format_citation)
+        self.doneButton.grid(column=1, row=11, pady=10)
 
         self.copyButton = ttk.Button(self, text=c.COPY_BUTTON, command=self.copy_citation)
-        self.copyButton.grid(columnspan=2, row=13)
+        self.copyButton.grid(column=1, row=12, pady=0)
 
-        self.grid(column=0, row=2, sticky=tk.NSEW, padx=20, pady=10)
+        self.grid(column=0, row=2, sticky=tk.NSEW, padx=50, pady=5)
 
     def format_citation(self):
         if self.option == "book":

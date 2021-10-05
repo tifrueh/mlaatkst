@@ -9,6 +9,10 @@ class App(tk.Tk):
     def __init__(self):
         super().__init__()
 
+        self.bg = tk.PhotoImage(file="./assets/bg2.png")
+        self.bgLabel = ttk.Label(self, image=self.bg)
+        self.bgLabel.place(x=0, y=0, relwidth=1, relheight=1)
+
         self.title(c.TITLE)
         self.geometry("700x700+50+50")
         self.resizable(False, False)
@@ -16,7 +20,7 @@ class App(tk.Tk):
         self.columnconfigure(index=0, weight=1)
 
         self.titleLabel = ttk.Label(self, text=c.TITLE_LABEL, font=("Futura", 20))
-        self.titleLabel.grid(column=0, row=0, pady=10)
+        self.titleLabel.grid(column=0, row=0, pady=40)
 
 
 if __name__ == "__main__":
