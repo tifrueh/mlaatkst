@@ -1,7 +1,7 @@
 import tkinter as tk
 import constants as c
 from tkinter import ttk
-from EntryFrame import EntryFrame
+from entry_frame import EntryFrame
 
 
 class ControlFrame(ttk.LabelFrame):

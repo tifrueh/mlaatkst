@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter import ttk
 
 import constants as c
-from ControlFrame import ControlFrame
+from control_frame import ControlFrame
 
 
 class App(tk.Tk):

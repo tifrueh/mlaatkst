@@ -2,7 +2,7 @@ import clipboard
 import tkinter as tk
 import constants as c
 from tkinter import ttk
-from CitationFormatter import CitationFormatter
+from citation_formatter import CitationFormatter
 
 
 class EntryFrame(ttk.Frame):
