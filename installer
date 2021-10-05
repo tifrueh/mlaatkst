@@ -1,3 +1,3 @@
 #!/bin/bash
 
-pyinstaller --clean --name="MLAatKST" --windowed --icon=./assets/mlaatkst.icns --osx-bundle-identifier="com.tifrueh.mlaatkst" --add-data="README.md:." main.py
+pyinstaller --clean --name="MLAatKST" --windowed --icon=./assets/mlaatkst.icns --osx-bundle-identifier="com.tifrueh.mlaatkst" --add-data="README.md:." --add-data="./assets/bg2.png:./assets" --noupx main.py

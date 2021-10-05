@@ -1,3 +1,4 @@
+import os
 import tkinter as tk
 from tkinter import ttk
 
@@ -9,7 +10,9 @@ class App(tk.Tk):
     def __init__(self):
         super().__init__()
 
-        self.bg = tk.PhotoImage(file="./assets/bg2.png")
+        self.appPath = os.path.dirname(__file__)
+        self.imagePath = os.path.join(self.appPath, "assets", "bg2.png")
+        self.bg = tk.PhotoImage(file=self.imagePath, format="png")
         self.bgLabel = ttk.Label(self, image=self.bg)
         self.bgLabel.place(x=0, y=0, relwidth=1, relheight=1)
 
