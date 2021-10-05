@@ -1,3 +1,3 @@
 #!/bin/bash
 
-pyinstaller --clean --name="MLAatKST" --windowed --icon=./assets/mlaatkst.icns --osx-bundle-identifier="com.tifrueh.mlaatkst" --add-data="README.md:." --splash=./assets/splash.png App.py
+pyinstaller --clean --name="MLAatKST" --windowed --icon=./assets/mlaatkst.icns --osx-bundle-identifier="com.tifrueh.mlaatkst" --add-data="README.md:." --splash=./assets/splash.png main.py
