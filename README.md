@@ -15,4 +15,5 @@ xattr -d com.apple.quarantine /path/to/MLAatKST.app
 This should resolve the issue. I might do something about that in the future, if I get to do it for free, otherwise you'll just have to go with that.
 
 ## Preview
-<img width="812" alt="Preview of the app" src="https://user-images.githubusercontent.com/84284672/135987992-25001e06-2d4c-44c7-8f72-7922b816ebb5.png">
+
+<img width="812" alt="App preview" src="https://user-images.githubusercontent.com/84284672/136099397-e57edd3b-f5a7-407c-be04-33a03d6d8a70.png">
