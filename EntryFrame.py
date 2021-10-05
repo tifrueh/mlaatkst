@@ -4,6 +4,7 @@ import constants as c
 from tkinter import ttk
 from CitationFormatter import CitationFormatter
 
+
 class EntryFrame(ttk.Frame):
     def __init__(self, container, option):
         super().__init__(container)
@@ -20,6 +21,8 @@ class EntryFrame(ttk.Frame):
         self.pageS = tk.StringVar()
         self.url = tk.StringVar()
         self.downDate = tk.StringVar()
+
+        self.result = tk.StringVar()
 
         self.nameAuthorLabel = ttk.Label(self, text=c.AUTHOR_PROMPT, justify=tk.LEFT)
         self.nameAuthorEntry = ttk.Entry(self, textvariable=self.nameAuthor)
@@ -48,62 +51,75 @@ class EntryFrame(ttk.Frame):
         self.columnconfigure(index=1, weight=1)
 
         if self.option == "book" or self.option == "web":
-            self.askAuthor()
-        
+            self.ask_author()
+
         if self.option == "scndBook":
-            self.askLastNameAuthor()
+            self.ask_last_name_author()
 
         if self.option == "book" or self.option == "web":
-            self.askTitle()
+            self.ask_title()
 
         if self.option == "book" or self.option == "web":
-            self.askSubtitle()
+            self.ask_subtitle()
 
         if self.option == "book":
-            self.askEdition()
+            self.ask_edition()
 
         if self.option == "book":
-            self.askPublisher()
+            self.ask_publisher()
 
         if self.option == "book":
-            self.askLocation()
+            self.ask_location()
 
         if self.option == "book" or self.option == "scndBook":
-            self.askYear()
-        
-        if self.option == "book" or self.option == "scndBook":
-            self.askPageS()
-        
-        if self.option == "web":
-            self.askURL()
-        
-        if self.option == "web":
-            self.askDownDate()
+            self.ask_year()
 
-        self.doneButton = ttk.Button(self, text=c.DONE_BUTTON, command=self.formatCitation)
+        if self.option == "book" or self.option == "scndBook":
+            self.ask_page_s()
+
+        if self.option == "web":
+            self.ask_url()
+
+        if self.option == "web":
+            self.ask_down_date()
+
+        self.doneButton = ttk.Button(self, text=c.DONE_BUTTON, command=self.format_citation)
         self.doneButton.grid(columnspan=2, row=11, pady=20)
 
         self.resultLabel = ttk.Label(self, justify=tk.LEFT, text=c.STANDARD_OUTPUT)
         self.resultLabel.grid(columnspan=2, row=12, padx=20, pady=5)
 
-        self.copyButton = ttk.Button(self, text=c.COPY_BUTTON, command=self.copyCitation)
+        self.copyButton = ttk.Button(self, text=c.COPY_BUTTON, command=self.copy_citation)
         self.copyButton.grid(columnspan=2, row=13)
 
         self.grid(column=0, row=2, sticky=tk.NSEW, padx=20, pady=10)
 
-    def formatCitation(self):
+    def format_citation(self):
         if self.option == "book":
-            result = CitationFormatter.book(self.nameAuthor.get(), self.title.get(), self.subtitle.get(), self.edition.get(), self.publisher.get(), self.location.get(), self.year.get(), self.pageS.get())
+            self.result = CitationFormatter.book(self.nameAuthor.get(),
+                                                 self.title.get(),
+                                                 self.subtitle.get(),
+                                                 self.edition.get(),
+                                                 self.publisher.get(),
+                                                 self.location.get(),
+                                                 self.year.get(),
+                                                 self.pageS.get())
         elif self.option == "scndBook":
-            result = CitationFormatter.scndBook(self.lastNameAuthor.get(), self.year.get(), self.pageS.get())
+            self.result = CitationFormatter.scnd_book(self.lastNameAuthor.get(),
+                                                      self.year.get(),
+                                                      self.pageS.get())
         elif self.option == "web":
-            result = CitationFormatter.web(self.nameAuthor.get(), self.title.get(), self.subtitle.get(), self.url.get(), self.downDate.get())
-        self.resultLabel.config(text=result)
-    
-    def copyCitation(self):
+            self.result = CitationFormatter.web(self.nameAuthor.get(),
+                                                self.title.get(),
+                                                self.subtitle.get(),
+                                                self.url.get(),
+                                                self.downDate.get())
+        self.resultLabel.config(text=self.result)
+
+    def copy_citation(self):
         citation = self.resultLabel["text"]
         clipboard.copy(citation)
-    
+
     def reset(self):
         self.nameAuthorEntry.delete(0, tk.END)
         self.lastNameAuthorEntry.delete(0, tk.END)
@@ -118,46 +134,46 @@ class EntryFrame(ttk.Frame):
         self.downDateEntry.delete(0, tk.END)
         self.resultLabel["text"] = c.STANDARD_OUTPUT
 
-    def askAuthor(self):
+    def ask_author(self):
         self.nameAuthorLabel.grid(column=0, row=0, sticky=tk.W, padx=10)
         self.nameAuthorEntry.grid(column=1, row=0, sticky=tk.E, pady=10, padx=10)
-    
-    def askLastNameAuthor(self):
+
+    def ask_last_name_author(self):
         self.lastNameAuthorLabel.grid(column=0, row=1, sticky=tk.W, padx=10)
         self.lastNameAuthorEntry.grid(column=1, row=1, sticky=tk.E, pady=10, padx=10)
 
-    def askTitle(self):
+    def ask_title(self):
         self.titleLabel.grid(column=0, row=2, sticky=tk.W, padx=10)
         self.titleEntry.grid(column=1, row=2, sticky=tk.E, pady=10, padx=10)
-    
-    def askSubtitle(self):
+
+    def ask_subtitle(self):
         self.subtitleLabel.grid(column=0, row=3, sticky=tk.W, padx=10)
         self.subtitleEntry.grid(column=1, row=3, sticky=tk.E, pady=10, padx=10)
-    
-    def askEdition(self):
+
+    def ask_edition(self):
         self.editionLabel.grid(column=0, row=4, sticky=tk.W, padx=10)
         self.editionEntry.grid(column=1, row=4, sticky=tk.E, pady=10, padx=10)
-    
-    def askPublisher(self):
+
+    def ask_publisher(self):
         self.publisherLabel.grid(column=0, row=5, sticky=tk.W, padx=10)
         self.publisherEntry.grid(column=1, row=5, sticky=tk.E, pady=10, padx=10)
-    
-    def askLocation(self):
+
+    def ask_location(self):
         self.locationLabel.grid(column=0, row=6, sticky=tk.W, padx=10)
         self.locationEntry.grid(column=1, row=6, sticky=tk.E, pady=10, padx=10)
-    
-    def askYear(self):
+
+    def ask_year(self):
         self.yearLabel.grid(column=0, row=7, sticky=tk.W, padx=10)
         self.yearEntry.grid(column=1, row=7, sticky=tk.E, pady=10, padx=10)
-    
-    def askPageS(self):
+
+    def ask_page_s(self):
         self.pageSLabel.grid(column=0, row=8, sticky=tk.W, padx=10)
         self.pageSEntry.grid(column=1, row=8, sticky=tk.E, pady=10, padx=10)
-    
-    def askURL(self):
+
+    def ask_url(self):
         self.urlLabel.grid(column=0, row=9, sticky=tk.W, padx=10)
         self.urlEntry.grid(column=1, row=9, sticky=tk.E, pady=10, padx=10)
-    
-    def askDownDate(self):
+
+    def ask_down_date(self):
         self.downDateLabel.grid(column=0, row=10, sticky=tk.W, padx=10)
         self.downDateEntry.grid(column=1, row=10, sticky=tk.E, pady=10, padx=10)

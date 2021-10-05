@@ -1,25 +1,25 @@
 class CitationFormatter:
 
     @staticmethod
-    def book(nameAuthor, title, subtitle, edition, publisher, location, year, pageS):
+    def book(nameauthor, title, subtitle, edition, publisher, location, year, pages):
         if subtitle == "" or subtitle == " ":
-            result = f"{nameAuthor}, {title}, {edition}. Auflage, {publisher}, {location}, {year}, S. {pageS}."
+            result = f"{nameauthor}, {title}, {edition}. Auflage, {publisher}, {location}, {year}, S. {pages}."
         else:
-            result = f"{nameAuthor}, {title}, {subtitle}, {edition}. Auflage, {publisher}, {location}, {year}, S. {pageS}."
-        
+            result = f"{nameauthor}, {title}, {subtitle}, {edition}. Auflage, {publisher}, {location}, {year}, S. {pages}. "
+
         return result
-    
+
     @staticmethod
-    def scndBook(lastNameAuthor, year, pageS):
-        result = f"{lastNameAuthor}, {year}, S. {pageS}."
-        
+    def scnd_book(lastnameauthor, year, pages):
+        result = f"{lastnameauthor}, {year}, S. {pages}."
+
         return result
-    
+
     @staticmethod
-    def web(nameAuthor, title, subtitle, url, downDate):
+    def web(nameauthor, title, subtitle, url, downdate):
         if subtitle == "" or subtitle == " ":
-            result = f"{nameAuthor}, {title}, {url}, {downDate}."
+            result = f"{nameauthor}, {title}, {url}, {downdate}."
         else:
-            result = f"{nameAuthor}, {title}, {subtitle}, {url}, {downDate}."
-        
+            result = f"{nameauthor}, {title}, {subtitle}, {url}, {downdate}."
+
         return result

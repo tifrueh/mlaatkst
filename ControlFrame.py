@@ -3,6 +3,7 @@ import constants as c
 from tkinter import ttk
 from EntryFrame import EntryFrame
 
+
 class ControlFrame(ttk.LabelFrame):
     def __init__(self, container):
         super().__init__(container)
@@ -15,7 +16,7 @@ class ControlFrame(ttk.LabelFrame):
             text=c.BOOK_BUTTON,
             value=0,
             variable=self.selectedFrame,
-            command=self.changeFrame
+            command=self.change_frame
         ).grid(column=0, row=0, padx=5, pady=5)
 
         ttk.Radiobutton(
@@ -23,7 +24,7 @@ class ControlFrame(ttk.LabelFrame):
             text=c.SCNDBOOK_BUTTON,
             value=1,
             variable=self.selectedFrame,
-            command=self.changeFrame
+            command=self.change_frame
         ).grid(column=1, row=0, padx=5, pady=5)
 
         ttk.Radiobutton(
@@ -31,28 +32,25 @@ class ControlFrame(ttk.LabelFrame):
             text=c.WEB_BUTTON,
             value=2,
             variable=self.selectedFrame,
-            command=self.changeFrame
+            command=self.change_frame
         ).grid(column=2, row=0, padx=5, pady=5)
 
         self.grid(column=0, row=1, padx=30, pady=30, sticky=tk.NSEW)
 
-        self.frames = {}
-        self.frames[0] = EntryFrame(
+        self.frames = {0: EntryFrame(
             container,
             "book"
-        )
-        self.frames[1] = EntryFrame(
+        ), 1: EntryFrame(
             container,
             "scndBook"
-        )
-        self.frames[2] = EntryFrame(
+        ), 2: EntryFrame(
             container,
             "web"
-        )
+        )}
 
-        self.changeFrame()
+        self.change_frame()
 
-    def changeFrame(self):
+    def change_frame(self):
         frame = self.frames[self.selectedFrame.get()]
         frame.lastNameAuthorEntry.focus()
         frame.nameAuthorEntry.focus()
