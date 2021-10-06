@@ -1,20 +1,33 @@
 # MLA at KST
 
-This Application was specifically designed to help students of the KST get their citations right. The student can input all attributes of the work they want to cite into the entry fields and the program spits out the correct citation which can be copied at this point.
-The program is in German in the moment, but I'll try to add a possibility to change the language to English, too.
+This Application was specifically designed to help students of the KST get their footnotes right. The student can input all attributes of the work they want to cite into the entry fields and the program spits out the correct footnote which then can be copied.
+The program is in German at the moment, but I'll try to add a possibility to change the language to English, too.
+
+NOTE: The app is currently only tested on MacOS and the installer script as well as the direct downloads are only available on MacOS (and Linux maybe). But I'll add support for windows soon.
 
 ## Installation
 
-For installation from source use the installation script (pyinstaller needs to be installed for this). The bundle needs to be dragged out of the dist folder to the application folder after the install.
-Alternatively you can download the .dmg directly from the last release.
+The app can be installed in three different ways:
+
+### Install with script (MacOS)
+
+For installation from source use the correct installation script (pyinstaller needs to be installed for this). The bundle needs to be dragged out of the dist folder to the application folder after the install.
+
+### Download .dmg or .zip (MacOS)
+
+Alternatively you can download the .dmg (or .zip) file directly from the latest release. The .dmg should show the app and a shortcut to the applications folder, so that you can drag it over, while the .zip only contains the app itself.
 
 NOTE: I do not have any developer certificate, so MacOS won't open the program if it is not built from source. But if you trust me, you can run:
 
 ``` Shell
-xattr -d com.apple.quarantine /path/to/MLAatKST.app
+xattr -d com.apple.quarantine /Applications/MLAatKST.app
 ```
 
 This should resolve the issue. I might do something about that in the future, if I get to do it for free, otherwise you'll just have to go with that.
+
+### Install manually (MacOS, Linux, Windows)
+
+Lastly you can also just download the source code and always run the app directly or use some installer of your own to convert the source into an executable.
 
 ## Preview
 
