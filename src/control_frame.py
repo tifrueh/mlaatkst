@@ -7,10 +7,16 @@ from entry_frame import EntryFrame
 class ControlFrame(ttk.LabelFrame):
     def __init__(self, container):
         super().__init__(container)
+
+        # set the title of the frame
         self["text"] = "Optionen"
 
+        # initialize empty integer which later determines
+        # which frame should be raised
         self.selectedFrame = tk.IntVar()
 
+        # make radiobuttons (the variable of which is selectedFrame) and place them on the grid of this frame
+        # through which the user can decide on the frame to be shown
         ttk.Radiobutton(
             self,
             text=c.BOOK_BUTTON,
@@ -35,8 +41,10 @@ class ControlFrame(ttk.LabelFrame):
             command=self.change_frame
         ).grid(column=2, row=0, padx=5, pady=5)
 
+        # put this option frame on the grid of the containing object
         self.grid(column=0, row=1, padx=50, pady=0, sticky=tk.NSEW)
 
+        # make all needed frames and place them in a set
         self.frames = {0: EntryFrame(
             container,
             "book"
@@ -48,11 +56,17 @@ class ControlFrame(ttk.LabelFrame):
             "web"
         )}
 
+        # call the change_frame function to raise the correct frame
         self.change_frame()
 
     def change_frame(self):
+
+        # look which frame was chosen by the user
+        # and assign it to the frame variable
         frame = self.frames[self.selectedFrame.get()]
-        frame.lastNameAuthorEntry.focus()
-        frame.nameAuthorEntry.focus()
+
+        # reset the chosen frame
         frame.reset()
+
+        # raise the chosen frame to the top
         frame.tkraise()
