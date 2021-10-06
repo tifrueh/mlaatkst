@@ -11,7 +11,7 @@ class App(tk.Tk):
         super().__init__()
 
         self.appPath = os.path.dirname(__file__)
-        self.imagePath = os.path.join(self.appPath, "assets", "bg2.png")
+        self.imagePath = os.path.join(self.appPath, "resources", "bg2.png")
         self.bg = tk.PhotoImage(file=self.imagePath, format="png")
         self.bgLabel = ttk.Label(self, image=self.bg)
         self.bgLabel.place(x=0, y=0, relwidth=1, relheight=1)
