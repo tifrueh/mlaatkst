@@ -11,7 +11,7 @@ class ControlFrame(ttk.LabelFrame):
         super().__init__(container)
 
         # set the title of the frame
-        self["text"] = "Optionen"
+        self["text"] = c.CONTROL_FRAME_TITLE
 
         # initialize empty integer which later determines
         # which frame should be raised

@@ -21,5 +21,6 @@ RESET_BUTTON = "Felder zurücksetzen"
 
 TITLE = "MLA @ KST"
 TITLE_LABEL = "MLA-Standard an der KST"
+CONTROL_FRAME_TITLE = "Optionen"
 
 STANDARD_OUTPUT = "Resultat erscheint hier ..."
