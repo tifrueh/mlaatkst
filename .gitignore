@@ -1,6 +1,5 @@
 __pycache__
 .DS_Store
-build/
-dist/
+out/
 *.spec
 .idea
