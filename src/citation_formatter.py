@@ -1,3 +1,5 @@
+# the CitationFormatter class which formats the citations lives here
+
 class CitationFormatter:
 
     # define the method for formatting a citation of a book

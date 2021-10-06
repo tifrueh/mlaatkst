@@ -1,4 +1,5 @@
 # this is the file where all constants are located
+
 AUTHOR_PROMPT = "Name des Autors / der Autorin: (Nachname, Vorname)"
 AUTHOR_LASTNAME_PROMPT = "Nachname des Autors / der Autorin:"
 TITLE_PROMPT = "Titel des Werks:"

@@ -1,3 +1,5 @@
+# the ControlFrame class which draws the control frame lives here
+
 import tkinter as tk
 import constants as c
 from tkinter import ttk

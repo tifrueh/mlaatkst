@@ -1,3 +1,5 @@
+# the EntryFrame class which draws the entry frame lives here
+
 import clipboard
 import tkinter as tk
 import constants as c
