@@ -18,4 +18,4 @@ This should resolve the issue. I might do something about that in the future, if
 
 ## Preview
 
-![App preview](https://user-images.githubusercontent.com/84284672/136099397-e57edd3b-f5a7-407c-be04-33a03d6d8a70.png)
+<img width="812" alt="App preview" src="https://user-images.githubusercontent.com/84284672/136099397-e57edd3b-f5a7-407c-be04-33a03d6d8a70.png">
