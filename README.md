@@ -11,7 +11,7 @@ The app can be installed in three different ways:
 
 ### Install with script (MacOS)
 
-For installation from source use the correct installation script (pyinstaller needs to be installed for this). The bundle needs to be dragged out of the dist folder to the application folder after the install.
+For installation from source use the installation script (pyinstaller needs to be installed for this). The bundle needs to be dragged out of the dist folder to the application folder after the install.
 
 ### Download .dmg or .zip (MacOS)
 
