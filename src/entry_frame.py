@@ -9,7 +9,12 @@ class EntryFrame(ttk.Frame):
     def __init__(self, container, option):
         super().__init__(container)
 
+        # initialize option variable
+        # through which the control frame tells the program which frame to show
         self.option = option
+
+        # initialize all needed variables
+        # and set them to empty strings
         self.nameAuthor = tk.StringVar()
         self.lastNameAuthor = tk.StringVar()
         self.title = tk.StringVar()
@@ -24,6 +29,7 @@ class EntryFrame(ttk.Frame):
 
         self.result = tk.StringVar()
 
+        # initialize all possible labels and entries
         self.nameAuthorLabel = ttk.Label(self, text=c.AUTHOR_PROMPT, justify=tk.LEFT)
         self.nameAuthorEntry = ttk.Entry(self, textvariable=self.nameAuthor)
         self.lastNameAuthorLabel = ttk.Label(self, text=c.AUTHOR_LASTNAME_PROMPT, justify=tk.LEFT)
@@ -47,9 +53,12 @@ class EntryFrame(ttk.Frame):
         self.downDateLabel = ttk.Label(self, text=c.DOWNDATE_PROMPT, justify=tk.LEFT)
         self.downDateEntry = ttk.Entry(self, textvariable=self.downDate)
 
+        # configure the grid view
         self.columnconfigure(index=0, weight=1)
         self.columnconfigure(index=1, weight=0)
 
+        # choose which frames and entries to show
+        # based on the value of the option variable
         if self.option == "book" or self.option == "web":
             self.ask_author()
 
@@ -83,21 +92,28 @@ class EntryFrame(ttk.Frame):
         if self.option == "web":
             self.ask_down_date()
 
+        # initialize label for result and set it to a standard message
         self.resultLabel = ttk.Label(self, justify=tk.LEFT, text=c.STANDARD_OUTPUT, wraplength=300)
         self.resultLabel.grid(column=0, row=11, sticky=tk.W, padx=10, pady=5)
 
+        # place a button at the bottom which starts the formatting of the citation
         self.doneButton = ttk.Button(self, text=c.DONE_BUTTON, command=self.format_citation)
         self.doneButton.grid(column=1, row=11, sticky=tk.EW, padx=10, pady=20)
 
+        # place another button under the doneButton which copies the formatted citation
         self.copyButton = ttk.Button(self, text=c.COPY_BUTTON, command=self.copy_citation)
         self.copyButton.grid(column=1, row=12, sticky=tk.EW, padx=10, pady=0)
 
+        # place yet another button under the copyButton which clears out the entries
         self.resetButton = ttk.Button(self, text=c.RESET_BUTTON, command=self.reset)
         self.resetButton.grid(column=1, row=13, sticky=tk.EW, padx=10, pady=5)
 
+        # place this whole entry frame on the grid of the containing object
         self.grid(column=0, row=2, sticky=tk.NSEW, padx=50, pady=5)
 
     def format_citation(self):
+
+        # choose the formatter based on the value of the option variable
         if self.option == "book":
             self.result = CitationFormatter.book(self.nameAuthor.get(),
                                                  self.title.get(),
@@ -117,13 +133,20 @@ class EntryFrame(ttk.Frame):
                                                 self.subtitle.get(),
                                                 self.url.get(),
                                                 self.downDate.get())
+
+        # set the text of the prevously initialized resultLabel
+        # to the result of the formatting
         self.resultLabel.config(text=self.result)
 
     def copy_citation(self):
+
+        # copy the contents of the resultLabel
         citation = self.resultLabel["text"]
         clipboard.copy(citation)
 
     def reset(self):
+
+        # clear out all entries
         self.nameAuthorEntry.delete(0, tk.END)
         self.lastNameAuthorEntry.delete(0, tk.END)
         self.titleEntry.delete(0, tk.END)
@@ -135,11 +158,15 @@ class EntryFrame(ttk.Frame):
         self.pageSEntry.delete(0, tk.END)
         self.urlEntry.delete(0, tk.END)
         self.downDateEntry.delete(0, tk.END)
+
+        # reset the resultLabel back to the standard message
         self.resultLabel["text"] = c.STANDARD_OUTPUT
 
+        # set the keyboard focus back to the first entry
         self.lastNameAuthorEntry.focus_set()
         self.nameAuthorEntry.focus_set()
 
+# functions for placing the prevously initialized labels and entries on the grid of the frame
     def ask_author(self):
         self.nameAuthorLabel.grid(column=0, row=0, sticky=tk.EW, padx=10)
         self.nameAuthorEntry.grid(column=1, row=0, sticky=tk.EW, pady=7, padx=10)
