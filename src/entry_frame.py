@@ -2,9 +2,14 @@
 
 import clipboard
 import tkinter as tk
-import constants as c
 from tkinter import ttk
 from citation_formatter import CitationFormatter
+from language_helper import LanguageHelper
+
+if LanguageHelper.get_lang() == "GER":
+    import constants_de as c
+elif LanguageHelper.get_lang() == "ENG":
+    import constants_eng as c
 
 
 class EntryFrame(ttk.Frame):
@@ -116,19 +121,37 @@ class EntryFrame(ttk.Frame):
     def format_citation(self):
 
         # choose the formatter based on the value of the option variable
+        # and based on the set language
         if self.option == "book":
-            self.result = CitationFormatter.book(self.nameAuthor.get(),
-                                                 self.title.get(),
-                                                 self.subtitle.get(),
-                                                 self.edition.get(),
-                                                 self.publisher.get(),
-                                                 self.location.get(),
-                                                 self.year.get(),
-                                                 self.pageS.get())
+            if LanguageHelper.get_lang() == "GER":
+                self.result = CitationFormatter.book_ger(self.nameAuthor.get(),
+                                                         self.title.get(),
+                                                         self.subtitle.get(),
+                                                         self.edition.get(),
+                                                         self.publisher.get(),
+                                                         self.location.get(),
+                                                         self.year.get(),
+                                                         self.pageS.get())
+            elif LanguageHelper.get_lang() == "ENG":
+                self.result = CitationFormatter.book_eng(self.nameAuthor.get(),
+                                                         self.title.get(),
+                                                         self.subtitle.get(),
+                                                         self.edition.get(),
+                                                         self.publisher.get(),
+                                                         self.location.get(),
+                                                         self.year.get(),
+                                                         self.pageS.get())
+
         elif self.option == "scndBook":
-            self.result = CitationFormatter.scnd_book(self.lastNameAuthor.get(),
-                                                      self.year.get(),
-                                                      self.pageS.get())
+            if LanguageHelper.get_lang() == "GER":
+                self.result = CitationFormatter.scnd_book_ger(self.lastNameAuthor.get(),
+                                                              self.year.get(),
+                                                              self.pageS.get())
+            elif LanguageHelper.get_lang() == "ENG":
+                self.result = CitationFormatter.scnd_book_eng(self.lastNameAuthor.get(),
+                                                              self.year.get(),
+                                                              self.pageS.get())
+
         elif self.option == "web":
             self.result = CitationFormatter.web(self.nameAuthor.get(),
                                                 self.title.get(),

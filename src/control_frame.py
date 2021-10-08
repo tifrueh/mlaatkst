@@ -1,9 +1,14 @@
 # the ControlFrame class which draws the control frame lives here
 
 import tkinter as tk
-import constants as c
 from tkinter import ttk
 from entry_frame import EntryFrame
+from language_helper import LanguageHelper
+
+if LanguageHelper.get_lang() == "GER":
+    import constants_de as c
+elif LanguageHelper.get_lang() == "ENG":
+    import constants_eng as c
 
 
 class ControlFrame(ttk.LabelFrame):

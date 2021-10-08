@@ -2,33 +2,52 @@
 
 class CitationFormatter:
 
-    # define the method for formatting a citation of a book
+    # define the method for formatting a citation of a book in german
     @staticmethod
-    def book(nameauthor, title, subtitle, edition, publisher, location, year, pages):
+    def book_ger(name_author, title, subtitle, edition, publisher, location, year, pages):
 
         # omit subtitle if empty
         if subtitle == "" or subtitle == " ":
-            result = f"{nameauthor}, {title}, {edition}. Auflage, {publisher}, {location}, {year}, S. {pages}."
+            result = f"{name_author}, {title}, {edition}. Auflage, {publisher}, {location}, {year}, S. {pages}."
         else:
-            result = f"{nameauthor}, {title}, {subtitle}, {edition}. Auflage, {publisher}, {location}, {year}, S. {pages}. "
+            result = f"{name_author}, {title}, {subtitle}, {edition}. Auflage, {publisher}, {location}, {year}, S. {pages}. "
+
+        return result
+
+    # define the method for formatting a citation of a book in english
+    @staticmethod
+    def book_eng(name_author, title, subtitle, edition, publisher, location, year, pages):
+
+        # omit subtitle if empty
+        if subtitle == "" or subtitle == " ":
+            result = f"{name_author}, {title}, {edition}. edition, {publisher}, {location}, {year}, p. {pages}."
+        else:
+            result = f"{name_author}, {title}, {subtitle}, {edition}. edition, {publisher}, {location}, {year}, p. {pages}. "
 
         return result
 
     # define the method for formatting the second citation of a book
     @staticmethod
-    def scnd_book(lastnameauthor, year, pages):
-        result = f"{lastnameauthor}, {year}, S. {pages}."
+    def scnd_book_ger(last_name_author, year, pages):
+        result = f"{last_name_author}, {year}, S. {pages}."
+
+        return result
+
+    # define the method for formatting the second citation of a book in english
+    @staticmethod
+    def scnd_book_eng(last_name_author, year, pages):
+        result = f"{last_name_author}, {year}, p. {pages}."
 
         return result
 
     # define the method for formatting a citation of a website
     @staticmethod
-    def web(nameauthor, title, subtitle, url, downdate):
+    def web(name_author, title, subtitle, url, down_date):
 
         # omit subtitle if empty
         if subtitle == "" or subtitle == " ":
-            result = f"{nameauthor}, {title}, {url}, {downdate}."
+            result = f"{name_author}, {title}, {url}, {down_date}."
         else:
-            result = f"{nameauthor}, {title}, {subtitle}, {url}, {downdate}."
+            result = f"{name_author}, {title}, {subtitle}, {url}, {down_date}."
 
         return result

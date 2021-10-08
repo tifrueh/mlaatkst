@@ -17,9 +17,13 @@
 import os
 import tkinter as tk
 from tkinter import ttk
-
-import constants as c
 from control_frame import ControlFrame
+from language_helper import LanguageHelper
+
+if LanguageHelper.get_lang() == "GER":
+    import constants_de as c
+elif LanguageHelper.get_lang() == "ENG":
+    import constants_eng as c
 
 
 class App(tk.Tk):
