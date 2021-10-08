@@ -20,6 +20,10 @@ class SettingsWindow(tk.Toplevel):
         self.geometry("300x200+100+100")
         self.title(c.SETTINGS_TITLE)
 
+        # call grab_set for window to receive events
+        # and to prevent user interaction with main window
+        self.grab_set()
+
         # initiate a title label, two buttons (to change the language)
         # and finally a note
         self.label = ttk.Label(self, text=c.SETTINGS_LABEL)
