@@ -23,4 +23,4 @@ TITLE = "MLA @ KST"
 TITLE_LABEL = "MLA standard at the KST"
 CONTROL_FRAME_TITLE = "Options"
 
-STANDARD_OUTPUT = "The result appears here"
+STANDARD_OUTPUT = "The result appears here..."
