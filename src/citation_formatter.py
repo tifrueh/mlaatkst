@@ -11,9 +11,11 @@ class CitationFormatter:
 
         # omit subtitle if empty
         if subtitle == "" or subtitle == " ":
-            result = f"{name_author}, {title}, {edition}. Auflage, {publisher}, {location}, {year}, S. {pages}."
+            result = f"{name_author}, {title}, {edition}. Auflage, " \
+                     f"{publisher}, {location}, {year}, S. {pages}."
         else:
-            result = f"{name_author}, {title}, {subtitle}, {edition}. Auflage, {publisher}, {location}, {year}, S. {pages}. "
+            result = f"{name_author}, {title}, {subtitle}, {edition}. Auflage, " \
+                     f"{publisher}, {location}, {year}, S. {pages}. "
 
         return result
 
@@ -23,9 +25,11 @@ class CitationFormatter:
 
         # omit subtitle if empty
         if subtitle == "" or subtitle == " ":
-            result = f"{name_author}, {title}, {edition}. edition, {publisher}, {location}, {year}, p. {pages}."
+            result = f"{name_author}, {title}, {edition}. edition, " \
+                     f"{publisher}, {location}, {year}, p. {pages}."
         else:
-            result = f"{name_author}, {title}, {subtitle}, {edition}. edition, {publisher}, {location}, {year}, p. {pages}. "
+            result = f"{name_author}, {title}, {subtitle}, {edition}. edition, " \
+                     f"{publisher}, {location}, {year}, p. {pages}. "
 
         return result
 
