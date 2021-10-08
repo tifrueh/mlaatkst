@@ -9,7 +9,7 @@ NOTE: The app is currently only tested on macOS and the installer script as well
 
 The app can be installed in three different ways:
 
-### Script install (MacOS)
+### Script install (macOS)
 
 For installation from source use the installation script ([pyinstaller](https://www.pyinstaller.org/) needs to be installed for this). The bundle will be located at ./out/dist/ after the execution of the script.
 
