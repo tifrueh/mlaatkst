@@ -21,6 +21,7 @@ from control_frame import ControlFrame
 from menubar import Menubar
 from language_helper import LanguageHelper
 
+# choose the right constants file depending on the language
 if LanguageHelper.get_lang() == "GER":
     import constants_de as c
 elif LanguageHelper.get_lang() == "ENG":
@@ -55,7 +56,7 @@ if __name__ == "__main__":
     # start the main window specified above
     app = App()
 
-    # add language menu
+    # add menubar
     Menubar(app)
 
     # place the control frame inside the window

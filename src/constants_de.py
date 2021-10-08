@@ -1,4 +1,4 @@
-# this is the file where all constants are located
+# this is the file where all constants in german are stored
 
 AUTHOR_PROMPT = "Name des Autors / der Autorin: (Nachname, Vorname)"
 AUTHOR_LASTNAME_PROMPT = "Nachname des Autors / der Autorin:"

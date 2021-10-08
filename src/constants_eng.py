@@ -1,4 +1,4 @@
-# this is the file where all constants are located
+# this is the file where all constants in english are stored
 
 AUTHOR_PROMPT = "Name of the author (name, surname)"
 AUTHOR_LASTNAME_PROMPT = "Family name of the author:"

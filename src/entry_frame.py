@@ -6,6 +6,7 @@ from tkinter import ttk
 from citation_formatter import CitationFormatter
 from language_helper import LanguageHelper
 
+# choose the right constants file depending on the language
 if LanguageHelper.get_lang() == "GER":
     import constants_de as c
 elif LanguageHelper.get_lang() == "ENG":
