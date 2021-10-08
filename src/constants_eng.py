@@ -23,4 +23,11 @@ TITLE = "MLA @ KST"
 TITLE_LABEL = "MLA standard at the KST"
 CONTROL_FRAME_TITLE = "Options"
 
-STANDARD_OUTPUT = "The result appears here..."
+SETTINGS_TITLE = "Settings"
+OPEN_SETTINGS_TITLE = "Open settings"
+SETTINGS_LABEL = "Set language to:"
+ENGLISH = "English"
+GERMAN = "German"
+SETTINGS_NOTE = "The program needs to be restarted for the changes to have effect ..."
+
+STANDARD_OUTPUT = "The result appears here ..."

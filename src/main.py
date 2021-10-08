@@ -18,6 +18,7 @@ import os
 import tkinter as tk
 from tkinter import ttk
 from control_frame import ControlFrame
+from menubar import Menubar
 from language_helper import LanguageHelper
 
 if LanguageHelper.get_lang() == "GER":
@@ -53,6 +54,9 @@ class App(tk.Tk):
 if __name__ == "__main__":
     # start the main window specified above
     app = App()
+
+    # add language menu
+    Menubar(app)
 
     # place the control frame inside the window
     ControlFrame(app)
