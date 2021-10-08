@@ -1,3 +1,6 @@
+# Copyright (C) 2021  Timo Früh
+# full copyright notice in main.py
+
 # the LanguageHelper which helps to add language support lives here
 import os
 
@@ -20,4 +23,3 @@ class LanguageHelper:
         lang_path = os.path.join(app_path, "resources", "lang.txt")
         lang_file = open(lang_path, "w")
         lang_file.write(lang)
-

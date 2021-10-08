@@ -1,3 +1,6 @@
+# Copyright (C) 2021  Timo Früh
+# full copyright notice in main.py
+
 # the Menubar class which is responsible for showing the correct menus lives here
 import tkinter as tk
 from language_helper import LanguageHelper

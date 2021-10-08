@@ -1,3 +1,6 @@
+# Copyright (C) 2021  Timo Früh
+# full copyright notice in main.py
+
 # this is the file where all constants in german are stored
 
 AUTHOR_PROMPT = "Name des Autors / der Autorin: (Nachname, Vorname)"

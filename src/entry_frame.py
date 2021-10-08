@@ -1,3 +1,6 @@
+# Copyright (C) 2021  Timo Früh
+# full copyright notice in main.py
+
 # the EntryFrame class which draws the entry frame lives here
 
 import clipboard
