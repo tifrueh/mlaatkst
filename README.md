@@ -1,7 +1,7 @@
 # MLA at KST
 
 This Application was specifically designed to help students of the KST get their footnotes right. The student can input all attributes of the work they want to cite into the entry fields and the program spits out the correct footnote which then can be copied.
-The program is in German at the moment, but I'll try to add a possibility to change the language to English, too.
+The program was originally in German, but since the release of v1.2.0 the user can change the language to English in the settings menu.
 
 NOTE: The app is currently only tested on MacOS and the installer script as well as the direct downloads are only available on MacOS (and Linux maybe). But I'll add support for windows soon.
 
