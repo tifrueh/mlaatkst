@@ -28,6 +28,6 @@ OPEN_SETTINGS_TITLE = "Einstellungen öffnen"
 SETTINGS_LABEL = "Stelle die Sprache um zu:"
 ENGLISH = "Englisch"
 GERMAN = "Deutsch"
-SETTINGS_NOTE = "Das Programm muss neu gestartet werden, um die Änderungen anzuwenden ..."
+SETTINGS_NOTE = "Anmerkung: Das Programm schliesst sich automatisch und muss neu gestartet werden, um die Änderungen anzuwenden ..."
 
 STANDARD_OUTPUT = "Resultat erscheint hier ..."

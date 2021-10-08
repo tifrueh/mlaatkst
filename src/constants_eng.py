@@ -28,6 +28,6 @@ OPEN_SETTINGS_TITLE = "Open settings"
 SETTINGS_LABEL = "Set language to:"
 ENGLISH = "English"
 GERMAN = "German"
-SETTINGS_NOTE = "The program needs to be restarted for the changes to have effect ..."
+SETTINGS_NOTE = "Note: The program closes automatically and needs to be restarted for the changes to have effect ..."
 
 STANDARD_OUTPUT = "The result appears here ..."
