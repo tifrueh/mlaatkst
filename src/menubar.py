@@ -24,7 +24,7 @@ class Menubar(tk.Menu):
 
         # add command to menu which opens a settings window
         self.settings_menu.add_command(
-            label="Open settings window",
+            label=c.OPEN_SETTINGS_TITLE,
             command=self.open_settings
         )
 
