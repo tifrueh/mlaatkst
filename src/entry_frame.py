@@ -192,7 +192,7 @@ class EntryFrame(ttk.Frame):
         self.lastNameAuthorEntry.focus_set()
         self.nameAuthorEntry.focus_set()
 
-# functions for placing the prevously initialized labels and entries on the grid of the frame
+# methods for placing the prevously initialized labels and entries on the grid of the frame
     def ask_author(self):
         self.nameAuthorLabel.grid(column=0, row=0, sticky=tk.EW, padx=10)
         self.nameAuthorEntry.grid(column=1, row=0, sticky=tk.EW, pady=7, padx=10)
