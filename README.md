@@ -3,31 +3,47 @@
 This application was specifically designed to help students of the KST get their footnotes right. The student can input all attributes of the work they want to cite into the entry fields and the program spits out the correct footnote which then can be copied.
 The program was originally in German, but since the release of v1.2.0 the user can change the language to English in the settings menu.
 
-NOTE: The app is currently only tested on macOS and the installer script as well as the direct downloads are only available on macOS (and Linux maybe). But I'll add support for Windows soon.
+NOTE: The app is currently only tested on macOS 11, Apple Silicon.
 
 ## Installation
 
-The app can be installed in three different ways:
+I'm assuming that most students are not familiar with building python applications, which is why I will provide detailed instructions on how to do that here.
 
-### Script install (macOS)
+NOTE: I have not tried this on Windows yet, so I won't tell you how to do that, but as soon as I have done my first build on Windows I'll add instructions for that.
 
-For installation from source use the installation script ([pyinstaller](https://www.pyinstaller.org/) needs to be installed for this). The bundle will be located at ./out/dist/ after the execution of the script.
+### Installation with pyinstaller
 
-### Download of .dmg or .zip (macOS)
+1.  Download python 3.9.7 for your OS. [Here](https://www.python.org/downloads/release/python-397) is a link to the official download page.
+    You will need to scroll down until you see a table containing downloads and then choose the correct one for your system:
 
-Alternatively you can download the .dmg (or .zip) file directly from the latest release. The .dmg should show the app and a shortcut to the application's folder, so that you can drag it over, while the .zip only contains the app itself.
+    - Mac with Intel architecture: macOS 64-bit Intel installer
+    - Mac with Apple Silicon: macOS 64-bit universal2 installer
+    - not sure: macOS 64-bit universal2 installer
 
-NOTE: I do not have any developer certificate, so macOS won't open the program if it is not built from source. But if you trust me, you can run:
+2.  Open the installer and follow its instructions.
 
-``` Shell
-xattr -d com.apple.quarantine /Applications/MLAatKST.app
-```
+3.  Open Terminal.app, which is located in your Launchpad in "Other" (open CMD in Windows).
 
-This should resolve the issue. I might do something about that in the future, but until then you'll just have to go with that.
+4.  Use pip to install pyinstaller and all needed requirements. Input the following command into your terminal:
+    ``` bash
+    pip3 install pyinstaller clipboard
+    ```
+
+5.  Download the source of the [latest release](https://github.com/Timo-Frueh/mlaatkst/releases/latest) by clicking on (Source Code (zip)).
+
+6.  Unzip the archive and save the folder it contains to somewhere you have access to and will find it again later.
+
+7.  Open the folder prevously unzipped and run "install.sh" by double clicking it.
+
+8.  You should now see a folder named "out". Open it.
+
+9.  Open its subfolder "dist".
+
+10. Move "MLAatKST.app" into your Application directory.
 
 ### Manual install (macOS, Linux, Windows)
 
-Lastly you can also just download the source code and always run the app directly or use some installer of your own to convert the source into an executable.
+You can also just download the source code and always run the app directly or use some installer of your own to convert the source into an executable.
 
 ## Preview
 
