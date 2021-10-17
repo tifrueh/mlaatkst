@@ -26,7 +26,7 @@ If you already have python 3.9.7 and pyinstaller installed, jump directly to 5._
 
 2.  Open the installer and follow its instructions.
 
-3.  Open Terminal.app, which is located in your Launchpad in "Other" (open CMD in Windows).
+3.  Open Terminal.app, which is located in your Launchpad in "Other".
 
 4.  Use pip to install pyinstaller and all needed requirements. Input the following command into your terminal:
     ``` bash
