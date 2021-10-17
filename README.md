@@ -51,4 +51,4 @@ You can also just download the source code and always run the app directly or us
 
 ## Preview
 
-<img width="812" alt="App preview" src="https://user-images.githubusercontent.com/84284672/136099397-e57edd3b-f5a7-407c-be04-33a03d6d8a70.png">
+![App preview](https://user-images.githubusercontent.com/84284672/136099397-e57edd3b-f5a7-407c-be04-33a03d6d8a70.png "Preview")
