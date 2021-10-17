@@ -13,6 +13,10 @@ NOTE: I have not tried this on Windows yet, so I won't tell you how to do that, 
 
 ### Installation with pyinstaller
 
+_This is the main option for installing the app in the moment.
+If you already have python 3.9.7 installed, jump directly to 3.
+If you already have python 3.9.7 and pyinstaller installed, jump directly to 5._
+
 1.  Download python 3.9.7 for your OS. [Here](https://www.python.org/downloads/release/python-397) is a link to the official download page.
     You will need to scroll down until you see a table containing downloads and then choose the correct one for your system:
 
