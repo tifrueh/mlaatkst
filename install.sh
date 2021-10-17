@@ -13,4 +13,4 @@ pyinstaller --clean --name="MLAatKST" --windowed \
   --distpath="$SCRIPT_DIR/out/dist" \
   "$SCRIPT_DIR/src/main.py" &&
 
-plutil -replace "CFBundleShortVersionString" -string "1.2.1" "$SCRIPT_DIR/out/dist/MLAatKST.app/Contents/Info.plist"
+plutil -replace "CFBundleShortVersionString" -string "1.2.2" "$SCRIPT_DIR/out/dist/MLAatKST.app/Contents/Info.plist"
