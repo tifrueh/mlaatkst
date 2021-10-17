@@ -28,22 +28,27 @@ If you already have python 3.9.7 and pyinstaller installed, jump directly to 5._
 
 3.  Open Terminal.app, which is located in your Launchpad in "Other".
 
-4.  Use pip to install pyinstaller and all needed requirements. Input the following command into your terminal:
+4.  Use pip to install pyinstaller and all needed requirements. Input the following command into your terminal and press enter:
     ``` bash
     pip3 install pyinstaller clipboard
     ```
 
-5.  Download the source of the [latest release](https://github.com/Timo-Frueh/mlaatkst/releases/latest) by clicking on (Source Code (zip)).
+5.  Download the source of the [latest release](https://github.com/Timo-Frueh/mlaatkst/releases/latest) by clicking on "Source Code (zip)".
 
 6.  Unzip the archive and save the folder it contains to somewhere you have access to and will find it again later.
 
-7.  Open the folder prevously unzipped and run "install.sh" by double clicking it.
+7.  Right-click the folder and select "New Terminal tab here".
 
-8.  You should now see a folder named "out". Open it.
+8.  A terminal tab should open. Now input the following command and press enter:
+    ``` bash
+    bash install.sh
+    ```
 
-9.  Open its subfolder "dist".
+9.  You should now see a folder named "out". Open it.
 
-10. Move "MLAatKST.app" into your Application directory.
+10. Open its subfolder "dist".
+
+11. Move "MLAatKST.app" into your Application directory.
 
 ### Manual install (macOS, Linux, Windows)
 
