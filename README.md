@@ -7,14 +7,33 @@ NOTE: The app is currently only tested on macOS 11, Apple Silicon.
 
 ## Installation
 
-I'm assuming that most students are not familiar with building python applications, which is why I will provide detailed instructions on how to do that here.
+I'm trying to make installation as easy as possible, but it is still far from perfect. So bear with me while I try to implement something better than this.
+But in the moment there are three major ways for installation: download from .zip, build from source with pyinstaller, build from source by yourself.
+Downloading is probably the easiest for most, but there are also instructions for building with pyinstaller below.
 
-NOTE: I have not tried this on Windows yet, so I won't tell you how to do that, but as soon as I have done my first build on Windows I'll add instructions for that.
+### Download
+
+1.  Go to the [latest release](https://github.com/Timo-Frueh/mlaatkst/releases/latest) and download the correct version for your system:
+    macOS: `MLAatKST-macOS-universal-(version).zip`
+    Windows: There is no version for Windows yet, but I'll add that in the future.
+
+2.  Open the ZIP-archive and move the application to your Applications folder (usually `/Applications`)
+
+3.  _Disclaimer: I do not have a developer certificate, so Gatekeeper won't let you open the app._
+    But if you trust me, you can run the following command in your terminal:
+    ~~~ shell
+    xattr -d com.apple.quarantine /Applications/MLAatKST.app
+    ~~~
+
+4.  You should then be able to open and use the app.
 
 ### Installation with pyinstaller
 
-_This is the main option for installing the app in the moment.
-If you already have python 3.9.7 installed, jump directly to 3.
+I'm assuming that most students are not familiar with building python applications, which is why I will provide detailed instructions on how to do that here.
+
+NOTE: I have not tried this on Windows yet, so I can't tell you how to do this whole thing there, but as soon as I have done my first build there I'll add instructions for that.
+
+_If you already have python 3.9.7 installed, jump directly to 3.
 If you already have python 3.9.7 and pyinstaller installed, jump directly to 5._
 
 1.  Download python 3.9.7 for your OS. [Here](https://www.python.org/downloads/release/python-397) is a link to the official download page.
