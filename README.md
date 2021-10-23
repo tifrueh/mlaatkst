@@ -14,8 +14,10 @@ Downloading is probably the easiest for most, but there are also instructions fo
 ### Download
 
 1.  Go to the [latest release](https://github.com/Timo-Frueh/mlaatkst/releases/latest) and download the correct version for your system:
-    macOS: `MLAatKST-macOS-universal-(version).zip`
-    Windows: There is no version for Windows yet, but I'll add that in the future.
+    
+    - macOS: `MLAatKST-macOS-universal-(version).zip`
+    
+    - Windows: There is no version for Windows yet, but I'll add that in the future.
 
 2.  Open the ZIP-archive and move the application to your Applications folder (usually `/Applications`)
 
