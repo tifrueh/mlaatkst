@@ -77,4 +77,4 @@ You can also just download the source code and always run the app directly or us
 
 ## Preview
 
-![App preview](https://user-images.githubusercontent.com/84284672/136099397-e57edd3b-f5a7-407c-be04-33a03d6d8a70.png "Preview")
+![App preview](https://github.com/Timo-Frueh/mlaatkst/blob/17753bb75811a1b21cbc0a4d173e73666c924e0a/assets/preview_de.png "Preview")
