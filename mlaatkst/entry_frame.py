@@ -6,14 +6,14 @@
 import clipboard
 import tkinter as tk
 from tkinter import ttk
-from citation_formatter import CitationFormatter
-from language_helper import LanguageHelper
+from mlaatkst.citation_formatter import CitationFormatter
+from mlaatkst.language_helper import LanguageHelper
 
 # choose the right constants file depending on the language
 if LanguageHelper.get_lang() == "GER":
-    import constants_de as c
+    import mlaatkst.constants_de as c
 elif LanguageHelper.get_lang() == "ENG":
-    import constants_eng as c
+    import mlaatkst.constants_eng as c
 
 
 class EntryFrame(ttk.Frame):

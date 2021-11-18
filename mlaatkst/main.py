@@ -17,15 +17,16 @@
 import os
 import tkinter as tk
 from tkinter import ttk
-from control_frame import ControlFrame
-from menubar import Menubar
-from language_helper import LanguageHelper
+
+from mlaatkst.control_frame import ControlFrame
+from mlaatkst.language_helper import LanguageHelper
+from mlaatkst.menubar import Menubar
 
 # choose the right constants file depending on the language
 if LanguageHelper.get_lang() == "GER":
-    import constants_de as c
+    import mlaatkst.constants_de as c
 elif LanguageHelper.get_lang() == "ENG":
-    import constants_eng as c
+    import mlaatkst.constants_eng as c
 
 
 class App(tk.Tk):

@@ -3,14 +3,15 @@
 
 # the Menubar class which is responsible for showing the correct menus lives here
 import tkinter as tk
-from language_helper import LanguageHelper
-from settings_window import SettingsWindow
+
+from mlaatkst.language_helper import LanguageHelper
+from mlaatkst.settings_window import SettingsWindow
 
 # choose the right constants file depending on the language
 if LanguageHelper.get_lang() == "GER":
-    import constants_de as c
+    import mlaatkst.constants_de as c
 elif LanguageHelper.get_lang() == "ENG":
-    import constants_eng as c
+    import mlaatkst.constants_eng as c
 
 
 class Menubar(tk.Menu):
