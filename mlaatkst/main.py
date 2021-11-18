@@ -53,7 +53,7 @@ class App(tk.Tk):
         self.titleLabel.grid(column=0, row=0, pady=40)
 
 
-if __name__ == "__main__":
+def main():
     # start the main window specified above
     app = App()
 
@@ -65,3 +65,7 @@ if __name__ == "__main__":
 
     # call tkinter mainloop of the main window
     app.mainloop()
+
+
+if __name__ == "__main__":
+    main
