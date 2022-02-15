@@ -3,7 +3,7 @@ import plistlib
 
 import PyInstaller.__main__
 
-dir_path = os.path.dirname(__file__)
+dir_path = os.path.abspath(os.path.dirname(__file__))
 
 name = "MLAatKST"
 icon_path = os.path.join(dir_path, "assets", "mlaatkst.icns")
