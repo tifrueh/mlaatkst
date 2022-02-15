@@ -1,5 +1,5 @@
 # Copyright (C) 2021  Timo Früh
-# full copyright notice in main.py
+# full copyright notice in __main__.py
 
 # the CitationFormatter class which formats the citations lives here
 

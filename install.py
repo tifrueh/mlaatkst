@@ -22,7 +22,6 @@ plist_path = os.path.join(distpath, "MLAatKST.app", "Contents", "Info.plist")
 
 PyInstaller.__main__.run([
     "--clean",
-    "--windowed",
     f"--name={name}",
     f"--icon={icon_path}",
     f"--osx-bundle-identifier={osx_bundle_identifier}",
@@ -33,7 +32,6 @@ PyInstaller.__main__.run([
     f"--workpath={workpath}",
     f"--distpath={distpath}",
     "--noupx",
-    f"--log-level={log_level}",
     f"{main_path}",
     "-y"
 ])

@@ -1,5 +1,5 @@
 # Copyright (C) 2021  Timo Früh
-# full copyright notice in main.py
+# full copyright notice in __main__.py
 
 # the SettingsWindow class which shows a settings window lives here
 import tkinter as tk
