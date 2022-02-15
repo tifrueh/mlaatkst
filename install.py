@@ -15,7 +15,6 @@ lang_path = os.path.join(dir_path, "mlaatkst", "resources", "lang.txt")
 resources_path = os.path.join(dir_path, "mlaatkst", "resources")
 workpath = os.path.join(dir_path, "out", "build")
 distpath = os.path.join(dir_path, "out", "dist")
-log_level = "DEBUG"
 
 main_path = os.path.join(dir_path, "mlaatkst.py")
 
