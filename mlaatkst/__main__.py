@@ -34,7 +34,7 @@ class App(tk.Tk):
         super().__init__()
 
         # show the background image bg2.png from the resources folder in a label
-        self.appPath = os.path.dirname(__file__)
+        self.appPath = os.path.abspath(os.path.dirname(__file__))
         self.imagePath = os.path.join(self.appPath, "resources", "bg2.png")
         self.bg = tk.PhotoImage(file=self.imagePath, format="png")
         self.bgLabel = ttk.Label(self, image=self.bg)
