@@ -22,6 +22,7 @@ main_path = os.path.join(dir_path, "mlaatkst.py")
 plist_path = os.path.join(distpath, "MLAatKST.app", "Contents", "Info.plist")
 
 PyInstaller.__main__.run([
+    "--windowed",
     "--clean",
     f"--name={name}",
     f"--icon={icon_path}",
