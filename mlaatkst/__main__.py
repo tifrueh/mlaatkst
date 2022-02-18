@@ -17,6 +17,7 @@
 import os
 import tkinter as tk
 from tkinter import ttk
+from pkg_resources import resource_filename
 
 from mlaatkst.control_frame import ControlFrame
 from mlaatkst.language_helper import LanguageHelper
@@ -34,9 +35,8 @@ class App(tk.Tk):
         super().__init__()
 
         # show the background image bg2.png from the resources folder in a label
-        self.appPath = os.path.abspath(os.path.dirname(__file__))
-        self.imagePath = os.path.join(self.appPath, "resources", "bg2.png")
-        self.bg = tk.PhotoImage(file=self.imagePath, format="png")
+        self.bg_image = resource_filename("mlaatkst.resources", "bg2.png")
+        self.bg = tk.PhotoImage(file=self.bg_image, format="png")
         self.bgLabel = ttk.Label(self, image=self.bg)
         self.bgLabel.place(x=0, y=0, relwidth=1, relheight=1)
 
