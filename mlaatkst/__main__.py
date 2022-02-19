@@ -48,7 +48,7 @@ class App(tk.Tk):
         self.columnconfigure(index=0, weight=1)
 
         # add a title label containing the title message
-        self.titleLabel = ttk.Label(self, text=c.TITLE_LABEL, font=("Futura", 20))
+        self.titleLabel = ttk.Label(self, text=c.TITLE_LABEL, font=("TkHeadingFont", 26, "bold"))
         self.titleLabel.grid(column=0, row=0, pady=40)
 
 
