@@ -8,7 +8,7 @@ NOTE: The app is currently only tested on macOS 11, Apple Silicon.
 ## Installation
 
 I'm trying to make installation as easy as possible, but it is still far from perfect. So bear with me while I try to implement something better than this.
-But in the moment there are three major ways for installation: download from .zip, build from source with pyinstaller, build from source by yourself.
+But in the moment there are three major ways for installation: download from .zip, build from source with my installer script, build from source by yourself.
 Downloading is probably the easiest for most, but there are also instructions for building with pyinstaller below.
 
 ### Download
@@ -35,10 +35,10 @@ I'm assuming that most students are not familiar with building python applicatio
 
 NOTE: I have not tried this on Windows yet, so I can't tell you how to do this whole thing there, but as soon as I have done my first build there I'll add instructions for that.
 
-_If you already have python 3.9.7 installed, jump directly to 3.
-If you already have python 3.9.7 and pyinstaller installed, jump directly to 5._
+_If you already have python 3.10 installed, jump directly to 3.
+If you already have python 3.10 and pyinstaller installed, jump directly to 5._
 
-1.  Download python 3.9.7 for your OS. [Here](https://www.python.org/downloads/release/python-397) is a link to the official download page.
+1.  Download python 3.10 for your OS. [Here](https://www.python.org/downloads/release/python-3102) is a link to the official download page.
     You will need to scroll down until you see a table containing downloads and then choose the correct one for your system:
 
     - Mac with Intel architecture: macOS 64-bit Intel installer
@@ -50,8 +50,8 @@ If you already have python 3.9.7 and pyinstaller installed, jump directly to 5._
 3.  Open Terminal.app, which is located in your Launchpad in "Other".
 
 4.  Use pip to install pyinstaller and all needed requirements. Input the following command into your terminal and press enter:
-    ``` bash
-    pip3 install pyinstaller clipboard
+    ``` shell
+    pip3 install pyinstaller pyperclip
     ```
 
 5.  Download the source of the [latest release](https://github.com/Timo-Frueh/mlaatkst/releases/latest) by clicking on "Source Code (zip)".
@@ -61,8 +61,8 @@ If you already have python 3.9.7 and pyinstaller installed, jump directly to 5._
 7.  Right-click the folder and select "New Terminal tab here".
 
 8.  A terminal tab should open. Now input the following command and press enter:
-    ``` bash
-    bash install.sh
+    ``` shell
+    python3 install.py
     ```
 
 9.  You should now see a folder named "out". Open it.
