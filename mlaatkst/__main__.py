@@ -36,7 +36,6 @@ class App(tk.Tk):
 
         # show the background image bg2.png from the resources folder in a label
         self.bg_path = ResourceHelper.get_resource_path("bg2.png")
-        print(__file__)
         self.bg = tk.PhotoImage(file=self.bg_path, format="png")
         self.bgLabel = ttk.Label(self, image=self.bg)
         self.bgLabel.place(x=0, y=0, relwidth=1, relheight=1)
