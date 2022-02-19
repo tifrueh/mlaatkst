@@ -9,16 +9,16 @@ from tkinter import ttk
 from mlaatkst.citation_formatter import CitationFormatter
 from mlaatkst.language_helper import LanguageHelper
 
-# choose the right constants file depending on the language
-if LanguageHelper.get_lang() == "GER":
-    import mlaatkst.constants_de as c
-elif LanguageHelper.get_lang() == "ENG":
-    import mlaatkst.constants_eng as c
-
 
 class EntryFrame(ttk.Frame):
-    def __init__(self, container, option):
+    def __init__(self, container: tk.Tk, option):
         super().__init__(container)
+
+        # choose the right constants file depending on the language
+        if LanguageHelper.get_lang() == "GER":
+            import mlaatkst.constants_de as c
+        else:
+            import mlaatkst.constants_eng as c
 
         # initialize option variable
         # through which the control frame tells the program which frame to show
@@ -174,6 +174,12 @@ class EntryFrame(ttk.Frame):
         pyperclip.copy(citation)
 
     def reset(self):
+
+        # choose the right constants file depending on the language
+        if LanguageHelper.get_lang() == "GER":
+            import mlaatkst.constants_de as c
+        else:
+            import mlaatkst.constants_eng as c
 
         # clear out all entries
         self.nameAuthorEntry.delete(0, tk.END)
