@@ -1,2 +1,2 @@
-clipboard~=0.0.4
 pyinstaller~=4.7
+pyperclip~=1.8.2

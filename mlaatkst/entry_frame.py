@@ -3,7 +3,7 @@
 
 # the EntryFrame class which draws the entry frame lives here
 
-import clipboard
+import pyperclip as pyperclip
 import tkinter as tk
 from tkinter import ttk
 from mlaatkst.citation_formatter import CitationFormatter
@@ -171,7 +171,7 @@ class EntryFrame(ttk.Frame):
 
         # copy the contents of the resultLabel
         citation = self.resultLabel["text"]
-        clipboard.copy(citation)
+        pyperclip.copy(citation)
 
     def reset(self):
 
