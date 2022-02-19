@@ -1,7 +1,25 @@
 import os
 import plistlib
+import argparse
 
 import PyInstaller.__main__
+
+parser = argparse.ArgumentParser()
+
+parser.add_argument(
+    "--universal2",
+    help="build the app as universal2 binary (only works if python itself was compiled as universal2)",
+    action="store_true"
+)
+
+parser.add_argument(
+    "--version",
+    help="change the version string of the final executable",
+    type=str,
+    default="HEAD"
+)
+
+args = parser.parse_args()
 
 dir_path = os.path.abspath(os.path.dirname(__file__))
 
@@ -34,15 +52,20 @@ run_list.append(f"--workpath={workpath}")
 run_list.append(f"--distpath={distpath}")
 run_list.append(f"{main_path}")
 
+if args.universal2:
+    run_list.append("--target-arch=universal2")
+
 PyInstaller.__main__.run(run_list)
 
 try:
     with open(plist_path, "rb") as pl:
+        print("INFO: Load property list for version string modification ...")
         plist = plistlib.load(pl)
 
-    plist["CFBundleShortVersionString"] = "dev"
+    plist["CFBundleShortVersionString"] = args.version
 
     with open(plist_path, "wb") as pl:
+        print("INFO: Rewrite property list after version string modification ...")
         plistlib.dump(plist, pl)
 
 except FileNotFoundError:
