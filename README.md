@@ -19,7 +19,7 @@ Downloading is probably the easiest for most, but there are also instructions fo
     
     - Windows: There is no version for Windows yet, but I'll add that in the future.
 
-2.  Open the ZIP-archive and move the application to your Applications folder (usually `/Applications`)
+2.  Open the ZIP-archive, double click the DMG file and drag the application to your Applications folder
 
 3.  _Disclaimer: I do not have a developer certificate, so Gatekeeper won't let you open the app._
     But if you trust me, you can run the following command in your terminal:
