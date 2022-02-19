@@ -2,7 +2,7 @@
 # full copyright notice in __main__.py
 
 # the LanguageHelper which helps to add language support lives here
-from pkg_resources import resource_filename
+from mlaatkst.resource_helper import ResourceHelper
 
 
 class LanguageHelper:
@@ -10,14 +10,10 @@ class LanguageHelper:
     # method for getting the string contained in ./resources/lang.txt
     @staticmethod
     def get_lang():
-        lang_path = resource_filename("mlaatkst.resources", "lang.txt")
-        with open(lang_path, "r") as lang_file:
-            lang = lang_file.read()
+        lang = ResourceHelper.read_text_resource("lang.txt")
         return lang
 
     # method for setting the string contained in ./resources/lang.txt
     @staticmethod
     def set_lang(lang):
-        lang_path = resource_filename("mlaatkst.resources", "lang.txt")
-        with open(lang_path, "w") as lang_file:
-            lang_file.write(lang)
+        ResourceHelper.write_text_resource("lang.txt", lang)
