@@ -18,21 +18,23 @@ main_path = os.path.join(dir_path, "mlaatkst/__main__.py")
 
 plist_path = os.path.join(distpath, "MLAatKST.app", "Contents", "Info.plist")
 
-PyInstaller.__main__.run([
-    "--clean",
-    "--windowed",
-    f"--name={name}",
-    f"--icon={icon_path}",
-    f"--osx-bundle-identifier={osx_bundle_identifier}",
-    f"--add-data={readme_path}:.",
-    f"--add-data={license_path}:.",
-    f"--add-data={resources_path}:resources",
-    f"--workpath={workpath}",
-    f"--distpath={distpath}",
-    "--noupx",
-    f"{main_path}",
-    "-y"
-])
+run_list = list()
+
+run_list.append("--clean")
+run_list.append("--windowed")
+run_list.append("--noupx")
+run_list.append("-y")
+run_list.append(f"--name={name}")
+run_list.append(f"--icon={icon_path}")
+run_list.append(f"--osx-bundle-identifier={osx_bundle_identifier}")
+run_list.append(f"--add-data={readme_path}:.")
+run_list.append(f"--add-data={license_path}:.")
+run_list.append(f"--add-data={resources_path}:resources")
+run_list.append(f"--workpath={workpath}")
+run_list.append(f"--distpath={distpath}")
+run_list.append(f"{main_path}")
+
+PyInstaller.__main__.run(run_list)
 
 try:
     with open(plist_path, "rb") as pl:
