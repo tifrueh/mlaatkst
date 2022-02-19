@@ -8,18 +8,24 @@ NOTE: The app is currently only tested on macOS 11, Apple Silicon.
 ## Installation
 
 I'm trying to make installation as easy as possible, but it is still far from perfect. So bear with me while I try to implement something better than this.
-But in the moment there are three major ways for installation: download from .zip, build from source with my installer script, build from source by yourself.
+But in the moment there are four major ways for installation: 
+
+1. [download as DMG](#download-dmg) / [download as ZIP](#download-zip)
+2. [use homebrew](#installation-with-homebrew)
+3. [build from source with my installer script](#installation-with-pyinstaller)
+4. [build from source by yourself](#manual-install-macos-linux-windows)
+
 Downloading is probably the easiest for most, but there are also instructions for building with pyinstaller below.
 
-### Download
+### Download DMG
 
-1.  Go to the [latest release](https://github.com/Timo-Frueh/mlaatkst/releases/latest) and download the correct version for your system:
+1.  Go to the [latest release](https://github.com/tifrueh/mlaatkst/releases/latest) and download the correct version for your system:
     
-    - macOS: `MLAatKST-macOS-universal-(version).zip`
+    - macOS: `MLAatKST-macOS-universal-(version).dmg`
     
     - Windows: There is no version for Windows yet, but I'll add that in the future.
 
-2.  Open the ZIP-archive, double click the DMG file and drag the application to your Applications folder
+2.  Open the double click the DMG file and drag the application to your Applications folder
 
 3.  _Disclaimer: I do not have a developer certificate, so Gatekeeper won't let you open the app._
     But if you trust me, you can run the following command in your terminal:
@@ -28,6 +34,38 @@ Downloading is probably the easiest for most, but there are also instructions fo
     ~~~
 
 4.  You should then be able to open and use the app.
+
+### Download ZIP
+
+1.  Go to the [latest release](https://github.com/tifrueh/mlaatkst/releases/latest) and download the correct version for your system:
+    
+    - macOS: `MLAatKST-macOS-universal-(version).zip`
+    
+    - Windows: There is no version for Windows yet, but I'll add that in the future.
+
+2.  Extract the ZIP file and move `MLAatKST.app` into your Applications folder.
+
+3.  _Disclaimer: I do not have a developer certificate, so Gatekeeper won't let you open the app._
+    But if you trust me, you can run the following command in your terminal:
+    ~~~ shell
+    xattr -d com.apple.quarantine /Applications/MLAatKST.app
+    ~~~
+
+4.  You should then be able to open and use the app.
+
+### Installation with homebrew
+
+1.  Tap my homebrew tap:
+
+    ~~~ shell
+    brew tap tifrueh/homebrew-mytap
+    ~~~
+
+2.  Install MLAatKST (with the `--no-quarantine` flag, because I don't have a developer certificate:
+
+    ~~~ shell
+    brew install mlaatkst --no-quarantine
+    ~~~
 
 ### Installation with pyinstaller
 
@@ -77,4 +115,4 @@ You can also just download the source code and always run the app directly or us
 
 ## Preview
 
-![App preview](https://github.com/Timo-Frueh/mlaatkst/blob/17753bb75811a1b21cbc0a4d173e73666c924e0a/assets/preview_de.png "Preview")
+![App preview](https://github.com/tifrueh/mlaatkst/blob/17753bb75811a1b21cbc0a4d173e73666c924e0a/assets/preview_de.png "Preview")
