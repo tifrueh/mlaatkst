@@ -10,8 +10,6 @@ class ResourceHelper:
     pkgdir = pathlib.PurePath(__file__).parent
     rcdir = pkgdir.parent.joinpath("resources")
 
-    print(rcdir)
-
     @classmethod
     def get_resource_path(cls, name):
         rc_path = pathlib.Path(cls.rcdir.joinpath(name))
