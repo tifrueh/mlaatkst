@@ -115,4 +115,4 @@ You can also just download the source code and always run the app directly or us
 
 ## Preview
 
-![App preview](https://github.com/tifrueh/mlaatkst/blob/17753bb75811a1b21cbc0a4d173e73666c924e0a/assets/preview_de.png "Preview")
+![App preview](https://github.com/tifrueh/mlaatkst/raw/dev/assets/preview_eng.png "Preview")
