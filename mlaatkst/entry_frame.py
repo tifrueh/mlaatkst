@@ -3,22 +3,24 @@
 
 # the EntryFrame class which draws the entry frame lives here
 
-import pyperclip as pyperclip
 import tkinter as tk
 from tkinter import ttk
+
 from mlaatkst.citation_formatter import CitationFormatter
 from mlaatkst.language_helper import LanguageHelper
 
-# choose the right constants file depending on the language
-if LanguageHelper.get_lang() == "GER":
-    import mlaatkst.constants_de as c
-elif LanguageHelper.get_lang() == "ENG":
-    import mlaatkst.constants_eng as c
-
 
 class EntryFrame(ttk.Frame):
-    def __init__(self, container, option):
+    def __init__(self, container: tk.Tk, option):
         super().__init__(container)
+
+        self.container = container
+
+        # choose the right constants file depending on the language
+        if LanguageHelper.get_lang() == "GER":
+            import mlaatkst.constants_de as c
+        else:
+            import mlaatkst.constants_eng as c
 
         # initialize option variable
         # through which the control frame tells the program which frame to show
@@ -170,10 +172,17 @@ class EntryFrame(ttk.Frame):
     def copy_citation(self):
 
         # copy the contents of the resultLabel
+        self.container.clipboard_clear()
         citation = self.resultLabel["text"]
-        pyperclip.copy(citation)
+        self.container.clipboard_append(citation)
 
     def reset(self):
+
+        # choose the right constants file depending on the language
+        if LanguageHelper.get_lang() == "GER":
+            import mlaatkst.constants_de as c
+        else:
+            import mlaatkst.constants_eng as c
 
         # clear out all entries
         self.nameAuthorEntry.delete(0, tk.END)

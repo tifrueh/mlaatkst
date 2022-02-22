@@ -7,18 +7,18 @@ from tkinter import ttk
 
 from mlaatkst.language_helper import LanguageHelper
 
-# choose the right constants file depending on the language
-if LanguageHelper.get_lang() == "GER":
-    import mlaatkst.constants_de as c
-elif LanguageHelper.get_lang() == "ENG":
-    import mlaatkst.constants_eng as c
-
 
 class SettingsWindow(tk.Toplevel):
-    def __init__(self, container):
+    def __init__(self, container: tk.Tk):
         super().__init__(container)
 
         self.container = container
+
+        # choose the right constants file depending on the language
+        if LanguageHelper.get_lang() == "GER":
+            import mlaatkst.constants_de as c
+        else:
+            import mlaatkst.constants_eng as c
 
         # set geometry and window title
         self.geometry("300x200+100+100")
@@ -46,9 +46,11 @@ class SettingsWindow(tk.Toplevel):
         LanguageHelper.set_lang("GER")
         self.destroy()
         self.container.destroy()
+        self.container.__init__()
 
     # method for setting the language to English and closing the program afterwards
     def set_eng(self):
         LanguageHelper.set_lang("ENG")
         self.destroy()
         self.container.destroy()
+        self.container.__init__()

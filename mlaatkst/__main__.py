@@ -22,16 +22,16 @@ from mlaatkst.language_helper import LanguageHelper
 from mlaatkst.menubar import Menubar
 from mlaatkst.resource_helper import ResourceHelper
 
-# choose the right constants file depending on the language
-if LanguageHelper.get_lang() == "GER":
-    import mlaatkst.constants_de as c
-elif LanguageHelper.get_lang() == "ENG":
-    import mlaatkst.constants_eng as c
-
 
 class App(tk.Tk):
     def __init__(self):
         super().__init__()
+
+        # choose the right constants file depending on the language
+        if LanguageHelper.get_lang() == "GER":
+            import mlaatkst.constants_de as c
+        else:
+            import mlaatkst.constants_eng as c
 
         # show the background image bg2.png from the resources folder in a label
         self.bg_path = ResourceHelper.get_resource_path("bg2.png")
@@ -51,16 +51,14 @@ class App(tk.Tk):
         self.titleLabel = ttk.Label(self, text=c.TITLE_LABEL, font=("TkHeadingFont", 26, "bold"))
         self.titleLabel.grid(column=0, row=0, pady=40)
 
+        Menubar(self)
+
+        ControlFrame(self)
+
 
 def main():
     # start the main window specified above
     app = App()
-
-    # add menubar
-    Menubar(app)
-
-    # place the control frame inside the window
-    ControlFrame(app)
 
     # call tkinter mainloop of the main window
     app.mainloop()

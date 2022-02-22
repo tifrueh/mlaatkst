@@ -9,16 +9,16 @@ from tkinter import ttk
 from mlaatkst.entry_frame import EntryFrame
 from mlaatkst.language_helper import LanguageHelper
 
-# choose the right constants file depending on the language
-if LanguageHelper.get_lang() == "GER":
-    import mlaatkst.constants_de as c
-elif LanguageHelper.get_lang() == "ENG":
-    import mlaatkst.constants_eng as c
-
 
 class ControlFrame(ttk.LabelFrame):
-    def __init__(self, container):
+    def __init__(self, container: tk.Tk):
         super().__init__(container)
+
+        # choose the right constants file depending on the language
+        if LanguageHelper.get_lang() == "GER":
+            import mlaatkst.constants_de as c
+        else:
+            import mlaatkst.constants_eng as c
 
         # set the title of the frame
         self["text"] = c.CONTROL_FRAME_TITLE

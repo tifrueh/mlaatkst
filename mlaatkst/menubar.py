@@ -7,16 +7,16 @@ import tkinter as tk
 from mlaatkst.language_helper import LanguageHelper
 from mlaatkst.settings_window import SettingsWindow
 
-# choose the right constants file depending on the language
-if LanguageHelper.get_lang() == "GER":
-    import mlaatkst.constants_de as c
-elif LanguageHelper.get_lang() == "ENG":
-    import mlaatkst.constants_eng as c
-
 
 class Menubar(tk.Menu):
-    def __init__(self, container):
+    def __init__(self, container: tk.Tk):
         super().__init__(container)
+
+        # choose the right constants file depending on the language
+        if LanguageHelper.get_lang() == "GER":
+            import mlaatkst.constants_de as c
+        else:
+            import mlaatkst.constants_eng as c
 
         self.container = container
 
