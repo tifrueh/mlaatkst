@@ -3,9 +3,9 @@
 
 # the EntryFrame class which draws the entry frame lives here
 
-import pyperclip as pyperclip
 import tkinter as tk
 from tkinter import ttk
+
 from mlaatkst.citation_formatter import CitationFormatter
 from mlaatkst.language_helper import LanguageHelper
 
@@ -13,6 +13,8 @@ from mlaatkst.language_helper import LanguageHelper
 class EntryFrame(ttk.Frame):
     def __init__(self, container: tk.Tk, option):
         super().__init__(container)
+
+        self.container = container
 
         # choose the right constants file depending on the language
         if LanguageHelper.get_lang() == "GER":
@@ -170,8 +172,9 @@ class EntryFrame(ttk.Frame):
     def copy_citation(self):
 
         # copy the contents of the resultLabel
+        self.container.clipboard_clear()
         citation = self.resultLabel["text"]
-        pyperclip.copy(citation)
+        self.container.clipboard_append(citation)
 
     def reset(self):
 
