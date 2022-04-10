@@ -27,7 +27,7 @@ Downloading is probably the easiest for most, but there are also instructions fo
 
 2. Right-click the PKG and select 'open'.
 
-3. _Disclaimer: I do not have a developer certificate, but if you trust me, you can right-click the PKG (instead of merely double-clicking it), select 'open' and then 'open' again to circumvent macOS Gatekeeper._
+3. _Disclaimer: I do not have a developer certificate, but if you trust me, you can right-click the PKG (instead of merely double-clicking it), select `open` and then `open` again to circumvent macOS Gatekeeper._
 
 5. You should then be able to open and use the app.
 
