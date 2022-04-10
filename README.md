@@ -10,7 +10,7 @@ NOTE: The app is currently only tested on macOS 11, Apple Silicon.
 I'm trying to make installation as easy as possible, but it is still far from perfect. So bear with me while I try to implement something better than this.
 But in the moment there are four major ways for installation: 
 
-1. [download as PKG](#download-pgk) / [download as ZIP](#download-zip)
+1. [download as PKG](#download-pkg) / [download as ZIP](#download-zip)
 2. [use homebrew](#installation-with-homebrew)
 3. [build from source with my installer script](#installation-with-pyinstaller)
 4. [build from source by yourself](#manual-install-macos-linux-windows)
