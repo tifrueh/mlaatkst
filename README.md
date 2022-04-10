@@ -17,23 +17,19 @@ But in the moment there are four major ways for installation:
 
 Downloading is probably the easiest for most, but there are also instructions for building with pyinstaller below.
 
-### Download DMG
+### Download PKG
 
-1.  Go to the [latest release](https://github.com/tifrueh/mlaatkst/releases/latest) and download the correct version for your system:
+1. Go to the [latest release](https://github.com/tifrueh/mlaatkst/releases/latest) and download the correct version for your system:
     
-    - macOS: `MLAatKST-macOS-universal-(version).dmg`
+    - macOS: `MLAatKST-macOS-universal-(version).pkg`
     
     - Windows: There is no version for Windows yet, but I'll add that in the future.
 
-2.  Open the double click the DMG file and drag the application to your Applications folder
+2. Right-click the PKG and select 'open'.
 
-3.  _Disclaimer: I do not have a developer certificate, so Gatekeeper won't let you open the app._
-    But if you trust me, you can run the following command in your terminal:
-    ~~~ shell
-    xattr -d com.apple.quarantine /Applications/MLAatKST.app
-    ~~~
+3. _Disclaimer: I do not have a developer certificate, but if you trust me, you can right-click the PKG (instead of merely double-clicking it), select 'open' and then 'open' again to circumvent macOS Gatekeeper.
 
-4.  You should then be able to open and use the app.
+5. You should then be able to open and use the app.
 
 ### Download ZIP
 
@@ -61,7 +57,7 @@ Downloading is probably the easiest for most, but there are also instructions fo
     brew tap tifrueh/homebrew-mytap
     ~~~
 
-2.  Install MLAatKST (with the `--no-quarantine` flag, because I don't have a developer certificate:
+2.  Install MLAatKST (with the `--no-quarantine` flag, because I don't have a developer certificate):
 
     ~~~ shell
     brew install mlaatkst --no-quarantine
