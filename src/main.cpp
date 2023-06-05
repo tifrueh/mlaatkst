@@ -35,7 +35,7 @@ bool MLAatKST::OnInit() {
     info.SetVersion(wxT("2.0.0-dev"));
     info.SetCopyright(wxT(
         "Copyright (C) 2022-2023 Timo Früh\n"
-        "This program is free and open source software, licensed under the GNU General Public License 3.0.\n"
+        "This program is free and open source software, licensed under the GNU General Public License 3.0. "
         "For futher information, see <https://www.gnu.org/licenses/>."
     ));
 
