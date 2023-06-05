@@ -28,14 +28,19 @@ class MainFrame : public wxFrame {
 wxIMPLEMENT_APP(MLAatKST);
 
 bool MLAatKST::OnInit() {
-    MainFrame* window = new MainFrame(wxT("MLAatKST"));
-    window->Show();
+    
+    this->SetAppDisplayName(wxT("MLAatKST"));
 
     info.SetName(wxT("MLAatKST"));
     info.SetVersion(wxT("2.0.0-dev"));
-    info.SetDescription(wxT("Quotation helper for KST students"));
-    info.SetCopyright(wxT("MLAatKST Copyright (C) 2022-2023 Timo Früh"));
-    info.SetLicense(wxT("GNU General Public License v3.0"));
+    info.SetCopyright(wxT(
+        "Copyright (C) 2022-2023 Timo Früh\n"
+        "This program is free and open source software, licensed under the GNU General Public License 3.0.\n"
+        "For futher information, see <https://www.gnu.org/licenses/>."
+    ));
+
+    MainFrame* window = new MainFrame(wxT("MLAatKST"));
+    window->Show();
 
     return true;
 }
