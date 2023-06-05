@@ -49,7 +49,7 @@ MainFrame::MainFrame(wxString title) : wxFrame(NULL, wxID_ANY, title) {
     menuFile->Append(wxID_EXIT, wxT("&Quit MLAatKST\tCtrl-q"));
  
     wxMenu *menuHelp = new wxMenu;
-    menuHelp->Append(wxID_ABOUT, wxT("About MLAatKST\tCtrl-?"));
+    menuHelp->Append(wxID_ABOUT, wxT("&About MLAatKST\tCtrl-?"));
  
     wxMenuBar *menuBar = new wxMenuBar;
     menuBar->Append(menuFile, "&File");
