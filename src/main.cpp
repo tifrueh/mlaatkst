@@ -35,7 +35,7 @@ bool MLAatKST::OnInit() {
     info.SetVersion(wxT("2.0.0-dev"));
     info.SetDescription(wxT("Quotation helper for KST students"));
     info.SetCopyright(wxT("MLAatKST Copyright (C) 2022-2023 Timo Früh"));
-    info.SetLicense(wxT("GPL-3.0-or-later"));
+    info.SetLicense(wxT("GNU General Public License v3.0"));
 
     return true;
 }
