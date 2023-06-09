@@ -7,8 +7,11 @@ project(
     version: '2.0.0-dev'
 )
 
+incdir = include_directories('include')
+
 srcs = [
-    'src/main.cpp'
+    'src/main.cpp',
+    'src/mainframe.cpp'
 ]
 
 wx = dependency('wxwidgets')
@@ -19,5 +22,6 @@ executable(
     'MLAatKST',
     srcs,
     dependencies: deps,
+    include_directories: incdir,
     win_subsystem: 'windows'
 )
