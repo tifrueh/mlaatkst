@@ -311,7 +311,7 @@ void MainFrame::getInputGroupOne() {
 }
 
 void MainFrame::getInputGroupTwo() {
-    authorNameS = authorLastNameCtrl->GetLineText(0);
+    authorNameS = authorNameCtrl->GetLineText(0);
     titleS = titleCtrl->GetLineText(0);
     subtitleS = subtitleCtrl->GetLineText(0);
     urlS = urlCtrl->GetLineText(0);
