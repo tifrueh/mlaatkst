@@ -8,6 +8,7 @@
 
 #include "id.hpp"
 #include "mainframe.hpp"
+#include "quotation_formatter.hpp"
 
 
 MainFrame::MainFrame(wxString title) : wxFrame(NULL, wxID_ANY, title) {
@@ -37,6 +38,7 @@ MainFrame::MainFrame(wxString title) : wxFrame(NULL, wxID_ANY, title) {
     Bind(wxEVT_MENU, &MainFrame::OnClose, this, wxID_CLOSE);
     Bind(wxEVT_MENU, &MainFrame::OnAbout, this, wxID_ABOUT);
     Bind(wxEVT_RADIOBOX, &MainFrame::OnRadioBox, this, winID::ID_RADIOBOX);
+    Bind(wxEVT_BUTTON, &MainFrame::OnOK, this, wxID_OK);
 
     showDialogue();
 }
@@ -74,6 +76,28 @@ void MainFrame::OnRadioBox(wxCommandEvent& event) {
             showInputGroupTwo();
             break;
     };
+}
+
+void MainFrame::OnOK(wxCommandEvent& event) {
+    switch (radioBox->GetSelection()) {
+        case 0:
+            getInputGroupZero();
+            resultS = qft::bookFirstQuotation(authorNameS, titleS, subtitleS, editionS, publisherS, locationS, yearS, pageSS);
+            break;
+        
+        case 1:
+            getInputGroupOne();
+            resultS = qft::bookSecondQuotation(authorLastNameS, yearS, pageSS);
+            break;
+        
+        case 2:
+            getInputGroupTwo();
+            resultS = qft::web(authorNameS, titleS, subtitleS, urlS, dateS);
+            break;
+    };
+
+    result->SetLabel(resultS);
+    topsizer->Layout();
 }
 
 void MainFrame::showDialogue() {
@@ -267,4 +291,29 @@ void MainFrame::showInputGroupTwo() {
     inputSizer->Show(date);
     inputSizer->Show(dateCtrl);
     inputSizer->Layout();
+}
+
+void MainFrame::getInputGroupZero() {
+    authorNameS = authorNameCtrl->GetLineText(0);
+    titleS = titleCtrl->GetLineText(0);
+    subtitleS = subtitleCtrl->GetLineText(0);
+    editionS = editionCtrl->GetLineText(0);
+    publisherS = publisherCtrl->GetLineText(0);
+    locationS = locationCtrl->GetLineText(0);
+    yearS = yearCtrl->GetLineText(0);
+    pageSS = pageSCtrl->GetLineText(0);
+}
+
+void MainFrame::getInputGroupOne() {
+    authorLastNameS = authorLastNameCtrl->GetLineText(0);
+    yearS = yearCtrl->GetLineText(0);
+    pageSS = pageSCtrl->GetLineText(0);
+}
+
+void MainFrame::getInputGroupTwo() {
+    authorNameS = authorLastNameCtrl->GetLineText(0);
+    titleS = titleCtrl->GetLineText(0);
+    subtitleS = subtitleCtrl->GetLineText(0);
+    urlS = urlCtrl->GetLineText(0);
+    dateS = dateCtrl->GetLineText(0);
 }

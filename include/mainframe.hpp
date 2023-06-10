@@ -44,8 +44,21 @@ class MainFrame : public wxFrame {
         wxTextCtrl* urlCtrl = nullptr;
         wxTextCtrl* dateCtrl = nullptr;
 
+        wxString authorNameS;
+        wxString authorLastNameS;
+        wxString titleS;
+        wxString subtitleS;
+        wxString editionS;
+        wxString publisherS;
+        wxString locationS;
+        wxString yearS;
+        wxString pageSS;
+        wxString urlS;
+        wxString dateS;
+
         wxButton* buttonOK = nullptr;
 
+        wxString resultS;
         wxStaticText* result = nullptr;
 
         wxButton* buttonCopy = nullptr;
@@ -55,9 +68,13 @@ class MainFrame : public wxFrame {
         void OnQuit(wxCommandEvent& event);
         void OnAbout(wxCommandEvent& event);
         void OnRadioBox(wxCommandEvent& event);
+        void OnOK(wxCommandEvent& event);
         void showDialogue();
         void hideAllInputs();
         void showInputGroupZero();
         void showInputGroupOne();
         void showInputGroupTwo();
+        void getInputGroupZero();
+        void getInputGroupOne();
+        void getInputGroupTwo();
 };
