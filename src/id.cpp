@@ -8,3 +8,4 @@
 
 
 const wxWindowID winID::ID_RADIOBOX = 1;
+const wxWindowID winID::ID_CLEAR = 2;

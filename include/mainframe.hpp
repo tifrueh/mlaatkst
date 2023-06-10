@@ -69,6 +69,7 @@ class MainFrame : public wxFrame {
         void OnAbout(wxCommandEvent& event);
         void OnRadioBox(wxCommandEvent& event);
         void OnOK(wxCommandEvent& event);
+        void OnClear(wxCommandEvent& event);
         void showDialogue();
         void hideAllInputs();
         void showInputGroupZero();
@@ -77,4 +78,5 @@ class MainFrame : public wxFrame {
         void getInputGroupZero();
         void getInputGroupOne();
         void getInputGroupTwo();
+        void clearAllInputs();
 };

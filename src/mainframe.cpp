@@ -39,6 +39,7 @@ MainFrame::MainFrame(wxString title) : wxFrame(NULL, wxID_ANY, title) {
     Bind(wxEVT_MENU, &MainFrame::OnAbout, this, wxID_ABOUT);
     Bind(wxEVT_RADIOBOX, &MainFrame::OnRadioBox, this, winID::ID_RADIOBOX);
     Bind(wxEVT_BUTTON, &MainFrame::OnOK, this, wxID_OK);
+    Bind(wxEVT_BUTTON, &MainFrame::OnClear, this, winID::ID_CLEAR);
 
     showDialogue();
 }
@@ -59,21 +60,28 @@ void MainFrame::OnQuit(wxCommandEvent& event) {
     Close();
 }
 
+void MainFrame::OnClear(wxCommandEvent& event) {
+    clearAllInputs();
+}
+
 void MainFrame::OnRadioBox(wxCommandEvent& event) {
     switch (radioBox->GetSelection()) {
         case 0:
             hideAllInputs();
             showInputGroupZero();
+            clearAllInputs();
             break;
         
         case 1:
             hideAllInputs();
             showInputGroupOne();
+            clearAllInputs();
             break;
         
         case 2:
             hideAllInputs();
             showInputGroupTwo();
+            clearAllInputs();
             break;
     };
 }
@@ -169,7 +177,7 @@ void MainFrame::showDialogue() {
     result = new wxStaticText(this, wxID_ANY, wxT("Das Resultat erscheint hier ..."), wxDefaultPosition, wxDefaultSize, wxALIGN_CENTER);
 
     buttonCopy = new wxButton(this, wxID_ANY, wxT("Fussnote kopieren"));
-    buttonReset = new wxButton(this, wxID_ANY, wxT("Felder zurücksetzen"));
+    buttonReset = new wxButton(this, winID::ID_CLEAR, wxT("Felder zurücksetzen"));
 
     buttonSizer = new wxBoxSizer(wxHORIZONTAL);
     buttonSizer->Add(buttonCopy, 1, wxCENTER | wxALL, 10);
@@ -316,4 +324,18 @@ void MainFrame::getInputGroupTwo() {
     subtitleS = subtitleCtrl->GetLineText(0);
     urlS = urlCtrl->GetLineText(0);
     dateS = dateCtrl->GetLineText(0);
+}
+
+void MainFrame::clearAllInputs() {
+    authorNameCtrl->Clear();
+    authorLastNameCtrl->Clear();
+    titleCtrl->Clear();
+    subtitleCtrl->Clear();
+    editionCtrl->Clear();
+    publisherCtrl->Clear();
+    locationCtrl->Clear();
+    yearCtrl->Clear();
+    pageSCtrl->Clear();
+    urlCtrl->Clear();
+    dateCtrl->Clear();
 }
