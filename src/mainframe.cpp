@@ -22,6 +22,7 @@ MainFrame::MainFrame(wxString title) : wxFrame(NULL, wxID_ANY, title) {
 
     wxMenu *menuFile = new wxMenu;
     menuFile->Append(wxID_EXIT, wxT("&Quit MLAatKST\tCtrl-q"));
+    menuFile->Append(wxID_CLOSE, wxT("&Close Window\tCtrl-w"));
  
     wxMenu *menuHelp = new wxMenu;
     menuHelp->Append(wxID_ABOUT, wxT("&About MLAatKST\tCtrl-?"));
@@ -33,6 +34,7 @@ MainFrame::MainFrame(wxString title) : wxFrame(NULL, wxID_ANY, title) {
     this->SetMenuBar(menuBar);
 
     Bind(wxEVT_MENU, &MainFrame::OnQuit, this, wxID_EXIT);
+    Bind(wxEVT_MENU, &MainFrame::OnClose, this, wxID_CLOSE);
     Bind(wxEVT_MENU, &MainFrame::OnAbout, this, wxID_ABOUT);
 
     showDialogue();
@@ -40,6 +42,10 @@ MainFrame::MainFrame(wxString title) : wxFrame(NULL, wxID_ANY, title) {
 
 wxAboutDialogInfo MainFrame::GetInfo() {
     return info;
+}
+
+void MainFrame::OnClose(wxCommandEvent& event) {
+    Close();
 }
 
 void MainFrame::OnAbout(wxCommandEvent& event) {
