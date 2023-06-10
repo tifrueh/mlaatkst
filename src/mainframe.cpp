@@ -57,7 +57,7 @@ void MainFrame::OnQuit(wxCommandEvent& event) {
 }
 
 void MainFrame::showDialogue() {
-    wxStaticText* appTitle = new wxStaticText(this, wxID_ANY, wxT("MLA Standart an der KST"), wxDefaultPosition, wxDefaultSize, wxALIGN_CENTER_HORIZONTAL);
+    appTitle = new wxStaticText(this, wxID_ANY, wxT("MLA Standart an der KST"), wxDefaultPosition, wxDefaultSize, wxALIGN_CENTER_HORIZONTAL);
     wxFont titleFont = appTitle->GetFont();
     titleFont.Scale(2);
     titleFont.MakeBold();
@@ -67,36 +67,38 @@ void MainFrame::showDialogue() {
     radioBoxOptions.Add(wxT("&Erstnennung Buch"));
     radioBoxOptions.Add(wxT("&Zweitnennung Buch"));
     radioBoxOptions.Add(wxT("&Webzitat"));
-    wxRadioBox* radioBox = new wxRadioBox(this, winID::ID_RADIOBOX, wxT("Optionen"), wxDefaultPosition, wxDefaultSize, radioBoxOptions, 3, wxRA_SPECIFY_COLS);
+    radioBox = new wxRadioBox(this, winID::ID_RADIOBOX, wxT("Optionen"), wxDefaultPosition, wxDefaultSize, radioBoxOptions, 3, wxRA_SPECIFY_COLS);
 
-    wxStaticText* authorName = new wxStaticText(this, wxID_ANY, wxT("Name des Autors / der Autorin: (Nachname, Vorname)"), wxDefaultPosition, wxDefaultSize, wxALIGN_CENTER_VERTICAL);
-    wxStaticText* title = new wxStaticText(this, wxID_ANY, wxT("Titel des Werks"), wxDefaultPosition, wxDefaultSize, wxALIGN_CENTER_VERTICAL);
-    wxStaticText* subtitle = new wxStaticText(this, wxID_ANY, wxT("Untertitel: (leer lassen wenn nicht vorhanden)"), wxDefaultPosition, wxDefaultSize, wxALIGN_CENTER_VERTICAL);
-    wxStaticText* edition = new wxStaticText(this, wxID_ANY, wxT("Auflage: (Zahl eingeben)"), wxDefaultPosition, wxDefaultSize, wxALIGN_CENTER_VERTICAL);
-    wxStaticText* publisher = new wxStaticText(this, wxID_ANY, wxT("Verlag"), wxDefaultPosition, wxDefaultSize, wxALIGN_CENTER_VERTICAL);
-    wxStaticText* location = new wxStaticText(this, wxID_ANY, wxT("Ort"), wxDefaultPosition, wxDefaultSize, wxALIGN_CENTER_VERTICAL);
-    wxStaticText* year = new wxStaticText(this, wxID_ANY, wxT("Jahr"), wxDefaultPosition, wxDefaultSize, wxALIGN_CENTER_VERTICAL);
-    wxStaticText* pageS = new wxStaticText(this, wxID_ANY, wxT("Zitierte Seite(n):"), wxDefaultPosition, wxDefaultSize, wxALIGN_CENTER_VERTICAL);
-    wxStaticText* url = new wxStaticText(this, wxID_ANY, wxT("URL:"), wxDefaultPosition, wxDefaultSize, wxALIGN_CENTER_VERTICAL);
-    wxStaticText* date = new wxStaticText(this, wxID_ANY, wxT("Herunterladedatum:"), wxDefaultPosition, wxDefaultSize, wxALIGN_CENTER_VERTICAL);
+    authorName = new wxStaticText(this, wxID_ANY, wxT("Name des Autors / der Autorin: (Nachname, Vorname)"), wxDefaultPosition, wxDefaultSize, wxALIGN_CENTER_VERTICAL);
+    authorLastName = new wxStaticText(this, wxID_ANY, wxT("Nachname des Autors / der Autorin:"), wxDefaultPosition, wxDefaultSize, wxALIGN_CENTER_VERTICAL);
+    title = new wxStaticText(this, wxID_ANY, wxT("Titel des Werks:"), wxDefaultPosition, wxDefaultSize, wxALIGN_CENTER_VERTICAL);
+    subtitle = new wxStaticText(this, wxID_ANY, wxT("Untertitel: (leer lassen wenn nicht vorhanden)"), wxDefaultPosition, wxDefaultSize, wxALIGN_CENTER_VERTICAL);
+    edition = new wxStaticText(this, wxID_ANY, wxT("Auflage: (Zahl eingeben)"), wxDefaultPosition, wxDefaultSize, wxALIGN_CENTER_VERTICAL);
+    publisher = new wxStaticText(this, wxID_ANY, wxT("Verlag"), wxDefaultPosition, wxDefaultSize, wxALIGN_CENTER_VERTICAL);
+    location = new wxStaticText(this, wxID_ANY, wxT("Ort"), wxDefaultPosition, wxDefaultSize, wxALIGN_CENTER_VERTICAL);
+    year = new wxStaticText(this, wxID_ANY, wxT("Jahr"), wxDefaultPosition, wxDefaultSize, wxALIGN_CENTER_VERTICAL);
+    pageS = new wxStaticText(this, wxID_ANY, wxT("Zitierte Seite(n):"), wxDefaultPosition, wxDefaultSize, wxALIGN_CENTER_VERTICAL);
+    url = new wxStaticText(this, wxID_ANY, wxT("URL:"), wxDefaultPosition, wxDefaultSize, wxALIGN_CENTER_VERTICAL);
+    date = new wxStaticText(this, wxID_ANY, wxT("Herunterladedatum:"), wxDefaultPosition, wxDefaultSize, wxALIGN_CENTER_VERTICAL);
 
+    authorNameCtrl = new wxTextCtrl(this, wxID_ANY, wxEmptyString, wxDefaultPosition, wxSize(250, wxDefaultSize.GetY()));
+    authorLastNameCtrl = new wxTextCtrl(this, wxID_ANY);
+    titleCtrl = new wxTextCtrl(this, wxID_ANY);
+    subtitleCtrl = new wxTextCtrl(this, wxID_ANY);
+    editionCtrl = new wxTextCtrl(this, wxID_ANY);
+    publisherCtrl = new wxTextCtrl(this, wxID_ANY);
+    locationCtrl = new wxTextCtrl(this, wxID_ANY);
+    yearCtrl = new wxTextCtrl(this, wxID_ANY);
+    pageSCtrl = new wxTextCtrl(this, wxID_ANY);
+    urlCtrl = new wxTextCtrl(this, wxID_ANY);
+    dateCtrl = new wxTextCtrl(this, wxID_ANY);
 
-
-    wxTextCtrl* authorNameCtrl = new wxTextCtrl(this, wxID_ANY, wxEmptyString, wxDefaultPosition, wxSize(250, wxDefaultSize.GetY()));
-    wxTextCtrl* titleCtrl = new wxTextCtrl(this, wxID_ANY);
-    wxTextCtrl* subtitleCtrl = new wxTextCtrl(this, wxID_ANY);
-    wxTextCtrl* editionCtrl = new wxTextCtrl(this, wxID_ANY);
-    wxTextCtrl* publisherCtrl = new wxTextCtrl(this, wxID_ANY);
-    wxTextCtrl* locationCtrl = new wxTextCtrl(this, wxID_ANY);
-    wxTextCtrl* yearCtrl = new wxTextCtrl(this, wxID_ANY);
-    wxTextCtrl* pageSCtrl = new wxTextCtrl(this, wxID_ANY);
-    wxTextCtrl* urlCtrl = new wxTextCtrl(this, wxID_ANY);
-    wxTextCtrl* dateCtrl = new wxTextCtrl(this, wxID_ANY);
-
-    wxFlexGridSizer* inputSizer = new wxFlexGridSizer(2, 0, 20);
+    inputSizer = new wxFlexGridSizer(2, 0, 20);
     inputSizer->AddGrowableCol(1);
     inputSizer->Add(authorName, 0, wxALIGN_CENTER_VERTICAL | wxALIGN_LEFT | wxALL, 5);
     inputSizer->Add(authorNameCtrl, 0, wxEXPAND | wxALL, 5);
+    inputSizer->Add(authorLastName, 0, wxALIGN_CENTER_VERTICAL | wxALIGN_LEFT | wxALL, 5);
+    inputSizer->Add(authorLastNameCtrl, 0, wxEXPAND | wxALL, 5);
     inputSizer->Add(title, 0, wxALIGN_CENTER_VERTICAL | wxALIGN_LEFT | wxALL, 5);
     inputSizer->Add(titleCtrl, 0, wxEXPAND | wxALL, 5);
     inputSizer->Add(subtitle, 0, wxALIGN_CENTER_VERTICAL | wxALIGN_LEFT | wxALL, 5);
@@ -116,7 +118,7 @@ void MainFrame::showDialogue() {
     inputSizer->Add(date, 0, wxALIGN_CENTER_VERTICAL | wxALIGN_LEFT | wxALL, 5);
     inputSizer->Add(dateCtrl, 0, wxEXPAND | wxALL, 5);
 
-    wxBoxSizer* topsizer = new wxBoxSizer(wxVERTICAL);
+    topsizer = new wxBoxSizer(wxVERTICAL);
 
     topsizer->Add(
         appTitle,
@@ -142,5 +144,78 @@ void MainFrame::showDialogue() {
         10
     );
 
+    hideAllInputs();
+    showInputGroupZero();
+
     SetSizerAndFit(topsizer);
+}
+
+void MainFrame::hideAllInputs() {
+    inputSizer->Show(authorName, false);
+    inputSizer->Show(authorNameCtrl, false);
+    inputSizer->Show(authorLastName, false);
+    inputSizer->Show(authorLastNameCtrl, false);
+    inputSizer->Show(title, false);
+    inputSizer->Show(titleCtrl, false);
+    inputSizer->Show(subtitle, false);
+    inputSizer->Show(subtitleCtrl, false);
+    inputSizer->Show(edition, false);
+    inputSizer->Show(editionCtrl, false);
+    inputSizer->Show(publisher, false);
+    inputSizer->Show(publisherCtrl, false);
+    inputSizer->Show(location, false);
+    inputSizer->Show(locationCtrl, false);
+    inputSizer->Show(year, false);
+    inputSizer->Show(yearCtrl, false);
+    inputSizer->Show(pageS, false);
+    inputSizer->Show(pageSCtrl, false);
+    inputSizer->Show(url, false);
+    inputSizer->Show(urlCtrl, false);
+    inputSizer->Show(date, false);
+    inputSizer->Show(dateCtrl, false);
+    inputSizer->Layout();
+}
+
+void MainFrame::showInputGroupZero() {
+    inputSizer->Show(authorName);
+    inputSizer->Show(authorNameCtrl);
+    inputSizer->Show(title);
+    inputSizer->Show(titleCtrl);
+    inputSizer->Show(subtitle);
+    inputSizer->Show(subtitleCtrl);
+    inputSizer->Show(edition);
+    inputSizer->Show(editionCtrl);
+    inputSizer->Show(publisher);
+    inputSizer->Show(publisherCtrl);
+    inputSizer->Show(location);
+    inputSizer->Show(locationCtrl);
+    inputSizer->Show(year);
+    inputSizer->Show(yearCtrl);
+    inputSizer->Show(pageS);
+    inputSizer->Show(pageSCtrl);
+    inputSizer->Layout();
+}
+
+void MainFrame::showInputGroupOne() {
+    inputSizer->Show(authorLastName);
+    inputSizer->Show(authorLastNameCtrl);
+    inputSizer->Show(year);
+    inputSizer->Show(yearCtrl);
+    inputSizer->Show(pageS);
+    inputSizer->Show(pageSCtrl);
+    inputSizer->Layout();
+}
+
+void MainFrame::showInputGroupTwo() {
+    inputSizer->Show(authorName);
+    inputSizer->Show(authorNameCtrl);
+    inputSizer->Show(title);
+    inputSizer->Show(titleCtrl);
+    inputSizer->Show(subtitle);
+    inputSizer->Show(subtitleCtrl);
+    inputSizer->Show(url);
+    inputSizer->Show(urlCtrl);
+    inputSizer->Show(date);
+    inputSizer->Show(dateCtrl);
+    inputSizer->Layout();
 }
