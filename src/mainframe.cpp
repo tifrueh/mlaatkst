@@ -67,6 +67,7 @@ void MainFrame::showDialogue() {
     radioBoxOptions.Add(wxT("&Erstnennung Buch"));
     radioBoxOptions.Add(wxT("&Zweitnennung Buch"));
     radioBoxOptions.Add(wxT("&Webzitat"));
+    wxRadioBox* radioBox = new wxRadioBox(this, winID::ID_RADIOBOX, wxT("Optionen"), wxDefaultPosition, wxDefaultSize, radioBoxOptions, 3, wxRA_SPECIFY_COLS);
 
     wxBoxSizer* topsizer = new wxBoxSizer(wxVERTICAL);
 
@@ -79,7 +80,7 @@ void MainFrame::showDialogue() {
     );
 
     topsizer->Add(
-        new wxRadioBox(this, winID::ID_RADIOBOX, wxT("Optionen"), wxDefaultPosition, wxDefaultSize, radioBoxOptions, 3, wxRA_SPECIFY_COLS),
+        radioBox,
         0,
         wxALIGN_CENTRE |
         wxBOTTOM | wxLEFT | wxRIGHT,
