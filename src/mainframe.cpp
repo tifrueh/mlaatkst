@@ -51,6 +51,12 @@ void MainFrame::OnQuit(wxCommandEvent& event) {
 }
 
 void MainFrame::showDialogue() {
+    wxStaticText* title = new wxStaticText(this, wxID_ANY, "MLA Standart an der KST", wxDefaultPosition, wxDefaultSize, wxALIGN_CENTER_HORIZONTAL);
+    wxFont titleFont = title->GetFont();
+    titleFont.Scale(2);
+    titleFont.MakeBold();
+    title->SetFont(titleFont);
+
     wxArrayString radioBoxOptions;
     radioBoxOptions.Add(wxT("&Erstnennung Buch"));
     radioBoxOptions.Add(wxT("&Zweitnennung Buch"));
@@ -59,19 +65,19 @@ void MainFrame::showDialogue() {
     wxBoxSizer* topsizer = new wxBoxSizer(wxVERTICAL);
 
     topsizer->Add(
-        new wxStaticText(this, wxID_ANY, "MLA Standart an der KST", wxDefaultPosition, wxDefaultSize, wxALIGN_CENTER_HORIZONTAL),
-        1,
+        title,
+        0,
         wxEXPAND |
         wxALL,
-        5
+        10
     );
 
     topsizer->Add(
         new wxRadioBox(this, winID::ID_RADIOBOX, wxT("Optionen"), wxDefaultPosition, wxDefaultSize, radioBoxOptions, 3, wxRA_SPECIFY_COLS),
-        1,
-        wxEXPAND |
-        wxALL,
-        5
+        0,
+        wxALIGN_CENTRE |
+        wxBOTTOM | wxLEFT | wxRIGHT,
+        10
     );
 
     SetSizerAndFit(topsizer);
