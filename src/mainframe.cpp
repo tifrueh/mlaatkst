@@ -5,6 +5,7 @@
 #endif
 
 #include <wx/aboutdlg.h>
+#include <wx/clipbrd.h>
 
 #include "id.hpp"
 #include "mainframe.hpp"
@@ -40,6 +41,7 @@ MainFrame::MainFrame(wxString title) : wxFrame(NULL, wxID_ANY, title) {
     Bind(wxEVT_RADIOBOX, &MainFrame::OnRadioBox, this, winID::ID_RADIOBOX);
     Bind(wxEVT_BUTTON, &MainFrame::OnOK, this, wxID_OK);
     Bind(wxEVT_BUTTON, &MainFrame::OnClear, this, winID::ID_CLEAR);
+    Bind(wxEVT_BUTTON, &MainFrame::OnCopy, this, winID::ID_COPY);
 
     showDialogue();
 }
@@ -108,6 +110,13 @@ void MainFrame::OnOK(wxCommandEvent& event) {
     topsizer->Layout();
 }
 
+void MainFrame::OnCopy(wxCommandEvent& event) {
+    if (wxTheClipboard->Open()) {
+        wxTheClipboard->SetData(new wxTextDataObject(resultS));
+        wxTheClipboard->Close();
+    }
+}
+
 void MainFrame::showDialogue() {
     appTitle = new wxStaticText(this, wxID_ANY, wxT("MLA Standart an der KST"), wxDefaultPosition, wxDefaultSize, wxALIGN_CENTER_HORIZONTAL);
     wxFont titleFont = appTitle->GetFont();
@@ -174,9 +183,11 @@ void MainFrame::showDialogue() {
     inputSizer->AddStretchSpacer();
     inputSizer->Add(buttonOK, 0, wxALIGN_CENTER | wxALL, 5);
 
-    result = new wxStaticText(this, wxID_ANY, wxT("Das Resultat erscheint hier ..."), wxDefaultPosition, wxDefaultSize, wxALIGN_CENTER);
+    resultS = wxT("Das Resultat erscheint hier ...");
 
-    buttonCopy = new wxButton(this, wxID_ANY, wxT("Fussnote kopieren"));
+    result = new wxStaticText(this, wxID_ANY, resultS, wxDefaultPosition, wxDefaultSize, wxALIGN_CENTER);
+
+    buttonCopy = new wxButton(this, winID::ID_COPY, wxT("Fussnote kopieren"));
     buttonReset = new wxButton(this, winID::ID_CLEAR, wxT("Felder zurücksetzen"));
 
     buttonSizer = new wxBoxSizer(wxHORIZONTAL);

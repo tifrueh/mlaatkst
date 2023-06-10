@@ -10,4 +10,5 @@
 namespace winID {
     extern const wxWindowID ID_RADIOBOX;
     extern const wxWindowID ID_CLEAR;
+    extern const wxWindowID ID_COPY;
 };

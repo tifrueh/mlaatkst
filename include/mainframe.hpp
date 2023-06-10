@@ -70,6 +70,7 @@ class MainFrame : public wxFrame {
         void OnRadioBox(wxCommandEvent& event);
         void OnOK(wxCommandEvent& event);
         void OnClear(wxCommandEvent& event);
+        void OnCopy(wxCommandEvent& event);
         void showDialogue();
         void hideAllInputs();
         void showInputGroupZero();
