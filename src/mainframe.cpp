@@ -33,6 +33,8 @@ MainFrame::MainFrame(wxString title) : wxFrame(NULL, wxID_ANY, title) {
 
     Bind(wxEVT_MENU, &MainFrame::OnQuit, this, wxID_EXIT);
     Bind(wxEVT_MENU, &MainFrame::OnAbout, this, wxID_ABOUT);
+
+    showDialogue();
 }
 
 wxAboutDialogInfo MainFrame::GetInfo() {
@@ -45,4 +47,18 @@ void MainFrame::OnAbout(wxCommandEvent& event) {
 
 void MainFrame::OnQuit(wxCommandEvent& event) {
     Close();
+}
+
+void MainFrame::showDialogue() {
+    wxBoxSizer* topsizer = new wxBoxSizer(wxVERTICAL);
+
+    topsizer->Add(
+        new wxStaticText(this, -1, "MLA Standart an der KST", wxDefaultPosition, wxDefaultSize, wxALIGN_CENTER_HORIZONTAL),
+        1,
+        wxEXPAND |
+        wxALL,
+        10 
+    );
+    
+    SetSizerAndFit(topsizer);
 }

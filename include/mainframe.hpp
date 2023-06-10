@@ -16,4 +16,5 @@ class MainFrame : public wxFrame {
         wxAboutDialogInfo info;
         void OnQuit(wxCommandEvent& event);
         void OnAbout(wxCommandEvent& event);
+        void showDialogue();
 };
