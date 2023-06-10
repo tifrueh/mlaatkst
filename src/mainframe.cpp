@@ -53,12 +53,12 @@ void MainFrame::showDialogue() {
     wxBoxSizer* topsizer = new wxBoxSizer(wxVERTICAL);
 
     topsizer->Add(
-        new wxStaticText(this, -1, "MLA Standart an der KST", wxDefaultPosition, wxDefaultSize, wxALIGN_CENTER_HORIZONTAL),
+        new wxStaticText(this, wxID_ANY, "MLA Standart an der KST", wxDefaultPosition, wxDefaultSize, wxALIGN_CENTER_HORIZONTAL),
         1,
         wxEXPAND |
         wxALL,
         10 
     );
-    
+
     SetSizerAndFit(topsizer);
 }
