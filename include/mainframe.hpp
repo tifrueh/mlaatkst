@@ -18,6 +18,7 @@ class MainFrame : public wxFrame {
         wxRadioBox* radioBox = nullptr;
         wxBoxSizer* topsizer = nullptr;
         wxFlexGridSizer* inputSizer = nullptr;
+        wxBoxSizer* buttonSizer = nullptr;
 
         wxStaticText* authorName = nullptr;
         wxStaticText* authorLastName = nullptr;
@@ -42,6 +43,13 @@ class MainFrame : public wxFrame {
         wxTextCtrl* pageSCtrl = nullptr;
         wxTextCtrl* urlCtrl = nullptr;
         wxTextCtrl* dateCtrl = nullptr;
+
+        wxButton* buttonOK = nullptr;
+
+        wxStaticText* result = nullptr;
+
+        wxButton* buttonCopy = nullptr;
+        wxButton* buttonReset = nullptr;
 
         void OnClose(wxCommandEvent& event);
         void OnQuit(wxCommandEvent& event);

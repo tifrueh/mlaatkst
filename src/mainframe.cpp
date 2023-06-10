@@ -113,6 +113,8 @@ void MainFrame::showDialogue() {
     urlCtrl = new wxTextCtrl(this, wxID_ANY);
     dateCtrl = new wxTextCtrl(this, wxID_ANY);
 
+    buttonOK = new wxButton(this, wxID_OK);
+
     inputSizer = new wxFlexGridSizer(2, 0, 20);
     inputSizer->AddGrowableCol(1);
     inputSizer->Add(authorName, 0, wxALIGN_CENTER_VERTICAL | wxALIGN_LEFT | wxALL, 5);
@@ -137,6 +139,17 @@ void MainFrame::showDialogue() {
     inputSizer->Add(urlCtrl, 0, wxEXPAND | wxALL, 5);
     inputSizer->Add(date, 0, wxALIGN_CENTER_VERTICAL | wxALIGN_LEFT | wxALL, 5);
     inputSizer->Add(dateCtrl, 0, wxEXPAND | wxALL, 5);
+    inputSizer->AddStretchSpacer();
+    inputSizer->Add(buttonOK, 0, wxALIGN_CENTER | wxALL, 5);
+
+    result = new wxStaticText(this, wxID_ANY, wxT("Das Resultat erscheint hier ..."), wxDefaultPosition, wxDefaultSize, wxALIGN_CENTER);
+
+    buttonCopy = new wxButton(this, wxID_ANY, wxT("Fussnote kopieren"));
+    buttonReset = new wxButton(this, wxID_ANY, wxT("Felder zurücksetzen"));
+
+    buttonSizer = new wxBoxSizer(wxHORIZONTAL);
+    buttonSizer->Add(buttonCopy, 1, wxCENTER | wxALL, 10);
+    buttonSizer->Add(buttonReset, 1, wxCENTER | wxALL, 10);
 
     topsizer = new wxBoxSizer(wxVERTICAL);
 
@@ -159,6 +172,22 @@ void MainFrame::showDialogue() {
     topsizer->Add(
         inputSizer,
         1,
+        wxEXPAND |
+        wxALL,
+        10
+    );
+
+    topsizer->Add(
+        result,
+        0,
+        wxEXPAND |
+        wxALL,
+        10
+    );
+
+    topsizer->Add(
+        buttonSizer,
+        0,
         wxEXPAND |
         wxALL,
         10
