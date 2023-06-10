@@ -46,6 +46,7 @@ class MainFrame : public wxFrame {
         void OnClose(wxCommandEvent& event);
         void OnQuit(wxCommandEvent& event);
         void OnAbout(wxCommandEvent& event);
+        void OnRadioBox(wxCommandEvent& event);
         void showDialogue();
         void hideAllInputs();
         void showInputGroupZero();

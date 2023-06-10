@@ -36,6 +36,7 @@ MainFrame::MainFrame(wxString title) : wxFrame(NULL, wxID_ANY, title) {
     Bind(wxEVT_MENU, &MainFrame::OnQuit, this, wxID_EXIT);
     Bind(wxEVT_MENU, &MainFrame::OnClose, this, wxID_CLOSE);
     Bind(wxEVT_MENU, &MainFrame::OnAbout, this, wxID_ABOUT);
+    Bind(wxEVT_RADIOBOX, &MainFrame::OnRadioBox, this, winID::ID_RADIOBOX);
 
     showDialogue();
 }
@@ -54,6 +55,25 @@ void MainFrame::OnAbout(wxCommandEvent& event) {
 
 void MainFrame::OnQuit(wxCommandEvent& event) {
     Close();
+}
+
+void MainFrame::OnRadioBox(wxCommandEvent& event) {
+    switch (radioBox->GetSelection()) {
+        case 0:
+            hideAllInputs();
+            showInputGroupZero();
+            break;
+        
+        case 1:
+            hideAllInputs();
+            showInputGroupOne();
+            break;
+        
+        case 2:
+            hideAllInputs();
+            showInputGroupTwo();
+            break;
+    };
 }
 
 void MainFrame::showDialogue() {
