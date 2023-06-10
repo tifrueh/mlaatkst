@@ -10,6 +10,7 @@ project(
 incdir = include_directories('include')
 
 srcs = [
+    'src/id.cpp',
     'src/main.cpp',
     'src/mainframe.cpp'
 ]

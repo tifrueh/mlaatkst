@@ -6,6 +6,7 @@
 
 #include <wx/aboutdlg.h>
 
+#include "id.hpp"
 #include "mainframe.hpp"
 
 
@@ -50,6 +51,11 @@ void MainFrame::OnQuit(wxCommandEvent& event) {
 }
 
 void MainFrame::showDialogue() {
+    wxArrayString radioBoxOptions;
+    radioBoxOptions.Add(wxT("&Erstnennung Buch"));
+    radioBoxOptions.Add(wxT("&Zweitnennung Buch"));
+    radioBoxOptions.Add(wxT("&Webzitat"));
+
     wxBoxSizer* topsizer = new wxBoxSizer(wxVERTICAL);
 
     topsizer->Add(
@@ -57,7 +63,15 @@ void MainFrame::showDialogue() {
         1,
         wxEXPAND |
         wxALL,
-        10 
+        5
+    );
+
+    topsizer->Add(
+        new wxRadioBox(this, winID::ID_RADIOBOX, wxT("Optionen"), wxDefaultPosition, wxDefaultSize, radioBoxOptions, 3, wxRA_SPECIFY_COLS),
+        1,
+        wxEXPAND |
+        wxALL,
+        5
     );
 
     SetSizerAndFit(topsizer);
