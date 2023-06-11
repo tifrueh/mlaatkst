@@ -13,7 +13,8 @@ srcs = [
     'src/id.cpp',
     'src/main.cpp',
     'src/mainframe.cpp',
-    'src/quotation_formatter.cpp'
+    'src/quotation_formatter.cpp',
+    'src/toppanel.cpp'
 ]
 
 wx = dependency('wxwidgets')
