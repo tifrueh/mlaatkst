@@ -33,9 +33,9 @@ MainFrame::MainFrame(wxString title) : wxFrame(NULL, wxID_ANY, title) {
     menuEdit->Append(winID::ID_COPY_MENU, wxT("&Copy footnote\tCtrl-Shift-c"));
     menuEdit->Append(winID::ID_CLEAR_MENU, wxT("&Clear inputs\tCtrl-Delete"));
     menuEdit->AppendSeparator();
-    menuEdit->Append(winID::ID_ONE, wxT("First mention of a book\tCtrl-1"));
-    menuEdit->Append(winID::ID_TWO, wxT("Second mention of a book\tCtrl-2"));
-    menuEdit->Append(winID::ID_THREE, wxT("Mention of a website\tCtrl-3"));
+    menuEdit->Append(winID::ID_ONE, wxT("&First mention of a book\tCtrl-1"));
+    menuEdit->Append(winID::ID_TWO, wxT("&Second mention of a book\tCtrl-2"));
+    menuEdit->Append(winID::ID_THREE, wxT("&Mention of a website\tCtrl-3"));
  
     menuHelp = new wxMenu;
     menuHelp->Append(wxID_ABOUT, wxT("&About MLAatKST\tCtrl-?"));
