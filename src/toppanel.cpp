@@ -141,19 +141,16 @@ void TopPanel::processRadioBox() {
         case 0:
             hideAllInputs();
             showInputGroupZero();
-            clearAllInputs();
             break;
         
         case 1:
             hideAllInputs();
             showInputGroupOne();
-            clearAllInputs();
             break;
         
         case 2:
             hideAllInputs();
             showInputGroupTwo();
-            clearAllInputs();
             break;
     };
 }
@@ -298,21 +295,18 @@ void TopPanel::clearAllInputs() {
 
 void TopPanel::selectInputGroupZero() {
     radioBox->SetSelection(0);
-    clearAllInputs();
     hideAllInputs();
     showInputGroupZero();
 }
 
 void TopPanel::selectInputGroupOne() {
     radioBox->SetSelection(1);
-    clearAllInputs();
     hideAllInputs();
     showInputGroupOne();
 }
 
 void TopPanel::selectInputGroupTwo() {
     radioBox->SetSelection(2);
-    clearAllInputs();
     hideAllInputs();
     showInputGroupTwo();
 }
