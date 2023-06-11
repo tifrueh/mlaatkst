@@ -31,7 +31,7 @@ MainFrame::MainFrame(wxString title) : wxFrame(NULL, wxID_ANY, title) {
     menuEdit->Append(winID::ID_OK_MENU, wxT("&Process inputs\tCtrl-Enter"));
     menuEdit->AppendSeparator();
     menuEdit->Append(winID::ID_COPY_MENU, wxT("&Copy footnote\tCtrl-Shift-c"));
-    menuEdit->Append(winID::ID_CLEAR_MENU, wxT("&Clear inputs\tCtrl-Backspace"));
+    menuEdit->Append(winID::ID_CLEAR_MENU, wxT("&Clear inputs\tCtrl-Delete"));
  
     menuHelp = new wxMenu;
     menuHelp->Append(wxID_ABOUT, wxT("&About MLAatKST\tCtrl-?"));
