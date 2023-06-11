@@ -59,7 +59,12 @@ MainFrame::MainFrame(wxString title) : wxFrame(NULL, wxID_ANY, title) {
     topPanel = new TopPanel(this);
 
     topPanelSizer = new wxBoxSizer(wxVERTICAL);
-    topPanelSizer->Add(topPanel);
+    topPanelSizer->Add(
+        topPanel,
+        1,
+        wxEXPAND,
+        0
+    );
 
     SetSizerAndFit(topPanelSizer);
 }
