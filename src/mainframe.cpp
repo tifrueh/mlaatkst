@@ -34,6 +34,7 @@ MainFrame::MainFrame(wxString title) : wxFrame(NULL, wxID_ANY, title) {
  
     menuHelp = new wxMenu;
     menuHelp->Append(wxID_ABOUT, wxT("&About MLAatKST\tCtrl-?"));
+    menuHelp->Append(winID::ID_GITHUB, wxT("&MLAatKST on GitHub"));
  
     menuBar = new wxMenuBar;
     menuBar->Append(menuFile, "&File");
@@ -48,6 +49,7 @@ MainFrame::MainFrame(wxString title) : wxFrame(NULL, wxID_ANY, title) {
     Bind(wxEVT_MENU, &MainFrame::OnCopy, this, winID::ID_COPY_MENU);
     Bind(wxEVT_MENU, &MainFrame::OnClear, this, winID::ID_CLEAR_MENU);
     Bind(wxEVT_MENU, &MainFrame::OnOK, this, winID::ID_OK_MENU);
+    Bind(wxEVT_MENU, &MainFrame::OnGitHub, this, winID::ID_GITHUB);
     Bind(wxEVT_RADIOBOX, &MainFrame::OnRadioBox, this, winID::ID_RADIOBOX);
     Bind(wxEVT_BUTTON, &MainFrame::OnOK, this, wxID_OK);
     Bind(wxEVT_BUTTON, &MainFrame::OnClear, this, winID::ID_CLEAR);
@@ -125,6 +127,10 @@ void MainFrame::OnCopy(wxCommandEvent& event) {
         wxTheClipboard->SetData(new wxTextDataObject(resultS));
         wxTheClipboard->Close();
     }
+}
+
+void MainFrame::OnGitHub(wxCommandEvent& event) {
+    wxLaunchDefaultBrowser(wxT("https://github.com/tifrueh/mlaatkst"));
 }
 
 void MainFrame::showDialogue() {

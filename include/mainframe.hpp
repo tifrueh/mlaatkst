@@ -75,6 +75,7 @@ class MainFrame : public wxFrame {
         void OnOK(wxCommandEvent& event);
         void OnClear(wxCommandEvent& event);
         void OnCopy(wxCommandEvent& event);
+        void OnGitHub(wxCommandEvent& event);
         void showDialogue();
         void hideAllInputs();
         void showInputGroupZero();

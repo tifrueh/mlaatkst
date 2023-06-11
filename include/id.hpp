@@ -14,4 +14,5 @@ namespace winID {
     extern const wxWindowID ID_CLEAR_MENU;
     extern const wxWindowID ID_COPY_MENU;
     extern const wxWindowID ID_OK_MENU;
+    extern const wxWindowID ID_GITHUB;
 };
