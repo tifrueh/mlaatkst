@@ -22,15 +22,22 @@ MainFrame::MainFrame(wxString title) : wxFrame(NULL, wxID_ANY, title) {
         "For futher information, see <https://www.gnu.org/licenses/>."
     ));
 
-    wxMenu *menuFile = new wxMenu;
+    menuFile = new wxMenu;
     menuFile->Append(wxID_EXIT, wxT("&Quit MLAatKST\tCtrl-q"));
     menuFile->Append(wxID_CLOSE, wxT("&Close Window\tCtrl-w"));
+
+    menuEdit = new wxMenu;
+    menuEdit->Append(winID::ID_OK_MENU, wxT("&Process inputs\tCtrl-Enter"));
+    menuEdit->AppendSeparator();
+    menuEdit->Append(winID::ID_COPY_MENU, wxT("&Copy quotation\tCtrl-Shift-c"));
+    menuEdit->Append(winID::ID_CLEAR_MENU, wxT("C&lear inputs\tCtrl-Backspace"));
  
-    wxMenu *menuHelp = new wxMenu;
+    menuHelp = new wxMenu;
     menuHelp->Append(wxID_ABOUT, wxT("&About MLAatKST\tCtrl-?"));
  
-    wxMenuBar *menuBar = new wxMenuBar;
+    menuBar = new wxMenuBar;
     menuBar->Append(menuFile, "&File");
+    menuBar->Append(menuEdit, "&Edit");
     menuBar->Append(menuHelp, "&Help");
 
     this->SetMenuBar(menuBar);
@@ -38,6 +45,9 @@ MainFrame::MainFrame(wxString title) : wxFrame(NULL, wxID_ANY, title) {
     Bind(wxEVT_MENU, &MainFrame::OnQuit, this, wxID_EXIT);
     Bind(wxEVT_MENU, &MainFrame::OnClose, this, wxID_CLOSE);
     Bind(wxEVT_MENU, &MainFrame::OnAbout, this, wxID_ABOUT);
+    Bind(wxEVT_MENU, &MainFrame::OnCopy, this, winID::ID_COPY_MENU);
+    Bind(wxEVT_MENU, &MainFrame::OnClear, this, winID::ID_CLEAR_MENU);
+    Bind(wxEVT_MENU, &MainFrame::OnOK, this, winID::ID_OK_MENU);
     Bind(wxEVT_RADIOBOX, &MainFrame::OnRadioBox, this, winID::ID_RADIOBOX);
     Bind(wxEVT_BUTTON, &MainFrame::OnOK, this, wxID_OK);
     Bind(wxEVT_BUTTON, &MainFrame::OnClear, this, winID::ID_CLEAR);

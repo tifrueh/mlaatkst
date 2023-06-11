@@ -14,6 +14,10 @@ class MainFrame : public wxFrame {
 
     private:
         wxAboutDialogInfo info;
+        wxMenu* menuFile = nullptr;
+        wxMenu* menuEdit = nullptr;
+        wxMenu* menuHelp = nullptr;
+        wxMenuBar* menuBar = nullptr;
         wxStaticText* appTitle = nullptr;
         wxRadioBox* radioBox = nullptr;
         wxBoxSizer* topsizer = nullptr;
