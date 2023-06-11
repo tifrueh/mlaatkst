@@ -17,10 +17,10 @@ wxString qft::bookFirstQuotation(const wxString& authorName,
         wxString result;
 
         if (subtitle.Strip() == wxT("")) {
-            result = wxT("" + authorName + ", " + title + ", " + edition + ". Auflage, "
+            result = wxT("" + authorName + ", " + title + ", " + edition + ". edition, "
                          + publisher + ", " + year + ", S. " + pageS + ".");
         } else {
-            result = wxT("" + authorName + ", " + title + ", " + subtitle + ", " + edition + ". Auflage, "
+            result = wxT("" + authorName + ", " + title + ", " + subtitle + ", " + edition + ". edition, "
                          + publisher + ", " + year + ", S. " + pageS + ".");
         }
 
