@@ -23,6 +23,10 @@ class TopPanel : public wxPanel {
         void getInputGroupTwo();
         void clearAllInputs();
 
+        void selectInputGroupZero();
+        void selectInputGroupOne();
+        void selectInputGroupTwo();
+
     private:
         wxStaticText* appTitle = nullptr;
         wxRadioBox* radioBox = nullptr;

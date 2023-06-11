@@ -28,5 +28,8 @@ class MainFrame : public wxFrame {
         void OnOK(wxCommandEvent& event);
         void OnClear(wxCommandEvent& event);
         void OnCopy(wxCommandEvent& event);
+        void OnOne(wxCommandEvent& event);
+        void OnTwo(wxCommandEvent& event);
+        void OnThree(wxCommandEvent& event);
         void OnGitHub(wxCommandEvent& event);
 };

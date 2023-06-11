@@ -14,3 +14,6 @@ const wxWindowID winID::ID_CLEAR_MENU = 4;
 const wxWindowID winID::ID_COPY_MENU = 5;
 const wxWindowID winID::ID_OK_MENU = 6;
 const wxWindowID winID::ID_GITHUB = 7;
+const wxWindowID winID::ID_ONE = 8;
+const wxWindowID winID::ID_TWO = 9;
+const wxWindowID winID::ID_THREE = 10;

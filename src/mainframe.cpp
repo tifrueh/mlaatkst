@@ -32,6 +32,10 @@ MainFrame::MainFrame(wxString title) : wxFrame(NULL, wxID_ANY, title) {
     menuEdit->AppendSeparator();
     menuEdit->Append(winID::ID_COPY_MENU, wxT("&Copy footnote\tCtrl-Shift-c"));
     menuEdit->Append(winID::ID_CLEAR_MENU, wxT("&Clear inputs\tCtrl-Delete"));
+    menuEdit->AppendSeparator();
+    menuEdit->Append(winID::ID_ONE, wxT("First mention of a book\tCtrl-1"));
+    menuEdit->Append(winID::ID_TWO, wxT("Second mention of a book\tCtrl-2"));
+    menuEdit->Append(winID::ID_THREE, wxT("Mention of a website\tCtrl-3"));
  
     menuHelp = new wxMenu;
     menuHelp->Append(wxID_ABOUT, wxT("&About MLAatKST\tCtrl-?"));
@@ -51,6 +55,9 @@ MainFrame::MainFrame(wxString title) : wxFrame(NULL, wxID_ANY, title) {
     Bind(wxEVT_MENU, &MainFrame::OnClear, this, winID::ID_CLEAR_MENU);
     Bind(wxEVT_MENU, &MainFrame::OnOK, this, winID::ID_OK_MENU);
     Bind(wxEVT_MENU, &MainFrame::OnGitHub, this, winID::ID_GITHUB);
+    Bind(wxEVT_MENU, &MainFrame::OnOne, this, winID::ID_ONE);
+    Bind(wxEVT_MENU, &MainFrame::OnTwo, this, winID::ID_TWO);
+    Bind(wxEVT_MENU, &MainFrame::OnThree, this, winID::ID_THREE);
     Bind(wxEVT_RADIOBOX, &MainFrame::OnRadioBox, this, winID::ID_RADIOBOX);
     Bind(wxEVT_BUTTON, &MainFrame::OnOK, this, wxID_OK);
     Bind(wxEVT_BUTTON, &MainFrame::OnClear, this, winID::ID_CLEAR);
@@ -103,4 +110,16 @@ void MainFrame::OnCopy(wxCommandEvent& event) {
 
 void MainFrame::OnGitHub(wxCommandEvent& event) {
     wxLaunchDefaultBrowser(wxT("https://github.com/tifrueh/mlaatkst"));
+}
+
+void MainFrame::OnOne(wxCommandEvent& event) {
+    topPanel->selectInputGroupZero();
+}
+
+void MainFrame::OnTwo(wxCommandEvent& event) {
+    topPanel->selectInputGroupOne();
+}
+
+void MainFrame::OnThree(wxCommandEvent& event) {
+    topPanel->selectInputGroupTwo();
 }

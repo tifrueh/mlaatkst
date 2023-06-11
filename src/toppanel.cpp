@@ -295,3 +295,24 @@ void TopPanel::clearAllInputs() {
     urlCtrl->Clear();
     dateCtrl->Clear();
 }
+
+void TopPanel::selectInputGroupZero() {
+    radioBox->SetSelection(0);
+    clearAllInputs();
+    hideAllInputs();
+    showInputGroupZero();
+}
+
+void TopPanel::selectInputGroupOne() {
+    radioBox->SetSelection(1);
+    clearAllInputs();
+    hideAllInputs();
+    showInputGroupOne();
+}
+
+void TopPanel::selectInputGroupTwo() {
+    radioBox->SetSelection(2);
+    clearAllInputs();
+    hideAllInputs();
+    showInputGroupTwo();
+}
