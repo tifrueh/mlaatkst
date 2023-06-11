@@ -29,13 +29,13 @@ MainFrame::MainFrame(wxString title) : wxFrame(NULL, wxID_ANY, title) {
 
     menuEdit = new wxMenu;
     menuEdit->Append(winID::ID_OK_MENU, wxT("&Process inputs\tCtrl-Enter"));
-    menuEdit->AppendSeparator();
     menuEdit->Append(winID::ID_COPY_MENU, wxT("&Copy footnote\tCtrl-Shift-c"));
-    menuEdit->Append(winID::ID_CLEAR_MENU, wxT("&Clear inputs\tCtrl-0"));
     menuEdit->AppendSeparator();
     menuEdit->Append(winID::ID_ONE, wxT("&First mention of a book\tCtrl-1"));
     menuEdit->Append(winID::ID_TWO, wxT("&Second mention of a book\tCtrl-2"));
     menuEdit->Append(winID::ID_THREE, wxT("&Mention of a website\tCtrl-3"));
+    menuEdit->AppendSeparator();
+    menuEdit->Append(winID::ID_CLEAR_MENU, wxT("&Clear inputs\tCtrl-0"));
  
     menuHelp = new wxMenu;
     menuHelp->Append(wxID_ABOUT, wxT("&About MLAatKST\tCtrl-?"));
