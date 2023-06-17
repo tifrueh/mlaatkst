@@ -22,7 +22,6 @@ cp ../../resources/Info.plist $CONTENTS_PATH
 cp ../../README.md $RES_PATH
 cp ../../LICENSE $RES_PATH
 cp ../../resources/mlaatkst.icns $RES_PATH
-cp ../../build/MLAatKST $EXE_PATH
+cp ../../build-universal/MLAatKST $EXE_PATH
 
-dylibbundler -od -b -x $EXE_PATH/MLAatKST -d $LIB_PATH -p @executable_path/../Frameworks
 pkgbuild --component $APP --install-location /Applications $PKG
