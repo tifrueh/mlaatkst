@@ -14,11 +14,7 @@ But in the moment there are three major ways for installation:
 
 ### Download PKG (macOS)
 
-1. Go to the [latest release](https://github.com/tifrueh/mlaatkst/releases/latest) and download the correct version for your system:
-    
-    - macOS: `MLAatKST-macOS-universal-(version).pkg`
-    
-    - Windows: There is no version for Windows yet, but I'll add that in the future.
+1. Go to the [latest release](https://github.com/tifrueh/mlaatkst/releases/latest) and download `MLAatKST-macOS-universal-(version).pkg`.
 
 2. Right-click the PKG and click 'open'.
 
