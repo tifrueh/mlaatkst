@@ -24,4 +24,6 @@ cp ../../LICENSE $RES_PATH
 cp ../../resources/mlaatkst.icns $RES_PATH
 cp ../../build-universal/MLAatKST $EXE_PATH
 
-pkgbuild --component $APP --install-location /Applications $PKG
+productbuild --component $APP /Applications $PKG
+
+rm -rf $APP
