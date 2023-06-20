@@ -18,10 +18,10 @@ wxString qft::bookFirstQuotation(const wxString& authorName,
 
         if (subtitle.Strip() == wxT("")) {
             result = wxT("" + authorName + ", " + title + ", " + edition + ". edition, "
-                         + publisher + ", " + year + ", S. " + pageS + ".");
+                         + publisher + ", " + year + ", p. " + pageS + ".");
         } else {
             result = wxT("" + authorName + ", " + title + ", " + subtitle + ", " + edition + ". edition, "
-                         + publisher + ", " + year + ", S. " + pageS + ".");
+                         + publisher + ", " + year + ", p. " + pageS + ".");
         }
 
         return result;
@@ -30,7 +30,7 @@ wxString qft::bookFirstQuotation(const wxString& authorName,
 wxString qft::bookSecondQuotation(const wxString& authorLastName,
                                  const wxString& year,
                                  const wxString& pageS) {
-        wxString result = wxT("" + authorLastName + ", " + year + ", S. " + pageS + ".");
+        wxString result = wxT("" + authorLastName + ", " + year + ", p. " + pageS + ".");
         return result;
 }
 
