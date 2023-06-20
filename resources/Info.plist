@@ -4,6 +4,10 @@
   <dict>
     <key>CFBundleDisplayName</key>
     <string>MLAatKST</string>
+    <key>CFBundleDevelopmentRegion</key>
+    <string>en-GB</string>
+    <key>CFBundleLocalizations</key>
+    <array><string>de</string></array>
     <key>CFBundleExecutable</key>
     <string>MLAatKST</string>
     <key>CFBundleIconFile</key>
