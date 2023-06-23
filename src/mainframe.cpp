@@ -17,7 +17,7 @@ MainFrame::MainFrame(wxString title) : wxFrame(NULL, wxID_ANY, title) {
 
     info.SetName(_("MLAatKST"));
     info.SetVersion(_("2.0.0"));
-    info.SetCopyright(_(
+    info.SetCopyright(wxT(
         "Copyright (C) 2022-2023 Timo Früh\n"
         "This program is free and open source software, licensed under the GNU General Public License 3.0. "
         "For futher information, see <https://www.gnu.org/licenses/>."
@@ -109,7 +109,7 @@ void MainFrame::OnCopy(wxCommandEvent& event) {
 }
 
 void MainFrame::OnGitHub(wxCommandEvent& event) {
-    wxLaunchDefaultBrowser(_("https://github.com/tifrueh/mlaatkst"));
+    wxLaunchDefaultBrowser(wxT("https://github.com/tifrueh/mlaatkst"));
 }
 
 void MainFrame::OnOne(wxCommandEvent& event) {
