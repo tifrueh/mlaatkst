@@ -16,12 +16,12 @@ wxString qft::bookFirstQuotation(const wxString& authorName,
                                 const wxString& pageS ) {
         wxString result;
 
-        if (subtitle.Strip() == wxT("")) {
-            result = wxT("" + authorName + ", " + title + ", " + edition + ". edition, "
-                         + publisher + ", " + year + ", p. " + pageS + ".");
+        if (subtitle.Strip() == _("")) {
+            result = _("") + authorName + _(", ") + title + _(", ") + edition + _(". edition, ")
+                         + publisher + _(", ") + year + _(", p. ") + pageS + _(".");
         } else {
-            result = wxT("" + authorName + ", " + title + ", " + subtitle + ", " + edition + ". edition, "
-                         + publisher + ", " + year + ", p. " + pageS + ".");
+            result = _("") + authorName + _(", ") + title + _(", ") + subtitle + _(", ") + edition + _(". edition, ")
+                         + publisher + _(", ") + year + _(", p. ") + pageS + _(".");
         }
 
         return result;
@@ -30,7 +30,7 @@ wxString qft::bookFirstQuotation(const wxString& authorName,
 wxString qft::bookSecondQuotation(const wxString& authorLastName,
                                  const wxString& year,
                                  const wxString& pageS) {
-        wxString result = wxT("" + authorLastName + ", " + year + ", p. " + pageS + ".");
+        wxString result = _("") + authorLastName + _(", ") + year + _(", p. ") + pageS + _(".");
         return result;
 }
 
@@ -41,10 +41,10 @@ wxString qft::web(const wxString& authorName,
                  const wxString& date) {
         wxString result;
 
-        if (subtitle.Strip() == wxT("")) {
-                result = wxT("" + authorName + ", " + title + ", " + url + ", " + date + ".");
+        if (subtitle.Strip() == _("")) {
+                result = _("") + authorName + _(", ") + title + _(", ") + url + _(", ") + date + _(".");
             } else {
-                result = wxT("" + authorName + ", " + title + ", " + ", " + subtitle + ", " + url + ", " + date + ".");
+                result = _("") + authorName + _(", ") + title + _(", ") + _(", ") + subtitle + _(", ") + url + _(", ") + date + _(".");
         }
 
         return result;

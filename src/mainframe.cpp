@@ -15,31 +15,31 @@
 
 MainFrame::MainFrame(wxString title) : wxFrame(NULL, wxID_ANY, title) {
 
-    info.SetName(wxT("MLAatKST"));
-    info.SetVersion(wxT("2.0.0"));
-    info.SetCopyright(wxT(
+    info.SetName(_("MLAatKST"));
+    info.SetVersion(_("2.0.0"));
+    info.SetCopyright(_(
         "Copyright (C) 2022-2023 Timo Früh\n"
         "This program is free and open source software, licensed under the GNU General Public License 3.0. "
         "For futher information, see <https://www.gnu.org/licenses/>."
     ));
 
     menuFile = new wxMenu;
-    menuFile->Append(wxID_EXIT, wxT("&Quit MLAatKST\tCtrl-q"));
-    menuFile->Append(wxID_CLOSE, wxT("&Close Window\tCtrl-w"));
+    menuFile->Append(wxID_EXIT, _("&Quit MLAatKST\tCtrl-q"));
+    menuFile->Append(wxID_CLOSE, _("&Close Window\tCtrl-w"));
 
     menuEdit = new wxMenu;
-    menuEdit->Append(winID::ID_OK_MENU, wxT("&Process inputs\tCtrl-Enter"));
-    menuEdit->Append(winID::ID_COPY_MENU, wxT("&Copy footnote\tCtrl-Shift-c"));
+    menuEdit->Append(winID::ID_OK_MENU, _("&Process inputs\tCtrl-Enter"));
+    menuEdit->Append(winID::ID_COPY_MENU, _("&Copy footnote\tCtrl-Shift-c"));
     menuEdit->AppendSeparator();
-    menuEdit->Append(winID::ID_ONE, wxT("&First mention of a book\tCtrl-1"));
-    menuEdit->Append(winID::ID_TWO, wxT("&Second mention of a book\tCtrl-2"));
-    menuEdit->Append(winID::ID_THREE, wxT("&Mention of a website\tCtrl-3"));
+    menuEdit->Append(winID::ID_ONE, _("&First mention of a book\tCtrl-1"));
+    menuEdit->Append(winID::ID_TWO, _("&Second mention of a book\tCtrl-2"));
+    menuEdit->Append(winID::ID_THREE, _("&Mention of a website\tCtrl-3"));
     menuEdit->AppendSeparator();
-    menuEdit->Append(winID::ID_CLEAR_MENU, wxT("&Clear inputs\tCtrl-0"));
+    menuEdit->Append(winID::ID_CLEAR_MENU, _("&Clear inputs\tCtrl-0"));
  
     menuHelp = new wxMenu;
-    menuHelp->Append(wxID_ABOUT, wxT("&About MLAatKST\tCtrl-?"));
-    menuHelp->Append(winID::ID_GITHUB, wxT("&MLAatKST on GitHub"));
+    menuHelp->Append(wxID_ABOUT, _("&About MLAatKST\tCtrl-?"));
+    menuHelp->Append(winID::ID_GITHUB, _("&MLAatKST on GitHub"));
  
     menuBar = new wxMenuBar;
     menuBar->Append(menuFile, "&File");
@@ -109,7 +109,7 @@ void MainFrame::OnCopy(wxCommandEvent& event) {
 }
 
 void MainFrame::OnGitHub(wxCommandEvent& event) {
-    wxLaunchDefaultBrowser(wxT("https://github.com/tifrueh/mlaatkst"));
+    wxLaunchDefaultBrowser(_("https://github.com/tifrueh/mlaatkst"));
 }
 
 void MainFrame::OnOne(wxCommandEvent& event) {
