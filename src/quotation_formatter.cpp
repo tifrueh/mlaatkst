@@ -17,11 +17,11 @@ wxString qft::bookFirstQuotation(const wxString& authorName,
         wxString result;
 
         if (subtitle.Strip() == wxT("")) {
-            result = authorName + wxT(", ") + title + wxT(", ") + edition + _(". edition, ")
-                         + publisher + wxT(", ") + year + _(", p. ") + pageS + wxT(".");
+            result = authorName + wxT(", ") + title + wxT(", ") + edition + wxT(". ") + _("edition") + wxT(", ")
+                         + publisher + wxT(", ") + year + wxT(", ") + _("p") + wxT(". ") + pageS + wxT(".");
         } else {
-            result = authorName + wxT(", ") + title + wxT(", ") + subtitle + wxT(", ") + edition + _(". edition, ")
-                         + publisher + wxT(", ") + year + _(", p. ") + pageS + wxT(".");
+            result = authorName + wxT(", ") + title + wxT(", ") + subtitle + wxT(", ") + edition + wxT(". ") + _("edition") + wxT(", ")
+                         + publisher + wxT(", ") + year + wxT(", ") + _("p") + wxT(". ") + pageS + wxT(".");
         }
 
         return result;
@@ -30,7 +30,7 @@ wxString qft::bookFirstQuotation(const wxString& authorName,
 wxString qft::bookSecondQuotation(const wxString& authorLastName,
                                  const wxString& year,
                                  const wxString& pageS) {
-        wxString result = authorLastName + wxT(", ") + year + _(", p. ") + pageS + wxT(".");
+        wxString result = authorLastName + wxT(", ") + year + wxT(", ") + _("p") + wxT(". ") + pageS + wxT(".");
         return result;
 }
 
