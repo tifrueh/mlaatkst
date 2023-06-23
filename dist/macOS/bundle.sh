@@ -29,7 +29,7 @@ cp ../../README.md $RES_PATH
 cp ../../LICENSE $RES_PATH
 cp ../../resources/mlaatkst.icns $RES_PATH
 cp ../../build-universal/MLAatKST $EXE_PATH
-cp ../../resources/lang/LC_MESSAGES/mlaatkst.mo $LC_DE_PATH
+cp ../../resources/lang/de/LC_MESSAGES/mlaatkst.mo $LC_DE_PATH
 
 productbuild --component $APP /Applications $PKG
 
