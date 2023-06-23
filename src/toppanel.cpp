@@ -78,7 +78,7 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY, wxDefaultPositi
     inputSizer->Add(date, 0, wxALIGN_CENTER_VERTICAL | wxALIGN_LEFT | wxALL, 5);
     inputSizer->Add(dateCtrl, 0, wxEXPAND | wxALL, 5);
     inputSizer->AddStretchSpacer();
-    inputSizer->Add(buttonOK, 0, wxALIGN_CENTER | wxALL, 5);
+    inputSizer->Add(buttonOK, 0, wxALIGN_CENTER | wxALL, 10);
 
     resultS = _("The footnote appears here ...");
 
