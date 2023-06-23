@@ -11,3 +11,5 @@ xgettext -C -k_ --from-code=utf-8 \
          --msgid-bugs-address='timo.frueh@icloud.com' \
          --join-existing \
          ../../src/*
+
+msgfmt -o ./de/LC_MESSAGES/messages.mo ./de/LC_MESSAGES/messages.po
