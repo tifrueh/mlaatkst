@@ -17,11 +17,11 @@ wxString qft::bookFirstQuotation(const wxString& authorName,
         wxString result;
 
         if (subtitle.Strip() == wxT("")) {
-            result = authorName + _(", ") + title + _(", ") + edition + _(". edition, ")
-                         + publisher + _(", ") + year + _(", p. ") + pageS + _(".");
+            result = authorName + wxT(", ") + title + wxT(", ") + edition + _(". edition, ")
+                         + publisher + wxT(", ") + year + _(", p. ") + pageS + wxT(".");
         } else {
-            result = authorName + _(", ") + title + _(", ") + subtitle + _(", ") + edition + _(". edition, ")
-                         + publisher + _(", ") + year + _(", p. ") + pageS + _(".");
+            result = authorName + wxT(", ") + title + wxT(", ") + subtitle + wxT(", ") + edition + _(". edition, ")
+                         + publisher + wxT(", ") + year + _(", p. ") + pageS + wxT(".");
         }
 
         return result;
@@ -30,7 +30,7 @@ wxString qft::bookFirstQuotation(const wxString& authorName,
 wxString qft::bookSecondQuotation(const wxString& authorLastName,
                                  const wxString& year,
                                  const wxString& pageS) {
-        wxString result = authorLastName + _(", ") + year + _(", p. ") + pageS + _(".");
+        wxString result = authorLastName + wxT(", ") + year + _(", p. ") + pageS + wxT(".");
         return result;
 }
 
@@ -42,9 +42,9 @@ wxString qft::web(const wxString& authorName,
         wxString result;
 
         if (subtitle.Strip() == wxT("")) {
-                result = authorName + _(", ") + title + _(", ") + url + _(", ") + date + _(".");
+                result = authorName + wxT(", ") + title + wxT(", ") + url + wxT(", ") + date + wxT(".");
             } else {
-                result = authorName + _(", ") + title + _(", ") + _(", ") + subtitle + _(", ") + url + _(", ") + date + _(".");
+                result = authorName + wxT(", ") + title + wxT(", ") + wxT(", ") + subtitle + wxT(", ") + url + wxT(", ") + date + wxT(".");
         }
 
         return result;
