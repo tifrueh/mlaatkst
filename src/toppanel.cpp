@@ -18,9 +18,9 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY, wxDefaultPositi
     appTitle->SetFont(titleFont);
 
     wxArrayString radioBoxOptions;
-    radioBoxOptions.Add(_("&First mention of a book"));
-    radioBoxOptions.Add(_("&Second mention of a book"));
-    radioBoxOptions.Add(_("&Mention of a website"));
+    radioBoxOptions.Add(_("First mention of a book"));
+    radioBoxOptions.Add(_("Second mention of a book"));
+    radioBoxOptions.Add(_("Mention of a website"));
     radioBox = new wxRadioBox(this, winID::ID_RADIOBOX, _("Options"), wxDefaultPosition, wxDefaultSize, radioBoxOptions, 3, wxRA_SPECIFY_COLS);
 
     authorName = new wxStaticText(this, wxID_ANY, _("Name of the author: (name, surname)"), wxDefaultPosition, wxDefaultSize, wxALIGN_CENTER_VERTICAL);
