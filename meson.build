@@ -26,5 +26,15 @@ executable(
     srcs,
     dependencies: deps,
     include_directories: incdir,
-    win_subsystem: 'windows'
+    win_subsystem: 'windows',
+    install: true
+)
+
+install_data(
+    'resources/lang/de/LC_MESSAGES/mlaatkst.mo',
+    install_dir: get_option('localedir') / 'de'
+)
+
+install_data(
+    'resources/mlaatkst.png'
 )
