@@ -18,9 +18,9 @@ wxIMPLEMENT_APP(MLAatKST);
 
 bool MLAatKST::OnInit() {
     
-    this->SetAppDisplayName(_("MLAatKST"));
+    this->SetAppDisplayName(wxT("MLAatKST"));
 
-    MainFrame* window = new MainFrame(_("MLAatKST"));
+    MainFrame* window = new MainFrame(wxT("MLAatKST"));
     window->Show();
 
     return true;
