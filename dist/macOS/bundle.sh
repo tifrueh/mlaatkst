@@ -1,6 +1,6 @@
 #!/bin/sh
 
-VERSION=2.0.0
+VERSION=2.1.0
 
 APP=MLAatKST.app
 PKG=MLAatKST-macOS-universal-v$VERSION.pkg
