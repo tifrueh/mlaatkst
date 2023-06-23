@@ -21,6 +21,7 @@
 #endif
 
 #include <wx/aboutdlg.h>
+#include <wx/intl.h>
 
 #include "mainframe.hpp"
 
@@ -28,11 +29,18 @@
 class MLAatKST : public wxApp {
     public:
         virtual bool OnInit();
+        wxLocale* locale;
 };
 
 wxIMPLEMENT_APP(MLAatKST);
 
 bool MLAatKST::OnInit() {
+
+    locale = new wxLocale();
+
+    locale->Init(wxLANGUAGE_DEFAULT);
+
+    locale->AddCatalog(wxT("mlaatkst"), wxLANGUAGE_GERMAN);
     
     this->SetAppDisplayName(wxT("MLAatKST"));
 
