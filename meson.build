@@ -7,6 +7,20 @@ project(
     version: '2.0.0'
 )
 
+run_command(
+    'xgettext',
+    '-o' + meson.current_source_dir() + '/resources/lang/de/LC_MESSAGES/messages.po',
+    '--copyright-holder="Timo Früh"',
+    '--package-name="MLAatKST"',
+    '--msgid-bugs-address="timo.frueh@icloud.com"',
+    '--join-existing',
+    meson.current_source_dir() + '/src/main.cpp',
+    meson.current_source_dir() + '/src/mainframe.cpp',
+    meson.current_source_dir() + '/src/quotation_formatter.cpp',
+    meson.current_source_dir() + '/src/toppanel.cpp',
+    check: true
+)
+
 incdir = include_directories('include')
 
 srcs = [
