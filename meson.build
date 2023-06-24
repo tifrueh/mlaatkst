@@ -32,7 +32,7 @@ executable(
 
 install_data(
     'resources/lang/de/LC_MESSAGES/mlaatkst.mo',
-    install_dir: get_option('localedir') / 'de'
+    install_dir: get_option('localedir') / 'de' / 'LC_MESSAGES'
 )
 
 install_data(
