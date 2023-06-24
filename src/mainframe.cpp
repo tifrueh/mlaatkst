@@ -24,7 +24,7 @@ MainFrame::MainFrame(wxString title) : wxFrame(NULL, wxID_ANY, title) {
     info.SetCopyright(wxT(
         "Copyright (C) 2022-2023 Timo Früh\n"
         "This program is free and open source software, licensed under the GNU General Public License 3.0. "
-        "For futher information, see <https://www.gnu.org/licenses/>."
+        "For further information, see <https://www.gnu.org/licenses/>."
     ));
 
     menuFile = new wxMenu;
