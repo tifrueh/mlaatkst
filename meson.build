@@ -38,3 +38,7 @@ install_data(
 install_data(
     'resources/mlaatkst.png'
 )
+
+install_data(
+    'resources/mlaatkst.desktop'
+)
