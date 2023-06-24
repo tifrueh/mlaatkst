@@ -1,10 +1,10 @@
 project(
-    'MLAatKST',
+    'mlaatkst',
     'cpp',
     default_options: [ 'cpp_std=c++17' ],
     license: 'GPL-3.0-or-later',
     license_files: 'LICENSE',
-    version: '2.0.0'
+    version: '2.1.0'
 )
 
 incdir = include_directories('include')
@@ -26,5 +26,19 @@ executable(
     srcs,
     dependencies: deps,
     include_directories: incdir,
-    win_subsystem: 'windows'
+    win_subsystem: 'windows',
+    install: true
+)
+
+install_data(
+    'resources/lang/de/LC_MESSAGES/mlaatkst.mo',
+    install_dir: get_option('localedir') / 'de'
+)
+
+install_data(
+    'resources/mlaatkst.png'
+)
+
+install_data(
+    'resources/mlaatkst.desktop'
 )

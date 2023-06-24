@@ -1,3 +1,7 @@
+// MLAatKST: Footnote helper for KST students
+// Copyright (C) 2023 Timo Früh
+// The full copyright notice can be found at the start of main.cpp
+
 #include "id.hpp"
 
 #include <wx/wxprec.h>

@@ -1,3 +1,7 @@
+// MLAatKST: Footnote helper for KST students
+// Copyright (C) 2023 Timo Früh
+// The full copyright notice can be found at the start of main.cpp
+
 #include <wx/wxprec.h>
  
 #ifndef WX_PRECOMP
@@ -11,29 +15,29 @@
 #include "toppanel.hpp"
 
 TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY, wxDefaultPosition, wxDefaultSize) {
-    appTitle = new wxStaticText(this, wxID_ANY, wxT("MLA at the KST"), wxDefaultPosition, wxDefaultSize, wxALIGN_CENTER_HORIZONTAL);
+    appTitle = new wxStaticText(this, wxID_ANY, _("MLA at the KST"), wxDefaultPosition, wxDefaultSize, wxALIGN_CENTER_HORIZONTAL);
     wxFont titleFont = appTitle->GetFont();
     titleFont.Scale(2);
     titleFont.MakeBold();
     appTitle->SetFont(titleFont);
 
     wxArrayString radioBoxOptions;
-    radioBoxOptions.Add(wxT("&First mention of a book"));
-    radioBoxOptions.Add(wxT("&Second mention of a book"));
-    radioBoxOptions.Add(wxT("&Mention of a website"));
-    radioBox = new wxRadioBox(this, winID::ID_RADIOBOX, wxT("Options"), wxDefaultPosition, wxDefaultSize, radioBoxOptions, 3, wxRA_SPECIFY_COLS);
+    radioBoxOptions.Add(_("First mention of a book"));
+    radioBoxOptions.Add(_("Second mention of a book"));
+    radioBoxOptions.Add(_("Mention of a website"));
+    radioBox = new wxRadioBox(this, winID::ID_RADIOBOX, _("Options"), wxDefaultPosition, wxDefaultSize, radioBoxOptions, 3, wxRA_SPECIFY_COLS);
 
-    authorName = new wxStaticText(this, wxID_ANY, wxT("Name of the author: (name, surname)"), wxDefaultPosition, wxDefaultSize, wxALIGN_CENTER_VERTICAL);
-    authorLastName = new wxStaticText(this, wxID_ANY, wxT("Last name of the author:"), wxDefaultPosition, wxDefaultSize, wxALIGN_CENTER_VERTICAL);
-    title = new wxStaticText(this, wxID_ANY, wxT("Title:"), wxDefaultPosition, wxDefaultSize, wxALIGN_CENTER_VERTICAL);
-    subtitle = new wxStaticText(this, wxID_ANY, wxT("Subtitle: (leave empty if there is none)"), wxDefaultPosition, wxDefaultSize, wxALIGN_CENTER_VERTICAL);
-    edition = new wxStaticText(this, wxID_ANY, wxT("Edition: (enter a number)"), wxDefaultPosition, wxDefaultSize, wxALIGN_CENTER_VERTICAL);
-    publisher = new wxStaticText(this, wxID_ANY, wxT("Publisher:"), wxDefaultPosition, wxDefaultSize, wxALIGN_CENTER_VERTICAL);
-    location = new wxStaticText(this, wxID_ANY, wxT("Location:"), wxDefaultPosition, wxDefaultSize, wxALIGN_CENTER_VERTICAL);
-    year = new wxStaticText(this, wxID_ANY, wxT("Year:"), wxDefaultPosition, wxDefaultSize, wxALIGN_CENTER_VERTICAL);
-    pageS = new wxStaticText(this, wxID_ANY, wxT("Page(s) quoted:"), wxDefaultPosition, wxDefaultSize, wxALIGN_CENTER_VERTICAL);
-    url = new wxStaticText(this, wxID_ANY, wxT("URL:"), wxDefaultPosition, wxDefaultSize, wxALIGN_CENTER_VERTICAL);
-    date = new wxStaticText(this, wxID_ANY, wxT("Download date:"), wxDefaultPosition, wxDefaultSize, wxALIGN_CENTER_VERTICAL);
+    authorName = new wxStaticText(this, wxID_ANY, _("Name of the author: (name, surname)"), wxDefaultPosition, wxDefaultSize, wxALIGN_CENTER_VERTICAL);
+    authorLastName = new wxStaticText(this, wxID_ANY, _("Last name of the author:"), wxDefaultPosition, wxDefaultSize, wxALIGN_CENTER_VERTICAL);
+    title = new wxStaticText(this, wxID_ANY, _("Title:"), wxDefaultPosition, wxDefaultSize, wxALIGN_CENTER_VERTICAL);
+    subtitle = new wxStaticText(this, wxID_ANY, _("Subtitle: (leave empty if there is none)"), wxDefaultPosition, wxDefaultSize, wxALIGN_CENTER_VERTICAL);
+    edition = new wxStaticText(this, wxID_ANY, _("Edition: (enter a number)"), wxDefaultPosition, wxDefaultSize, wxALIGN_CENTER_VERTICAL);
+    publisher = new wxStaticText(this, wxID_ANY, _("Publisher:"), wxDefaultPosition, wxDefaultSize, wxALIGN_CENTER_VERTICAL);
+    location = new wxStaticText(this, wxID_ANY, _("Location:"), wxDefaultPosition, wxDefaultSize, wxALIGN_CENTER_VERTICAL);
+    year = new wxStaticText(this, wxID_ANY, _("Year:"), wxDefaultPosition, wxDefaultSize, wxALIGN_CENTER_VERTICAL);
+    pageS = new wxStaticText(this, wxID_ANY, _("Page(s) quoted:"), wxDefaultPosition, wxDefaultSize, wxALIGN_CENTER_VERTICAL);
+    url = new wxStaticText(this, wxID_ANY, _("URL:"), wxDefaultPosition, wxDefaultSize, wxALIGN_CENTER_VERTICAL);
+    date = new wxStaticText(this, wxID_ANY, _("Download date:"), wxDefaultPosition, wxDefaultSize, wxALIGN_CENTER_VERTICAL);
 
     authorNameCtrl = new wxTextCtrl(this, wxID_ANY, wxEmptyString, wxDefaultPosition, wxSize(250, wxDefaultSize.GetY()));
     authorLastNameCtrl = new wxTextCtrl(this, wxID_ANY);
@@ -74,14 +78,14 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY, wxDefaultPositi
     inputSizer->Add(date, 0, wxALIGN_CENTER_VERTICAL | wxALIGN_LEFT | wxALL, 5);
     inputSizer->Add(dateCtrl, 0, wxEXPAND | wxALL, 5);
     inputSizer->AddStretchSpacer();
-    inputSizer->Add(buttonOK, 0, wxALIGN_CENTER | wxALL, 5);
+    inputSizer->Add(buttonOK, 0, wxALIGN_CENTER | wxALL, 10);
 
-    resultS = wxT("The footnote appears here ...");
+    resultS = _("The footnote appears here ...");
 
     result = new wxStaticText(this, wxID_ANY, resultS, wxDefaultPosition, wxDefaultSize, wxALIGN_CENTER);
 
-    buttonCopy = new wxButton(this, winID::ID_COPY, wxT("Copy footnote"));
-    buttonReset = new wxButton(this, winID::ID_CLEAR, wxT("Reset inputs"));
+    buttonCopy = new wxButton(this, winID::ID_COPY, _("Copy footnote"));
+    buttonReset = new wxButton(this, winID::ID_CLEAR, _("Reset inputs"));
 
     buttonSizer = new wxBoxSizer(wxHORIZONTAL);
     buttonSizer->Add(buttonCopy, 1, wxCENTER | wxALL, 10);

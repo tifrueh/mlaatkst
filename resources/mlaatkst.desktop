@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Version=1.5
+Name=MLAatKST
+Comment=Footnote helper for KST students
+Icon=mlaatkst
+TryExec=MLAatKST
+Exec=MLAatKST
+Terminal=false
+Categories=Education Science Utility
