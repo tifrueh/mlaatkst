@@ -1,7 +1,6 @@
 # MLA at KST
 
 This application was specifically designed to help students of the KST get their footnotes right. The student can input all attributes of the work they want to quote into the input fields and the program spits out the correct footnote which can then be copied.
-The program was originally in German, but is now in English since Release 2.0.0. There will, however, soon be an internationalised version of the application.
 
 ## Installation
 
