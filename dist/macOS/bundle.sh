@@ -4,7 +4,7 @@ parent_path=$( cd "$(dirname "$0")" ; pwd -P )
 
 cd "$parent_path"
 
-VERSION=2.1.0
+VERSION=2.1.1-dev
 
 APP=MLAatKST.app
 PKG=MLAatKST-macOS-universal-v$VERSION.pkg

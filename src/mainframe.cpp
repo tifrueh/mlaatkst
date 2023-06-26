@@ -20,7 +20,7 @@
 MainFrame::MainFrame(wxString title) : wxFrame(NULL, wxID_ANY, title) {
 
     info.SetName(wxT("MLAatKST"));
-    info.SetVersion(wxT("2.1.0"));
+    info.SetVersion(wxT("2.1.1-dev"));
     info.SetCopyright(wxT(
         "Copyright (C) 2022-2023 Timo Früh\n"
         "This program is free and open source software, licensed under the GNU General Public License 3.0. "
