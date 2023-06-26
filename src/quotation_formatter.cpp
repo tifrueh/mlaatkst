@@ -20,7 +20,10 @@ wxString qft::bookFirstQuotation(const wxString& authorName,
                                 const wxString& pageS ) {
         wxString result;
 
-        if (subtitle.Strip() == wxT("")) {
+        if (authorName.Strip() == wxT("") || title.Strip() == wxT("") || edition.Strip() == wxT("") || publisher.Strip() == wxT("") || location.Strip() == wxT("") || year.Strip() == wxT("") || pageS.Strip() == wxT("")) {
+            result = _("Please fill out all required fields ...");
+        }
+        else if (subtitle.Strip() == wxT("")) {
             result = authorName + wxT(", ") + title + wxT(", ") + edition + wxT(". ") + _("edition") + wxT(", ")
                          + publisher + wxT(", ") + year + wxT(", ") + _("p") + wxT(". ") + pageS + wxT(".");
         } else {
@@ -34,7 +37,14 @@ wxString qft::bookFirstQuotation(const wxString& authorName,
 wxString qft::bookSecondQuotation(const wxString& authorLastName,
                                  const wxString& year,
                                  const wxString& pageS) {
-        wxString result = authorLastName + wxT(", ") + year + wxT(", ") + _("p") + wxT(". ") + pageS + wxT(".");
+        wxString result;
+
+        if (authorLastName.Strip() == wxT("") || year.Strip() == wxT("") || pageS.Strip() == wxT("")) {
+            result = _("Please fill out all required fields ...");
+        } else {
+            result = authorLastName + wxT(", ") + year + wxT(", ") + _("p") + wxT(". ") + pageS + wxT(".");
+        }
+
         return result;
 }
 
@@ -45,10 +55,13 @@ wxString qft::web(const wxString& authorName,
                  const wxString& date) {
         wxString result;
 
-        if (subtitle.Strip() == wxT("")) {
+        if (authorName.Strip() == wxT("") || title.Strip() == wxT("") || url.Strip() == wxT("") || date.Strip() == wxT("")) {
+            result = _("Please fill out all required fields ...");
+        }
+        else if (subtitle.Strip() == wxT("")) {
                 result = authorName + wxT(", ") + title + wxT(", ") + url + wxT(", ") + date + wxT(".");
-            } else {
-                result = authorName + wxT(", ") + title + wxT(", ") + wxT(", ") + subtitle + wxT(", ") + url + wxT(", ") + date + wxT(".");
+        } else {
+                result = authorName + wxT(", ") + title + wxT(", ") + subtitle + wxT(", ") + url + wxT(", ") + date + wxT(".");
         }
 
         return result;

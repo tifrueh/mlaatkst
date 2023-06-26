@@ -17,128 +17,163 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../src/mainframe.cpp:27 ../../src/mainframe.cpp:31
+#: ../../src/mainframe.cpp:35
 msgid "Quit MLAatKST"
 msgstr "MLAatKST beenden"
 
 #: ../../src/mainframe.cpp:28 ../../src/mainframe.cpp:32
+#: ../../src/mainframe.cpp:36
 msgid "Close Window"
 msgstr "Fenster schliessen"
 
 #: ../../src/mainframe.cpp:31 ../../src/mainframe.cpp:35
+#: ../../src/mainframe.cpp:39
 msgid "Process inputs"
 msgstr "Fussnote fertigstellen"
 
 #: ../../src/mainframe.cpp:32 ../../src/toppanel.cpp:83
 #: ../../src/mainframe.cpp:36 ../../src/toppanel.cpp:87
+#: ../../src/mainframe.cpp:40 ../../src/toppanel.cpp:94
 msgid "Copy footnote"
 msgstr "Fussnote kopieren"
 
 #: ../../src/mainframe.cpp:34 ../../src/toppanel.cpp:21
 #: ../../src/mainframe.cpp:38 ../../src/toppanel.cpp:25
+#: ../../src/mainframe.cpp:42 ../../src/toppanel.cpp:32
 msgid "First mention of a book"
 msgstr "Erstnennung Buch"
 
 #: ../../src/mainframe.cpp:35 ../../src/toppanel.cpp:22
 #: ../../src/mainframe.cpp:39 ../../src/toppanel.cpp:26
+#: ../../src/mainframe.cpp:43 ../../src/toppanel.cpp:33
 msgid "Second mention of a book"
 msgstr "Zweitnennung Buch"
 
 #: ../../src/mainframe.cpp:36 ../../src/toppanel.cpp:23
 #: ../../src/mainframe.cpp:40 ../../src/toppanel.cpp:27
+#: ../../src/mainframe.cpp:44 ../../src/toppanel.cpp:34
 msgid "Mention of a website"
 msgstr "Webzitat"
 
 #: ../../src/mainframe.cpp:38 ../../src/mainframe.cpp:42
+#: ../../src/mainframe.cpp:46
 msgid "Clear inputs"
 msgstr "Felder zurücksetzen"
 
 #: ../../src/mainframe.cpp:41 ../../src/mainframe.cpp:45
+#: ../../src/mainframe.cpp:49
 msgid "About MLAatKST"
 msgstr "Über MLAatKST"
 
 #: ../../src/mainframe.cpp:42 ../../src/mainframe.cpp:46
+#: ../../src/mainframe.cpp:50
 msgid "MLAatKST on GitHub"
 msgstr "MLAatKST auf GitHub"
 
 #: ../../src/mainframe.cpp:45 ../../src/mainframe.cpp:49
+#: ../../src/mainframe.cpp:53
 msgid "File"
 msgstr "Datei"
 
 #: ../../src/mainframe.cpp:46 ../../src/mainframe.cpp:50
+#: ../../src/mainframe.cpp:54
 msgid "Edit"
 msgstr "Bearbeiten"
 
 #: ../../src/mainframe.cpp:47 ../../src/mainframe.cpp:51
+#: ../../src/mainframe.cpp:55
 msgid "Help"
 msgstr "Hilfe"
 
 #: ../../src/toppanel.cpp:14 ../../src/toppanel.cpp:18
+#: ../../src/toppanel.cpp:25
 msgid "MLA at the KST"
 msgstr "MLA an der KST"
 
 #: ../../src/toppanel.cpp:24 ../../src/toppanel.cpp:28
+#: ../../src/toppanel.cpp:35
 msgid "Options"
 msgstr "Optionen"
 
 #: ../../src/toppanel.cpp:26 ../../src/toppanel.cpp:30
+#: ../../src/toppanel.cpp:37
 msgid "Name of the author: (name, surname)"
 msgstr "Name des Autors / der Autorin: (Nachname, Vorname)"
 
 #: ../../src/toppanel.cpp:27 ../../src/toppanel.cpp:31
+#: ../../src/toppanel.cpp:38
 msgid "Last name of the author:"
 msgstr "Nachname des Autors / der Autorin:"
 
 #: ../../src/toppanel.cpp:28 ../../src/toppanel.cpp:32
+#: ../../src/toppanel.cpp:39
 msgid "Title:"
 msgstr "Titel:"
 
 #: ../../src/toppanel.cpp:29 ../../src/toppanel.cpp:33
+#: ../../src/toppanel.cpp:40
 msgid "Subtitle: (leave empty if there is none)"
 msgstr "Untertitel: (leer lassen wenn nicht vorhanden)"
 
 #: ../../src/toppanel.cpp:30 ../../src/toppanel.cpp:34
+#: ../../src/toppanel.cpp:41
 msgid "Edition: (enter a number)"
 msgstr "Auflage: (Zahl eingeben)"
 
 #: ../../src/toppanel.cpp:31 ../../src/toppanel.cpp:35
+#: ../../src/toppanel.cpp:42
 msgid "Publisher:"
 msgstr "Verlag:"
 
 #: ../../src/toppanel.cpp:32 ../../src/toppanel.cpp:36
+#: ../../src/toppanel.cpp:43
 msgid "Location:"
 msgstr "Ort:"
 
 #: ../../src/toppanel.cpp:33 ../../src/toppanel.cpp:37
+#: ../../src/toppanel.cpp:44
 msgid "Year:"
 msgstr "Jahr:"
 
 #: ../../src/toppanel.cpp:34 ../../src/toppanel.cpp:38
+#: ../../src/toppanel.cpp:45
 msgid "Page(s) quoted:"
 msgstr "Zitierte Seite(n):"
 
 #: ../../src/toppanel.cpp:35 ../../src/toppanel.cpp:39
+#: ../../src/toppanel.cpp:46
 msgid "URL:"
 msgstr "URL:"
 
 #: ../../src/toppanel.cpp:36 ../../src/toppanel.cpp:40
+#: ../../src/toppanel.cpp:47
 msgid "Download date:"
 msgstr "Herunterladedatum:"
 
 #: ../../src/toppanel.cpp:79 ../../src/toppanel.cpp:83
+#: ../../src/toppanel.cpp:90
 msgid "The footnote appears here ..."
 msgstr "Die Fussnote erscheint hier ..."
 
 #: ../../src/toppanel.cpp:84 ../../src/toppanel.cpp:88
+#: ../../src/toppanel.cpp:95
 msgid "Reset inputs"
 msgstr "Felder zurücksetzen"
 
 #: ../../src/quotation_formatter.cpp:20 ../../src/quotation_formatter.cpp:23
 #: ../../src/quotation_formatter.cpp:24 ../../src/quotation_formatter.cpp:27
+#: ../../src/quotation_formatter.cpp:30
 msgid "edition"
 msgstr "Auflage"
 
 #: ../../src/quotation_formatter.cpp:21 ../../src/quotation_formatter.cpp:24
 #: ../../src/quotation_formatter.cpp:33 ../../src/quotation_formatter.cpp:25
 #: ../../src/quotation_formatter.cpp:28 ../../src/quotation_formatter.cpp:37
+#: ../../src/quotation_formatter.cpp:31 ../../src/quotation_formatter.cpp:45
 msgid "p"
 msgstr "S"
+
+#: ../../src/quotation_formatter.cpp:24 ../../src/quotation_formatter.cpp:43
+#: ../../src/quotation_formatter.cpp:59
+msgid "Please fill out all required fields ..."
+msgstr "Bitte alle benötigten Felder ausfüllen ..."
