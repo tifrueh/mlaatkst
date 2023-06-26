@@ -41,6 +41,7 @@ bool MLAatKST::OnInit() {
     locale->Init(wxLANGUAGE_DEFAULT);
 
     locale->AddCatalog(wxT("mlaatkst"));
+    locale->AddCatalog(wxT("wxstd"));
     
     this->SetAppDisplayName(wxT("MLAatKST"));
 
