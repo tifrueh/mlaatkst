@@ -6,6 +6,7 @@ cd "$parent_path"
 
 xgettext -C -k_ --from-code=utf-8 \
          -o ./de/LC_MESSAGES/mlaatkst.po \
+         --omit-header \
          --join-existing \
          ../../src/*
 
