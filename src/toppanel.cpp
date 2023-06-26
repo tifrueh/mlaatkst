@@ -9,12 +9,19 @@
 #endif
 
 #include <wx/clipbrd.h>
+#include <wx/generic/statbmpg.h>
 
 #include "id.hpp"
 #include "quotation_formatter.hpp"
 #include "toppanel.hpp"
 
+#include "banner.xpm"
+
 TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY, wxDefaultPosition, wxDefaultSize) {
+
+    bar = new wxGenericStaticBitmap(this, wxID_ANY, wxBITMAP(banner), wxDefaultPosition, wxSize(250, 30));
+    bar->SetScaleMode(wxGenericStaticBitmap::Scale_AspectFill);
+
     appTitle = new wxStaticText(this, wxID_ANY, _("MLA at the KST"), wxDefaultPosition, wxDefaultSize, wxALIGN_CENTER_HORIZONTAL);
     wxFont titleFont = appTitle->GetFont();
     titleFont.Scale(2);
@@ -92,6 +99,14 @@ TopPanel::TopPanel(wxWindow* parent) : wxPanel(parent, wxID_ANY, wxDefaultPositi
     buttonSizer->Add(buttonReset, 1, wxCENTER | wxALL, 10);
 
     topsizer = new wxBoxSizer(wxVERTICAL);
+
+    topsizer->Add(
+        bar,
+        0,
+        wxEXPAND |
+        wxBOTTOM,
+        5
+    );
 
     topsizer->Add(
         appTitle,

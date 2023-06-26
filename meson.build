@@ -4,10 +4,10 @@ project(
     default_options: [ 'cpp_std=c++17' ],
     license: 'GPL-3.0-or-later',
     license_files: 'LICENSE',
-    version: '2.1.0'
+    version: '2.1.1'
 )
 
-incdir = include_directories('include')
+incdir = include_directories([ 'include', 'img' ])
 
 srcs = [
     'src/id.cpp',
@@ -32,7 +32,7 @@ executable(
 
 install_data(
     'resources/lang/de/LC_MESSAGES/mlaatkst.mo',
-    install_dir: get_option('localedir') / 'de'
+    install_dir: get_option('localedir') / 'de' / 'LC_MESSAGES'
 )
 
 install_data(

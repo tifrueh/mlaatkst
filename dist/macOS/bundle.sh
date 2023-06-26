@@ -4,7 +4,7 @@ parent_path=$( cd "$(dirname "$0")" ; pwd -P )
 
 cd "$parent_path"
 
-VERSION=2.1.0
+VERSION=2.1.1
 
 APP=MLAatKST.app
 PKG=MLAatKST-macOS-universal-v$VERSION.pkg
@@ -30,6 +30,7 @@ cp ../../LICENSE $RES_PATH
 cp ../../resources/mlaatkst.icns $RES_PATH
 cp ../../build/MLAatKST $EXE_PATH
 cp ../../resources/lang/de/LC_MESSAGES/mlaatkst.mo $LC_DE_PATH
+cp ../../resources/lang/de/LC_MESSAGES/wxstd.mo $LC_DE_PATH
 
 productbuild --component $APP /Applications $PKG
 

@@ -5,6 +5,7 @@
 #pragma once
 
 #include <wx/wxprec.h>
+#include <wx/generic/statbmpg.h>
  
 #ifndef WX_PRECOMP
     #include <wx/wx.h>
@@ -32,6 +33,7 @@ class TopPanel : public wxPanel {
         void selectInputGroupTwo();
 
     private:
+        wxGenericStaticBitmap* bar = nullptr;
         wxStaticText* appTitle = nullptr;
         wxRadioBox* radioBox = nullptr;
         wxBoxSizer* topsizer = nullptr;
