@@ -7,7 +7,7 @@ project(
     version: '2.1.1-dev'
 )
 
-incdir = include_directories('include')
+incdir = include_directories([ 'include', 'img' ])
 
 srcs = [
     'src/id.cpp',
