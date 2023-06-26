@@ -47,3 +47,7 @@ You can also download the source code from the [latest release](https://github.c
 Additional software components needed:
 - [meson](https://mesonbuild.com/SimpleStart.html)
 - [wxWidgets](https://www.wxwidgets.org/downloads/) 
+
+## Preview (macOS)
+
+![App Preview](https://raw.githubusercontent.com/tifrueh/mlaatkst/main/resources/macos_en_preview.png)
