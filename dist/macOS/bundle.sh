@@ -9,7 +9,6 @@ APP=MLAatKST.app
 CONTENTS_PATH=$APP/Contents
 RES_PATH=$CONTENTS_PATH/Resources
 EXE_PATH=$CONTENTS_PATH/macOS
-LIB_PATH=$CONTENTS_PATH/Frameworks
 LC_DE_PATH=$RES_PATH/de.lproj
 
 rm -rf $APP
@@ -17,7 +16,6 @@ mkdir $APP
 
 mkdir -p $RES_PATH
 mkdir -p $EXE_PATH
-mkdir -p $LIB_PATH
 mkdir -p $LC_DE_PATH
 
 cp ../../resources/Info.plist $CONTENTS_PATH
