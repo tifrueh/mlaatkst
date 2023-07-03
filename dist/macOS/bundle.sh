@@ -4,7 +4,6 @@ parent_path=$( cd "$(dirname "$0")" ; pwd -P )
 
 cd "$parent_path"
 
-VERSION=2.1.1
 
 APP=MLAatKST.app
 CONTENTS_PATH=$APP/Contents
