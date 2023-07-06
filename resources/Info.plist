@@ -3,7 +3,7 @@
 <plist version="1.0">
   <dict>
     <key>LSMinimumSystemVersion</key>
-    <string>12</string>
+    <string>11</string>
     <key>CFBundleDisplayName</key>
     <string>MLAatKST</string>
     <key>CFBundleDevelopmentRegion</key>
