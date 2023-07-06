@@ -11,7 +11,7 @@
     <key>CFBundleLocalizations</key>
     <array><string>de</string></array>
     <key>CFBundleExecutable</key>
-    <string>MLAatKST</string>
+    <string>mlaatkst</string>
     <key>CFBundleIconFile</key>
     <string>mlaatkst.icns</string>
     <key>CFBundleIdentifier</key>

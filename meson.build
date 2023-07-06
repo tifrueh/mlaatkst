@@ -22,7 +22,7 @@ wx = dependency('wxwidgets')
 deps = [ wx ]
 
 executable(
-    'MLAatKST',
+    'mlaatkst',
     srcs,
     dependencies: deps,
     include_directories: incdir,

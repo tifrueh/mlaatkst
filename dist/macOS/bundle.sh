@@ -22,6 +22,6 @@ cp ../../resources/Info.plist $CONTENTS_PATH
 cp ../../README.md $RES_PATH
 cp ../../LICENSE $RES_PATH
 cp ../../resources/mlaatkst.icns $RES_PATH
-cp ../../build/MLAatKST $EXE_PATH
+cp ../../build/mlaatkst $EXE_PATH
 cp ../../resources/lang/de/LC_MESSAGES/mlaatkst.mo $LC_DE_PATH
 cp ../../resources/lang/de/LC_MESSAGES/wxstd.mo $LC_DE_PATH
