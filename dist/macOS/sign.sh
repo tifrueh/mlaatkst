@@ -6,7 +6,7 @@ cd "$parent_path"
 
 echo "----=SIGNING=----"
 
-codesign --force --verbose=2 --sign $CERT_APPL MLAatKST.app
+codesign --force --verbose=2 --sign $CERT_APPL --options runtime MLAatKST.app
 
 echo "-----------------\n"
 
