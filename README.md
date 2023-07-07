@@ -19,13 +19,7 @@ But in the moment there are three major ways for installation:
 
 3. Follow the PKG-Installer's instructions.
 
-4.  _Disclaimer: I do not yet have a developer certificate, so Gatekeeper won't let you open the app._
-    But if you trust me, you can run the following command in your terminal:
-    ~~~ shell
-    xattr -d com.apple.quarantine /Applications/MLAatKST.app
-    ~~~
-
-5. You should then be able to open and use the app.
+4. You should then be able to open and use the app.
 
 ### Installation with homebrew (macOS)
 
@@ -35,10 +29,10 @@ But in the moment there are three major ways for installation:
     brew tap tifrueh/homebrew-mytap
     ~~~
 
-2.  Install MLAatKST (with the `--no-quarantine` flag, because I don't have a developer certificate):
+2.  Install MLAatKST:
 
     ~~~ shell
-    brew install mlaatkst --no-quarantine
+    brew install mlaatkst 
     ~~~
 
 ### Manual install (any OS)

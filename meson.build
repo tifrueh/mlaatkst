@@ -4,7 +4,7 @@ project(
     default_options: [ 'cpp_std=c++17' ],
     license: 'GPL-3.0-or-later',
     license_files: 'LICENSE',
-    version: '2.1.1'
+    version: '2.1.2'
 )
 
 incdir = include_directories([ 'include', 'img' ])
@@ -22,7 +22,7 @@ wx = dependency('wxwidgets')
 deps = [ wx ]
 
 executable(
-    'MLAatKST',
+    'mlaatkst',
     srcs,
     dependencies: deps,
     include_directories: incdir,
