@@ -19,5 +19,5 @@ install -d -m 755 $CONTENTS_PATH $RES_PATH $EXE_PATH $LC_DE_PATH
 install -m 644 ../../resources/Info.plist $CONTENTS_PATH
 install -m 644 ../../resources/lang/de/LC_MESSAGES/mlaatkst.mo $LC_DE_PATH
 install -m 644 ../../resources/lang/de/LC_MESSAGES/wxstd.mo $LC_DE_PATH
-install -m 644 ../../resources/mlaatkst.png $RES_PATH
+install -m 644 ../../resources/mlaatkst\ 2.icns $RES_PATH
 install -s -m 755 ../../build/mlaatkst $EXE_PATH

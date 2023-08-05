@@ -24,7 +24,7 @@ MainFrame::MainFrame(wxString title) : wxFrame(NULL, wxID_ANY, title) {
     SetIcon(wxICON(mlaatkst));
 
     info.SetName(wxT("MLAatKST"));
-    info.SetVersion(wxT("2.1.3"));
+    info.SetVersion(wxT("2.1.4"));
      info.SetCopyright(wxT(
         "Copyright (C) 2022-2023 Timo Früh\n"
         "This program is free and open source software, licensed under the GNU General Public License 3.0. "
